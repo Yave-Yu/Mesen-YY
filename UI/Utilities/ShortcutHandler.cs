@@ -66,6 +66,7 @@ namespace Mesen.Utilities
 				case EmulatorShortcut.OpenFile: OpenFile(); break;
 				case EmulatorShortcut.IncreaseSpeed: IncreaseEmulationSpeed(); break;
 				case EmulatorShortcut.DecreaseSpeed: DecreaseEmulationSpeed(); break;
+				case EmulatorShortcut.NormalSpeed: NormalEmulationSpeed(); break;
 
 				case EmulatorShortcut.SetScale1x: _mainWindow.SetScale(1); break;
 				case EmulatorShortcut.SetScale2x: _mainWindow.SetScale(2); break;
@@ -77,6 +78,8 @@ namespace Mesen.Utilities
 				case EmulatorShortcut.SetScale8x: _mainWindow.SetScale(8); break;
 				case EmulatorShortcut.SetScale9x: _mainWindow.SetScale(9); break;
 				case EmulatorShortcut.SetScale10x: _mainWindow.SetScale(10); break;
+				case EmulatorShortcut.SetScale11x: _mainWindow.SetScale(11); break;
+				case EmulatorShortcut.SetScale12x: _mainWindow.SetScale(12); break;
 
 				case EmulatorShortcut.ToggleBgLayer1: ToggleVideoLayer(VideoLayer.Bg1); break;
 				case EmulatorShortcut.ToggleBgLayer2: ToggleVideoLayer(VideoLayer.Bg2); break;
@@ -422,6 +425,11 @@ namespace Mesen.Utilities
 					}
 				}
 			}
+		}
+
+		private void NormalEmulationSpeed()
+		{
+			SetEmulationSpeed(100);
 		}
 
 		private void ToggleMaxSpeed()
