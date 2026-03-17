@@ -850,7 +850,7 @@
 			<Control ID="grpAcknowledgements">Acknowledgements</Control>
 			<Control ID="lblAcknowledgeList">Thank you to the following people/projects for their direct and indirect help in making Mesen possible:</Control>
 			<Control ID="lblUsedSoftware">Mesen uses the following open-source software:</Control>
-			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (bug reports, testing, research, etc.)</Control>
+			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (bug reports, testing, research, etc.). You are using a fork, this fork has minor changes, by Yave Yu.</Control>
 
 			<Control ID="btnOk">OK</Control>
 		</Form>
@@ -1889,6 +1889,7 @@ E
 			<Value ID="RewindOneMin">Rewind 1 minute</Value>
 			<Value ID="IncreaseSpeed">Increase Speed</Value>
 			<Value ID="DecreaseSpeed">Decrease Speed</Value>
+			<Value ID="NormalSpeed">Normal Speed</Value>
 			<Value ID="Pause">Pause</Value>
 			<Value ID="Reset">Reset</Value>
 			<Value ID="PowerCycle">Power Cycle</Value>
@@ -1920,6 +1921,8 @@ E
 			<Value ID="SetScale8x">Set Scale 8x</Value>
 			<Value ID="SetScale9x">Set Scale 9x</Value>
 			<Value ID="SetScale10x">Set Scale 10x</Value>
+			<Value ID="SetScale11x">Set Scale 11x</Value>
+			<Value ID="SetScale12x">Set Scale 12x</Value>
 			<Value ID="ToggleFullscreen">Toggle Fullscreen Mode</Value>
 			<Value ID="ToggleFps">Toggle FPS Counter</Value>
 			<Value ID="ToggleDebugInfo">Toggle Debug Information</Value>
@@ -2898,6 +2901,7 @@ E
 			<Value ID="Normal">Normal</Value>
 			<Value ID="SingleLine8x16">8x16 (same line)</Value>
 			<Value ID="SingleLine16x16">16x16 (same line)</Value>
+			<Value ID="Vertical">Vertical</Value>
 		</Enum>
 		<Enum ID="TileFilter">
 			<Value ID="None">None</Value>
