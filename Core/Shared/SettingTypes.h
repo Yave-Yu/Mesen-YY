@@ -935,6 +935,7 @@ enum class EmulatorShortcut
 
 	IncreaseSpeed,
 	DecreaseSpeed,
+	NormalSpeed,
 	MaxSpeed,
 
 	Pause,
@@ -959,6 +960,8 @@ enum class EmulatorShortcut
 	SetScale8x,
 	SetScale9x,
 	SetScale10x,
+	SetScale11x,
+	SetScale12x,
 	ToggleFullscreen,
 	ToggleFps,
 	ToggleGameTimer,
