@@ -28,9 +28,9 @@ namespace Mesen.Config
 		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.Random;
 		[Reactive] public bool AllowInvalidInput { get; set; } = false;
 
-		[Reactive] public UInt32[] BgColors { get; set; } = new UInt32[] { 0xFFFFFFFF, 0xFFB0B0B0, 0xFF686868, 0xFF000000 };
-		[Reactive] public UInt32[] Obj0Colors { get; set; } = new UInt32[] { 0xFFFFFFFF, 0xFFB0B0B0, 0xFF686868, 0xFF000000 };
-		[Reactive] public UInt32[] Obj1Colors { get; set; } = new UInt32[] { 0xFFFFFFFF, 0xFFB0B0B0, 0xFF686868, 0xFF000000 };
+		[Reactive] public UInt32[] BgColors { get; set; } = new UInt32[] { 0xFFDEEF94, 0xFFADC642, 0xFF528431, 0xFF214A21 };
+		[Reactive] public UInt32[] Obj0Colors { get; set; } = new UInt32[] { 0xFFDEEF94, 0xFFADC642, 0xFF528431, 0xFF214A21 };
+		[Reactive] public UInt32[] Obj1Colors { get; set; } = new UInt32[] { 0xFFDEEF94, 0xFFADC642, 0xFF528431, 0xFF214A21 };
 
 		[Reactive][MinMax(0, 100)] public UInt32 Square1Vol { get; set; } = 100;
 		[Reactive][MinMax(0, 100)] public UInt32 Square2Vol { get; set; } = 100;
