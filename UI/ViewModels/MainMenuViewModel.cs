@@ -305,7 +305,10 @@ namespace Mesen.ViewModels
 				new MainMenuAction() {
 					ActionType = ActionType.Speed,
 					SubActions = new List<object> {
-						GetSpeedMenuItem(ActionType.NormalSpeed, 100),
+						//GetSpeedMenuItem(ActionType.NormalSpeed, 100),
+						new MainMenuAction(EmulatorShortcut.NormalSpeed) {
+							ActionType = ActionType.NormalSpeed
+						},
 						new ContextMenuSeparator(),
 						new MainMenuAction(EmulatorShortcut.IncreaseSpeed) {
 							ActionType = ActionType.IncreaseSpeed
@@ -340,6 +343,8 @@ namespace Mesen.ViewModels
 						GetScaleMenuItem(8, EmulatorShortcut.SetScale8x),
 						GetScaleMenuItem(9, EmulatorShortcut.SetScale9x),
 						GetScaleMenuItem(10, EmulatorShortcut.SetScale10x),
+						GetScaleMenuItem(11, EmulatorShortcut.SetScale11x),
+						GetScaleMenuItem(12, EmulatorShortcut.SetScale12x),
 						new ContextMenuSeparator(),
 						new MainMenuAction(EmulatorShortcut.ToggleFullscreen) {
 							ActionType = ActionType.Fullscreen
@@ -1113,19 +1118,19 @@ namespace Mesen.ViewModels
 		private void InitHelpMenu(Window wnd)
 		{
 			HelpMenuItems = new List<object>() {
-				new MainMenuAction() {
+				/*new MainMenuAction() {
 					ActionType = ActionType.OnlineHelp,
 					IsVisible = () => false,
 					OnClick = () => ApplicationHelper.OpenBrowser("https://www.mesen.ca/documentation/")
-				},
+				},*/
 				new MainMenuAction() {
 					ActionType = ActionType.CommandLineHelp,
 					OnClick = () => { new CommandLineHelpWindow().ShowCenteredDialog((Control)wnd); }
 				},
-				new MainMenuAction() {
+				/*new MainMenuAction() {
 					ActionType = ActionType.CheckForUpdates,
 					OnClick = () => CheckForUpdate(wnd, false)
-				},
+				},*/
 				new MainMenuAction() {
 					ActionType = ActionType.ReportBug,
 					IsVisible = () => false,
