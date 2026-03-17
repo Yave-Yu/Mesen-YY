@@ -42,6 +42,7 @@ namespace Mesen.Config.Shortcuts
 
 		IncreaseSpeed,
 		DecreaseSpeed,
+		NormalSpeed,
 		MaxSpeed,
 
 		Pause,
@@ -66,6 +67,8 @@ namespace Mesen.Config.Shortcuts
 		SetScale8x,
 		SetScale9x,
 		SetScale10x,
+		SetScale11x,
+		SetScale12x,
 		ToggleFullscreen,
 		ToggleFps,
 		ToggleGameTimer,
