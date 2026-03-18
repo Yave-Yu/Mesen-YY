@@ -104,7 +104,9 @@
 						<StackPanel>
 							<CheckBox IsChecked="{Binding Config.ReduceDmcPopping}" Content="{l:Translate chkReduceDmcPopping}" />
 							<CheckBox IsChecked="{Binding Config.SilenceTriangleHighFreq}" Content="{l:Translate chkSilenceTriangleHighFreq}" />
+							<CheckBox IsChecked="{Binding Config.UseLinearSquareMixer}" Content="{l:Translate chkUseLinearSquareMixer}" />
 							<c:CheckBoxWarning IsChecked="{Binding Config.DisableNoiseModeFlag}" Text="{l:Translate chkDisableNoiseModeFlag}" />
+							<c:CheckBoxWarning IsChecked="{Binding Config.DisableSquareResetPhase}" Text="{l:Translate chkDisableSquareResetPhase}" />
 							<c:CheckBoxWarning IsChecked="{Binding Config.SwapDutyCycles}" Text="{l:Translate chkSwapDutyCycles}" />
 							<c:CheckBoxWarning IsChecked="{Binding Config.ReverseDpcmBitOrder}" Text="{l:Translate chkReverseDpcmBitOrder}" />
 						</StackPanel>
