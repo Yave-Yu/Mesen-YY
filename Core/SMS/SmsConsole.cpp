@@ -155,7 +155,8 @@ void SmsConsole::Reset()
 void SmsConsole::RunFrame()
 {
 	UpdateRegion(false);
-
+	UpdateInput();
+	//Get input first so 1 frame input lag gone
 	uint32_t frame = _vdp->GetFrameCount();
 	while(frame == _vdp->GetFrameCount()) {
 		_cpu->Exec();
@@ -165,7 +166,7 @@ void SmsConsole::RunFrame()
 	_psg->PlayQueuedAudio();
 }
 
-void SmsConsole::ProcessEndOfFrame()
+void SmsConsole::UpdateInput()
 {
 	_controlManager->UpdateControlDevices();
 	_controlManager->UpdateInputState();

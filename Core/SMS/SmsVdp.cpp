@@ -650,8 +650,6 @@ void SmsVdp::ProcessEndOfScanline()
 		_emu->GetVideoDecoder()->UpdateFrame(frame, rewinding, rewinding);
 
 		UpdateConfig();
-
-		_console->ProcessEndOfFrame();
 		_emu->ProcessEndOfFrame();
 	} else if(_state.Scanline >= _scanlineCount) {
 		_state.Scanline = 0;

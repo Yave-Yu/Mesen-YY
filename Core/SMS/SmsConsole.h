@@ -58,7 +58,7 @@ public:
 
 	void Reset() override;
 	void RunFrame() override;
-	void ProcessEndOfFrame();
+	void UpdateInput();
 
 	void SaveBattery() override;
 
