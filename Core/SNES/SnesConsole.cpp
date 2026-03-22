@@ -61,6 +61,10 @@ void SnesConsole::RunFrame()
 	UpdateRegion();
 
 	_frameRunning = true;
+	//Read input first
+	_controlManager->UpdateControlDevices();
+	_controlManager->UpdateInputState();
+	_internalRegisters->SetAutoJoypadReadClock();
 
 	while(_frameRunning) {
 		_cpu->Exec();
@@ -80,12 +84,7 @@ void SnesConsole::ProcessEndOfFrame()
 	//when a very long DMA transfer is running across multiple frames.
 	//(RunFrame above can run more than one frame in this scenario, which could cause crashes)
 	_spc->ProcessEndFrame();
-
 	_emu->ProcessEndOfFrame();
-
-	_controlManager->UpdateControlDevices();
-	_controlManager->UpdateInputState();
-	_internalRegisters->SetAutoJoypadReadClock();
 	_frameRunning = false;
 }
 
