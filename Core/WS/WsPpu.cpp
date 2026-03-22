@@ -500,9 +500,7 @@ void WsPpu::SendFrame()
 	RenderedFrame frame(_currentBuffer, width, height, 1.0, _state.FrameCount, _console->GetControlManager()->GetPortStates());
 	bool rewinding = _emu->GetRewindManager()->IsRewinding();
 	_emu->GetVideoDecoder()->UpdateFrame(frame, rewinding, rewinding);
-
 	_emu->ProcessEndOfFrame();
-	_console->ProcessEndOfFrame();
 }
 
 uint8_t WsPpu::ReadPort(uint16_t port)

@@ -71,7 +71,7 @@ public:
 	bool IsVerticalMode();
 	WsModel GetModel();
 
-	void ProcessEndOfFrame();
+	void UpdateInput();
 
 	void Reset() override;
 	void LoadBattery();
