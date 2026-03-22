@@ -99,7 +99,7 @@ namespace Mesen.Config
 
 		[Reactive] [MinMax(0, 100)] public UInt32 Square1Volume { get; set; } = 100;
 		[Reactive] [MinMax(0, 100)] public UInt32 Square2Volume { get; set; } = 100;
-		[Reactive] [MinMax(0, 100)] public UInt32 TriangleVolume { get; set; } = 100;
+		[Reactive] [MinMax(0, 100)] public UInt32 TriangleVolume { get; set; } = 90;
 		[Reactive] [MinMax(0, 100)] public UInt32 NoiseVolume { get; set; } = 100;
 		[Reactive] [MinMax(0, 100)] public UInt32 DmcVolume { get; set; } = 100;
 		[Reactive] [MinMax(0, 100)] public UInt32 FdsVolume { get; set; } = 100;
