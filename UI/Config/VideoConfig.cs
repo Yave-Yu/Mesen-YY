@@ -64,6 +64,7 @@ namespace Mesen.Config
 			double customAspectRatio = CustomAspectRatio;
 			VideoAspectRatio aspectRatio = AspectRatio;
 			VideoFilterType videoFilter = VideoFilter;
+			bool bilinearInterpolation = UseBilinearInterpolation;
 
 			ConsoleOverrideConfig? overrides = ConsoleOverrideConfig.GetActiveOverride();
 			if(overrides?.OverrideVideoFilter == true) {
@@ -75,12 +76,16 @@ namespace Mesen.Config
 				customAspectRatio = overrides.CustomAspectRatio;
 			}
 
+			if(overrides?.OverrideBilinearInterpolation == true) {
+				bilinearInterpolation = overrides.OverrideBilinearInterpolation;
+			}
+
 			ConfigApi.SetVideoConfig(new InteropVideoConfig() {
 				CustomAspectRatio = customAspectRatio,
 				VideoFilter = videoFilter,
 				AspectRatio = aspectRatio,
 
-				UseBilinearInterpolation = this.UseBilinearInterpolation,
+				UseBilinearInterpolation = bilinearInterpolation,
 				UseSrgbTextureFormat = this.UseSrgbTextureFormat,
 				VerticalSync = this.VerticalSync,
 				IntegerFpsMode = this.IntegerFpsMode,
@@ -190,9 +195,9 @@ namespace Mesen.Config
 		Prescale2x,
 		Prescale3x,
 		Prescale4x,
+		Prescale5x,
 		Prescale6x,
-		Prescale8x,
-		Prescale10x
+		Prescale8x
 	}
 
 	public enum VideoAspectRatio
