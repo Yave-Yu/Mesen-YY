@@ -11,6 +11,8 @@ namespace Mesen.Config;
 
 public class ConsoleOverrideConfig : BaseConfig<GameConfig>
 {
+	[Reactive] public bool OverrideBilinearInterpolation { get; set; } = false;
+
 	[Reactive] public bool OverrideVideoFilter { get; set; } = false;
 	[Reactive] public VideoFilterType VideoFilter { get; set; } = VideoFilterType.None;
 
