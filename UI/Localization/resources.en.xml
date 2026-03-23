@@ -221,7 +221,7 @@
 
 		<Form ID="VideoConfigOverrideView">
 			<Control ID="lblHeader">Global settings overrides</Control>
-
+			<Control ID="chkOverrideBilinearInterpolation">Override bilinear interpolation</Control>
 			<Control ID="chkOverrideVideoFilter">Override video filter:</Control>
 			<Control ID="chkOverrideAspectRatio">Override aspect ratio:</Control>
 			<Control ID="lblCustomRatio">Custom Ratio: </Control>
@@ -2457,9 +2457,9 @@ E
 			<Value ID="Prescale2x">Prescale 2x</Value>
 			<Value ID="Prescale3x">Prescale 3x</Value>
 			<Value ID="Prescale4x">Prescale 4x</Value>
+			<Value ID="Prescale5x">Prescale 5x</Value>
 			<Value ID="Prescale6x">Prescale 6x</Value>
 			<Value ID="Prescale8x">Prescale 8x</Value>
-			<Value ID="Prescale10x">Prescale 10x</Value>
 		</Enum>
 		<Enum ID="NtscBisqwitFilterScale">
 			<Value ID="_2x">2x</Value>
