@@ -151,9 +151,9 @@ unique_ptr<ScaleFilter> ScaleFilter::GetScaleFilter(Emulator* emu, VideoFilterTy
 		case VideoFilterType::Prescale2x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 2)); break;
 		case VideoFilterType::Prescale3x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 3)); break;
 		case VideoFilterType::Prescale4x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 4)); break;
+		case VideoFilterType::Prescale5x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 5)); break;
 		case VideoFilterType::Prescale6x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 6)); break;
 		case VideoFilterType::Prescale8x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 8)); break;
-		case VideoFilterType::Prescale10x: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::Prescale, 10)); break;
 		
 		case VideoFilterType::LcdGrid: scaleFilter.reset(new ScaleFilter(emu, ScaleFilterType::LcdGrid, 2)); break;
 	}
