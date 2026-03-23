@@ -23,6 +23,10 @@
 	</UserControl.Resources>
 
 	<c:OptionSection Header="{Binding Header, ElementName=root}" Margin="0">
+		<CheckBox
+			IsChecked="{Binding OverrideBilinearInterpolation}"
+			Content="{l:Translate chkOverrideBilinearInterpolation}"
+		/>
 		<Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto">
 			<CheckBox
 				IsChecked="{Binding OverrideVideoFilter}"
