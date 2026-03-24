@@ -65,6 +65,7 @@ private:
 	void ProcessDataOut();
 	void ProcessCommand();
 	
+	uint8_t ToBCD(uint8_t value);
 	void Reset();
 	void UpdateTime();
 
