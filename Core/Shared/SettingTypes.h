@@ -49,9 +49,9 @@ enum class VideoFilterType
 	Prescale2x,
 	Prescale3x,
 	Prescale4x,
+	Prescale5x,
 	Prescale6x,
-	Prescale8x,
-	Prescale10x
+	Prescale8x
 };
 
 enum class VideoResizeFilter
@@ -661,9 +661,11 @@ struct NesConfig
 	uint32_t PpuExtraScanlinesBeforeNmi = 0;
 	uint32_t PpuExtraScanlinesAfterNmi = 0;
 
-	bool DisableNoiseModeFlag = false;
 	bool ReduceDmcPopping = false;
 	bool SilenceTriangleHighFreq = false;
+	bool UseLinearSquareMixer = false;
+	bool DisableNoiseModeFlag = false;
+	bool DisableSquareResetPhase = false;
 	bool SwapDutyCycles = false;
 	bool ReverseDpcmBitOrder = false;
 
