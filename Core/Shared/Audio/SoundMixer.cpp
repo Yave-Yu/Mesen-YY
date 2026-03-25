@@ -65,9 +65,9 @@ void SoundMixer::StopAudio(bool clearBuffer)
 	}
 }
 
-static float_t GetGainRate(ConsoleType ct)
+double SoundMixer::GetGainRate()
 {
-	switch(ct) {
+	switch(_emu->GetConsoleType()) {
 		case ConsoleType::Nes:
 			return 2.0;
 		case ConsoleType::Snes:
@@ -135,7 +135,7 @@ void SoundMixer::PlayAudioBuffer(int16_t* samples, uint32_t sampleCount, uint32_
 
 	//Increase quieter volume of some console
 	for(uint32_t i = 0; i < count * 2; i++) {
-		out[i] = (int32_t)(out[i] * GetGainRate(_emu->GetConsoleType()) * masterVolume / 100);
+		out[i] = (int32_t)(out[i] * GetGainRate() * masterVolume / 100);
 	}
 
 	RewindManager* rewindManager = _emu->GetRewindManager();

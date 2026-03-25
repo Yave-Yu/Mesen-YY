@@ -33,6 +33,7 @@ private:
 	unique_ptr<ReverbFilter> _reverbFilter;
 
 	void ProcessEqualizer(int16_t *samples, uint32_t sampleCount, uint32_t targetRate);
+	double GetGainRate();
 
 public:
 	SoundMixer(Emulator *emu);
