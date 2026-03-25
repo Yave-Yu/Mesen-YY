@@ -66,13 +66,13 @@ void FolderUtilities::SetFolderOverrides(string saveFolder, string saveStateFold
 	_firmwareFolderOverride = firmwareFolder;
 }
 
-string FolderUtilities::GetSaveFolder()
+string FolderUtilities::GetSaveFolder(string console)
 {
 	string folder;
 	if(_saveFolderOverride.empty()) {
-		folder = CombinePath(GetHomeFolder(), "Saves");
+		folder = CombinePath(GetHomeFolder(), "Saves/" + console);
 	} else {
-		folder = _saveFolderOverride;
+		folder = _saveFolderOverride + "/" + console;
 	}
 	CreateFolder(folder);
 	return folder;

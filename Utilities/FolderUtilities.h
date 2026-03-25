@@ -22,7 +22,7 @@ public:
 	static void AddKnownGameFolder(string gameFolder);
 	static vector<string> GetKnownGameFolders();
 
-	static string GetSaveFolder();
+	static string GetSaveFolder(string console);
 	static string GetFirmwareFolder();
 	static string GetSaveStateFolder();
 	static string GetScreenshotFolder();
