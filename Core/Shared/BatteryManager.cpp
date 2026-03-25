@@ -1,21 +1,45 @@
 #include "pch.h"
 #include "Shared/BatteryManager.h"
+#include "Shared/Emulator.h"
 #include "Utilities/VirtualFile.h"
 #include "Utilities/FolderUtilities.h"
 #include "Utilities/StringUtilities.h"
 
-void BatteryManager::Initialize(string romName, bool setBatteryFlag)
+void BatteryManager::Initialize(string romName, Emulator *emu, bool setBatteryFlag)
 {
 	_romName = romName;
+	_emu = emu;
 	_hasBattery = setBatteryFlag;
+}
+
+string BatteryManager::GetConsoleName()
+{
+	switch(_emu->GetConsoleType()) {
+		case ConsoleType::Nes:
+			return "NES";
+		case ConsoleType::Snes:
+			return "SNES";
+		case ConsoleType::Gameboy:
+			return "Gameboy";
+		case ConsoleType::Gba:
+			return "GBA";
+		case ConsoleType::PcEngine:
+			return "PCE";
+		case ConsoleType::Sms:
+			return "SMS";
+		case ConsoleType::Ws:
+			return "WS";
+		default:
+			return "CV";
+	}
 }
 
 string BatteryManager::GetBasePath(string& extension)
 {
 	if(StringUtilities::StartsWith(extension, ".")) {
-		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(), _romName + extension);
+		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(GetConsoleName()), _romName + extension);
 	} else {
-		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(), extension);
+		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(GetConsoleName()), extension);
 	}
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 
+class Emulator;
 class IBatteryProvider
 {
 public:
@@ -17,15 +18,17 @@ class BatteryManager
 {
 private:
 	string _romName;
+	Emulator* _emu;
 	bool _hasBattery = false;
 
 	std::weak_ptr<IBatteryProvider> _provider;
 	std::weak_ptr<IBatteryRecorder> _recorder;
 
+	string GetConsoleName();
 	string GetBasePath(string& extension);
 
 public:
-	void Initialize(string romName, bool setBatteryFlag = false);
+	void Initialize(string romName, Emulator* emu, bool setBatteryFlag = false);
 
 	bool HasBattery() { return _hasBattery; }
 
