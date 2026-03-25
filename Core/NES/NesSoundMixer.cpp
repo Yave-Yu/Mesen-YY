@@ -177,13 +177,11 @@ double NesSoundMixer::GetChannelOutput(AudioChannel channel, bool forRightChanne
 int16_t NesSoundMixer::GetOutputVolume(bool forRightChannel)
 {
 	double squareOutput = GetChannelOutput(AudioChannel::Square1, forRightChannel) + GetChannelOutput(AudioChannel::Square2, forRightChannel);
-	double tndOutput = GetChannelOutput(AudioChannel::DMC, forRightChannel) + 2.7516713261213079 * GetChannelOutput(AudioChannel::Triangle, forRightChannel) + 1.8493587125234866 * GetChannelOutput(AudioChannel::Noise, forRightChannel);
+	double tndOutput = GetChannelOutput(AudioChannel::DMC, forRightChannel) + 2.751671 * GetChannelOutput(AudioChannel::Triangle, forRightChannel) + 1.849359 * GetChannelOutput(AudioChannel::Noise, forRightChannel);
 
-	//No longer care about squareSumFactor, even with that, low volume still a little quieter, high volume are a bit louder, couldn't make consistent volume with non-linear square channel mixer
-	//Non-linear mixer 95.88 * 5000.0, linear mixer 0.00752 * 6000.0
-	uint16_t squareVolume = !_console->GetNesConfig().UseLinearSquareMixer ? (uint16_t)(479400.0 / (8128.0 / squareOutput + 100.0)) : (uint16_t)(45.12 * squareOutput); //* squareSumFactor[(int)(_volumes[(int)AudioChannel::Square1] + _volumes[(int)AudioChannel::Square2])]);
-	//APU2 keeps non-linear 159.79 * 5000.0
-	uint16_t tndVolume = (uint16_t)(798950 / (1.0 / (tndOutput / 22638.0) + 100.0));
+	//Add linear mixer flag
+	double squareVolume = !_console->GetNesConfig().UseLinearSquareMixer ? 95.88 / (8128.0 / squareOutput + 100.0) * 5000.0 : squareOutput / 30.0 * squareSumFactor[(int)(_volumes[(int)AudioChannel::Square1] + _volumes[(int)AudioChannel::Square2])] * 0.258483 * 5000.0;
+	double tndVolume = 159.79 / (1.0 / (tndOutput / 22638.0) + 100.0) * 5000.0;
 
 	return (int16_t)(squareVolume + tndVolume +
 		GetChannelOutput(AudioChannel::FDS, forRightChannel) * 20 +
