@@ -42,7 +42,7 @@ bool HistoryViewer::Initialize(Emulator* mainEmu)
 	_emu->GetSettings()->GetPreferences().RewindBufferSize = 0;
 
 	//Disable battery saving for this instance
-	_emu->GetBatteryManager()->Initialize("");
+	_emu->GetBatteryManager()->Initialize("", _emu);
 	
 	_history = mainEmu->GetRewindManager()->GetHistory();
 	

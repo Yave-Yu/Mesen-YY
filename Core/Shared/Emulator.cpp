@@ -591,7 +591,7 @@ void Emulator::TryLoadRom(VirtualFile& romFile, LoadRomResult& result, unique_pt
 
 			//Change filename for batterymanager to allow loading the correct files
 			bool hasBattery = _batteryManager->HasBattery();
-			_batteryManager->Initialize(FolderUtilities::GetFilename(romFile.GetFileName(), false));
+			_batteryManager->Initialize(FolderUtilities::GetFilename(romFile.GetFileName(), false), this);
 
 			console.reset(new T(this));
 			result = console->LoadRom(romFile);
@@ -599,7 +599,7 @@ void Emulator::TryLoadRom(VirtualFile& romFile, LoadRomResult& result, unique_pt
 			if(result != LoadRomResult::Success) {
 				//Restore state if load fails
 				memcpy(_consoleMemory, consoleMemory, sizeof(_consoleMemory));
-				_batteryManager->Initialize(FolderUtilities::GetFilename(_rom.RomFile.GetFileName(), false), hasBattery);
+				_batteryManager->Initialize(FolderUtilities::GetFilename(_rom.RomFile.GetFileName(), false), this, hasBattery);
 			}
 		}
 	}
