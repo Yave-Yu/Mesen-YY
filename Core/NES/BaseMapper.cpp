@@ -492,7 +492,7 @@ uint32_t BaseMapper::GetChrRomPageCount()
 
 string BaseMapper::GetBatteryFilename()
 {
-	return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(), FolderUtilities::GetFilename(_romInfo.RomName, false) + ".sav");
+	return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder("NES"), FolderUtilities::GetFilename(_romInfo.RomName, false) + ".sav");
 }
 
 void BaseMapper::InitializeChrRam(int32_t chrRamSize)
