@@ -251,7 +251,7 @@ void GbaRtc::UpdateTime()
 
 void GbaRtc::LoadBattery()
 {
-	vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery(".rtc");
+	vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery("GBA", ".rtc");
 
 	if(rtcData.size() == sizeof(_state) + sizeof(uint64_t)) {
 		_state.Year = rtcData[0];
@@ -299,7 +299,7 @@ void GbaRtc::SaveBattery()
 		time <<= 8;
 	}
 
-	_emu->GetBatteryManager()->SaveBattery(".rtc", rtcData.data(), (uint32_t)rtcData.size());
+	_emu->GetBatteryManager()->SaveBattery("GBA", ".rtc", rtcData.data(), (uint32_t)rtcData.size());
 }
 
 uint8_t GbaRtc::Read()
