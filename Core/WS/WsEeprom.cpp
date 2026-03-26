@@ -264,12 +264,12 @@ uint8_t WsEeprom::ReadPort(uint8_t port)
 
 void WsEeprom::LoadBattery()
 {
-	_emu->GetBatteryManager()->LoadBattery(_isInternal ? ".ieeprom" : ".eeprom", _data, (uint32_t)_state.Size);
+	_emu->GetBatteryManager()->LoadBattery("WS", _isInternal ? ".ieeprom" : ".eeprom", _data, (uint32_t)_state.Size);
 }
 
 void WsEeprom::SaveBattery()
 {
-	_emu->GetBatteryManager()->SaveBattery(_isInternal ? ".ieeprom" : ".eeprom", _data, (uint32_t)_state.Size);
+	_emu->GetBatteryManager()->SaveBattery("WS", _isInternal ? ".ieeprom" : ".eeprom", _data, (uint32_t)_state.Size);
 }
 
 void WsEeprom::Serialize(Serializer& s)
