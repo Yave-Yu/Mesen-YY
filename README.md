@@ -1,7 +1,7 @@
 # Mesen
 
-Mesen is a multi-system emulator (NES, SNES, Game Boy, Game Boy Advance, PC Engine, SMS/Game Gear, WonderSwan) for Windows, Linux and macOS.  
-Mesen-YY is a fork, improve some casual play experience, update it with interest.
+Mesen is a multi-system emulator (NES, SNES, Game Boy, Game Boy Advance, PC Engine, SMS/Game Gear, WonderSwan) for Windows, Linux and macOS.
+Mesen-YY is a fork, improve casual play experience, update it with interest.
 
 ## Compiling
 
