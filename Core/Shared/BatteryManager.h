@@ -24,8 +24,7 @@ private:
 	std::weak_ptr<IBatteryProvider> _provider;
 	std::weak_ptr<IBatteryRecorder> _recorder;
 
-	string GetConsoleName();
-	string GetBasePath(string& extension);
+	string GetBasePath(string console, string& extension);
 
 public:
 	void Initialize(string romName, Emulator* emu, bool setBatteryFlag = false);
@@ -35,9 +34,9 @@ public:
 	void SetBatteryProvider(shared_ptr<IBatteryProvider> provider);
 	void SetBatteryRecorder(shared_ptr<IBatteryRecorder> recorder);
 	
-	void SaveBattery(string extension, uint8_t* data, uint32_t length);
+	void SaveBattery(string console, string extension, uint8_t* data, uint32_t length);
 	
-	vector<uint8_t> LoadBattery(string extension);
-	void LoadBattery(string extension, uint8_t* data, uint32_t length);
-	uint32_t GetBatteryFileSize(string extension);
+	vector<uint8_t> LoadBattery(string console, string extension);
+	void LoadBattery(string console, string extension, uint8_t* data, uint32_t length);
+	uint32_t GetBatteryFileSize(string console, string extension);
 };

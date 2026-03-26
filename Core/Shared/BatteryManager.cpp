@@ -12,34 +12,12 @@ void BatteryManager::Initialize(string romName, Emulator *emu, bool setBatteryFl
 	_hasBattery = setBatteryFlag;
 }
 
-string BatteryManager::GetConsoleName()
-{
-	switch(_emu->GetConsoleType()) {
-		case ConsoleType::Nes:
-			return "NES";
-		case ConsoleType::Snes:
-			return "SNES";
-		case ConsoleType::Gameboy:
-			return "Gameboy";
-		case ConsoleType::Gba:
-			return "GBA";
-		case ConsoleType::PcEngine:
-			return "PCE";
-		case ConsoleType::Sms:
-			return "SMS";
-		case ConsoleType::Ws:
-			return "WS";
-		default:
-			return "CV";
-	}
-}
-
-string BatteryManager::GetBasePath(string& extension)
+string BatteryManager::GetBasePath(string console, string& extension)
 {
 	if(StringUtilities::StartsWith(extension, ".")) {
-		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(GetConsoleName()), _romName + extension);
+		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(console), _romName + extension);
 	} else {
-		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(GetConsoleName()), extension);
+		return FolderUtilities::CombinePath(FolderUtilities::GetSaveFolder(console), extension);
 	}
 }
 
@@ -53,7 +31,7 @@ void BatteryManager::SetBatteryRecorder(shared_ptr<IBatteryRecorder> recorder)
 	_recorder = recorder;
 }
 
-void BatteryManager::SaveBattery(string extension, uint8_t* data, uint32_t length)
+void BatteryManager::SaveBattery(string console, string extension, uint8_t* data, uint32_t length)
 {
 	if(_romName.empty()) {
 		//Battery saves are disabled (used by history viewer)
@@ -61,13 +39,13 @@ void BatteryManager::SaveBattery(string extension, uint8_t* data, uint32_t lengt
 	}
 
 	_hasBattery = true;
-	ofstream out(GetBasePath(extension), ios::binary);
+	ofstream out(GetBasePath(console, extension), ios::binary);
 	if(out) {
 		out.write((char*)data, length);
 	}
 }
 
-vector<uint8_t> BatteryManager::LoadBattery(string extension)
+vector<uint8_t> BatteryManager::LoadBattery(string console, string extension)
 {
 	if(_romName.empty()) {
 		//Battery saves are disabled (used by history viewer)
@@ -81,7 +59,7 @@ vector<uint8_t> BatteryManager::LoadBattery(string extension)
 		//Used by movie player to provider initial state of ram at startup
 		batteryData = provider->LoadBattery(extension);
 	} else {
-		VirtualFile file = GetBasePath(extension);
+		VirtualFile file = GetBasePath(console, extension);
 		if(file.IsValid()) {
 			file.ReadFile(batteryData);
 		}
@@ -99,13 +77,13 @@ vector<uint8_t> BatteryManager::LoadBattery(string extension)
 	return batteryData;
 }
 
-void BatteryManager::LoadBattery(string extension, uint8_t* data, uint32_t length)
+void BatteryManager::LoadBattery(string console, string extension, uint8_t* data, uint32_t length)
 {
-	vector<uint8_t> batteryData = LoadBattery(extension);
+	vector<uint8_t> batteryData = LoadBattery(console, extension);
 	memcpy(data, batteryData.data(), std::min((uint32_t)batteryData.size(), length));
 }
 
-uint32_t BatteryManager::GetBatteryFileSize(string extension)
+uint32_t BatteryManager::GetBatteryFileSize(string console, string extension)
 {
-	return (uint32_t)LoadBattery(extension).size();
+	return (uint32_t)LoadBattery(console, extension).size();
 }
