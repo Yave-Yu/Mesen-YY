@@ -55,7 +55,7 @@ void Fds::InitMapper(RomData &romData)
 	loader.LoadDiskData(_fdsRawData, _orgDiskSides, _orgDiskHeaders);
 	
 	//Apply save data (saved as an IPS file), if found
-	vector<uint8_t> ipsData = _emu->GetBatteryManager()->LoadBattery(".ips");
+	vector<uint8_t> ipsData = _emu->GetBatteryManager()->LoadBattery("NES", ".ips");
 	LoadDiskData(ipsData);
 
 	_input.reset(new FdsInputButtons(this, _emu));
@@ -96,7 +96,7 @@ void Fds::SaveBattery()
 			file.write((char*)newData.data(), newData.size());
 		} else {
 			vector<uint8_t> ipsData = IpsPatcher::CreatePatch(_fdsRawData, newData);
-			_emu->GetBatteryManager()->SaveBattery(".ips", ipsData.data(), (uint32_t)ipsData.size());
+			_emu->GetBatteryManager()->SaveBattery("NES", ".ips", ipsData.data(), (uint32_t)ipsData.size());
 		}
 		_needSave = false;
 	}
