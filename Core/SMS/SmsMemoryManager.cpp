@@ -148,7 +148,7 @@ bool SmsMemoryManager::HasBios()
 
 void SmsMemoryManager::LoadBattery()
 {
-	_emu->GetBatteryManager()->LoadBattery(".sav", _cartRam, SmsMemoryManager::CartRamMaxSize);
+	_emu->GetBatteryManager()->LoadBattery("SMS", ".sav", _cartRam, SmsMemoryManager::CartRamMaxSize);
 }
 
 void SmsMemoryManager::SaveBattery()
@@ -168,9 +168,9 @@ void SmsMemoryManager::SaveBattery()
 		} else if(memcmp(_cartRam, _originalCartRam, 0x2000) != 0) {
 			batterySize = 0x2000;
 		}
-		batterySize = std::max(batterySize, _emu->GetBatteryManager()->GetBatteryFileSize(".sav"));
+		batterySize = std::max(batterySize, _emu->GetBatteryManager()->GetBatteryFileSize("SMS", ".sav"));
 		if(batterySize > 0) {
-			_emu->GetBatteryManager()->SaveBattery(".sav", _cartRam, batterySize);
+			_emu->GetBatteryManager()->SaveBattery("SMS", ".sav", _cartRam, batterySize);
 		}
 	}
 }
