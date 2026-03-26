@@ -380,7 +380,7 @@ CartFlags::CartFlags BaseCartridge::GetCartFlags()
 void BaseCartridge::LoadBattery()
 {
 	if(_saveRamSize > 0) {
-		_emu->GetBatteryManager()->LoadBattery(".srm", _saveRam, _saveRamSize);
+		_emu->GetBatteryManager()->LoadBattery("SNES", ".srm", _saveRam, _saveRamSize);
 	} 
 	
 	if(_coprocessor && _hasBattery) {
@@ -395,7 +395,7 @@ void BaseCartridge::LoadBattery()
 void BaseCartridge::SaveBattery()
 {
 	if(_saveRamSize > 0) {
-		_emu->GetBatteryManager()->SaveBattery(".srm", _saveRam, _saveRamSize);
+		_emu->GetBatteryManager()->SaveBattery("SNES", ".srm", _saveRam, _saveRamSize);
 	} 
 	
 	if(_coprocessor && _hasBattery) {
@@ -611,7 +611,7 @@ void BaseCartridge::MapBsxMemoryPack(MemoryMappings& mm)
 	string code = GetGameCode();
 	if(!_bsxMemPack && code.size() == 4 && code[0] == 'Z' && _cartInfo.DeveloperId == 0x33) {
 		//Game with data pack slot (e.g Sound Novel Tsukuuru, etc.)
-		vector<uint8_t> saveData = _emu->GetBatteryManager()->LoadBattery(".bs");
+		vector<uint8_t> saveData = _emu->GetBatteryManager()->LoadBattery("SNES", ".bs");
 		if(saveData.empty()) {
 			//Make a 1 megabyte flash cartridge by default (use $FF for all bytes)
 			saveData.resize(0x100000, 0xFF);
