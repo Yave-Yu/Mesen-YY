@@ -162,14 +162,14 @@ void Gameboy::Run(uint64_t runUntilClock)
 void Gameboy::LoadBattery()
 {
 	if(_hasBattery) {
-		_emu->GetBatteryManager()->LoadBattery(".srm", _cartRam, _cartRamSize);
+		_emu->GetBatteryManager()->LoadBattery("GB", ".sav", _cartRam, _cartRamSize);
 	}
 }
 
 void Gameboy::SaveBattery()
 {
 	if(_hasBattery) {
-		_emu->GetBatteryManager()->SaveBattery(".srm", _cartRam, _cartRamSize);
+		_emu->GetBatteryManager()->SaveBattery("GB", ".sav", _cartRam, _cartRamSize);
 	}
 	_cart->SaveBattery();
 }
@@ -536,8 +536,8 @@ GameboyModel Gameboy::GetEffectiveModel(GameboyHeader& header)
 	}
 
 	if(!_allowSgb && model == GameboyModel::SuperGameboy) {
-		//SGB isn't available, use gameboy color mode instead
-		model = GameboyModel::GameboyColor;
+		//SGB isn't available, use gameboy mode instead
+		model = GameboyModel::Gameboy;
 	}
 
 	return model;
