@@ -21,7 +21,7 @@ Rtc4513::~Rtc4513()
 
 void Rtc4513::LoadBattery()
 {
-	vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery(".rtc");
+	vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery("SNES", ".rtc");
 	
 	if(rtcData.size() == sizeof(_regs) + sizeof(uint64_t)) {
 		memcpy(_regs, rtcData.data(), sizeof(_regs));
@@ -48,7 +48,7 @@ void Rtc4513::SaveBattery()
 		time <<= 8;
 	}
 
-	_emu->GetBatteryManager()->SaveBattery(".rtc", rtcData.data(), (uint32_t)rtcData.size());
+	_emu->GetBatteryManager()->SaveBattery("SNES", ".rtc", rtcData.data(), (uint32_t)rtcData.size());
 }
 
 void Rtc4513::UpdateTime()
