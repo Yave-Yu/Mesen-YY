@@ -689,12 +689,12 @@ void Gsu::Serialize(Serializer &s)
 
 void Gsu::LoadBattery()
 {
-	_emu->GetBatteryManager()->LoadBattery(".srm", (uint8_t*)_gsuRam, _gsuRamSize);
+	_emu->GetBatteryManager()->LoadBattery("SNES", ".srm", (uint8_t*)_gsuRam, _gsuRamSize);
 }
 
 void Gsu::SaveBattery()
 {
-	_emu->GetBatteryManager()->SaveBattery(".srm", (uint8_t*)_gsuRam, _gsuRamSize);
+	_emu->GetBatteryManager()->SaveBattery("SNES", ".srm", (uint8_t*)_gsuRam, _gsuRamSize);
 }
 
 GsuState& Gsu::GetState()
