@@ -34,12 +34,12 @@ public:
 	void Init() override
 	{
 		_console->InitializeRam(_data, AsciiTurboFile::FileSize);
-		_emu->GetBatteryManager()->LoadBattery(".turbofile.sav", _data, AsciiTurboFile::FileSize);
+		_emu->GetBatteryManager()->LoadBattery("NES", ".turbofile.sav", _data, AsciiTurboFile::FileSize);
 	}
 
 	void SaveBattery() override
 	{
-		_emu->GetBatteryManager()->SaveBattery(".turbofile.sav", _data, AsciiTurboFile::FileSize);
+		_emu->GetBatteryManager()->SaveBattery("NES", ".turbofile.sav", _data, AsciiTurboFile::FileSize);
 	}
 
 	uint8_t ReadRam(uint16_t addr) override

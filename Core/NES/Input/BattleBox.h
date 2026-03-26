@@ -41,12 +41,12 @@ public:
 	void Init() override
 	{
 		_console->InitializeRam(_data, BattleBox::FileSize);
-		_emu->GetBatteryManager()->LoadBattery(".battlebox.sav", (uint8_t*)_data, BattleBox::FileSize);
+		_emu->GetBatteryManager()->LoadBattery("NES", ".battlebox.sav", (uint8_t*)_data, BattleBox::FileSize);
 	}
 
 	void SaveBattery() override
 	{
-		_emu->GetBatteryManager()->SaveBattery(".battlebox.sav", (uint8_t*)_data, BattleBox::FileSize);
+		_emu->GetBatteryManager()->SaveBattery("NES", ".battlebox.sav", (uint8_t*)_data, BattleBox::FileSize);
 	}
 	
 	uint8_t ReadRam(uint16_t addr) override
