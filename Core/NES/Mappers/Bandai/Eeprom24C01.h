@@ -31,12 +31,12 @@ public:
 	{
 		console->InitializeRam(_romData, 128);
 		_emu = console->GetEmulator();
-		_emu->GetBatteryManager()->LoadBattery(".eeprom128", _romData, 128);
+		_emu->GetBatteryManager()->LoadBattery("NES", ".eeprom128", _romData, 128);
 	}
 
 	void SaveBattery() override
 	{
-		_emu->GetBatteryManager()->SaveBattery(".eeprom128", _romData, 128);
+		_emu->GetBatteryManager()->SaveBattery("NES", ".eeprom128", _romData, 128);
 	}
 
 	void Write(uint8_t scl, uint8_t sda) override
