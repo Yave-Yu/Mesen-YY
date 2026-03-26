@@ -459,22 +459,22 @@ bool BaseMapper::HasBattery()
 void BaseMapper::LoadBattery()
 {
 	if(HasBattery() && _saveRamSize > 0) {
-		_emu->GetBatteryManager()->LoadBattery(".sav", _saveRam, _saveRamSize);
+		_emu->GetBatteryManager()->LoadBattery("NES", ".sav", _saveRam, _saveRamSize);
 	}
 
 	if(_hasChrBattery && _chrRamSize > 0) {
-		_emu->GetBatteryManager()->LoadBattery(".chr.sav", _chrRam, _chrRamSize);
+		_emu->GetBatteryManager()->LoadBattery("NES", ".chr.sav", _chrRam, _chrRamSize);
 	}
 }
 
 void BaseMapper::SaveBattery()
 {
 	if(HasBattery() && _saveRamSize > 0) {
-		_emu->GetBatteryManager()->SaveBattery(".sav", _saveRam, _saveRamSize);
+		_emu->GetBatteryManager()->SaveBattery("NES", ".sav", _saveRam, _saveRamSize);
 	}
 
 	if(_hasChrBattery && _chrRamSize > 0) {
-		_emu->GetBatteryManager()->SaveBattery(".chr.sav", _chrRam, _chrRamSize);
+		_emu->GetBatteryManager()->SaveBattery("NES", ".chr.sav", _chrRam, _chrRamSize);
 	}
 }
 
@@ -1260,7 +1260,7 @@ void BaseMapper::LoadRomPatch(vector<uint8_t>& orgPrgRom, vector<uint8_t>* orgCh
 {
 	if(!_console->GetNesConfig().OverwriteOriginalRom) {
 		//Apply save data (saved as an IPS file), if found
-		vector<uint8_t> ipsData = _emu->GetBatteryManager()->LoadBattery(".ips");
+		vector<uint8_t> ipsData = _emu->GetBatteryManager()->LoadBattery("NES", ".ips");
 		if(!ipsData.empty()) {
 			vector<uint8_t> patchedPrgRom;
 			if(IpsPatcher::PatchBuffer(ipsData, orgPrgRom, patchedPrgRom)) {
@@ -1269,7 +1269,7 @@ void BaseMapper::LoadRomPatch(vector<uint8_t>& orgPrgRom, vector<uint8_t>* orgCh
 		}
 
 		if(_chrRomSize > 0 && orgChrRom) {
-			ipsData = _emu->GetBatteryManager()->LoadBattery(".chr.ips");
+			ipsData = _emu->GetBatteryManager()->LoadBattery("NES", ".chr.ips");
 			if(!ipsData.empty()) {
 				vector<uint8_t> patchedChrRom;
 				if(IpsPatcher::PatchBuffer(ipsData, *orgChrRom, patchedChrRom)) {
@@ -1302,14 +1302,14 @@ void BaseMapper::SaveRom(vector<uint8_t>& orgPrgRom, vector<uint8_t>* orgChrRom)
 		vector<uint8_t> prgRom = vector<uint8_t>(_prgRom, _prgRom + _prgSize);
 		vector<uint8_t> ipsData = IpsPatcher::CreatePatch(orgPrgRom, prgRom);
 		if(ipsData.size() > 8) {
-			_emu->GetBatteryManager()->SaveBattery(".ips", ipsData.data(), (uint32_t)ipsData.size());
+			_emu->GetBatteryManager()->SaveBattery("NES", ".ips", ipsData.data(), (uint32_t)ipsData.size());
 		}
 
 		if(_chrRomSize > 0 && orgChrRom) {
 			vector<uint8_t> chrRom = vector<uint8_t>(_chrRom, _chrRom + _chrRomSize);
 			ipsData = IpsPatcher::CreatePatch(*orgChrRom, chrRom);
 			if(ipsData.size() > 8) {
-				_emu->GetBatteryManager()->SaveBattery(".chr.ips", ipsData.data(), (uint32_t)ipsData.size());
+				_emu->GetBatteryManager()->SaveBattery("NES", ".chr.ips", ipsData.data(), (uint32_t)ipsData.size());
 			}
 		}
 	}
