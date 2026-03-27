@@ -69,11 +69,11 @@ double SoundMixer::GetGainRate()
 {
 	switch(_emu->GetConsoleType()) {
 		case ConsoleType::Nes:
-			return 1.75;
+			return 1.8;
 		case ConsoleType::Snes:
 			return 1.0;
 		case ConsoleType::Sms:
-			return 0.75;
+			return 0.8;
 		default:
 			return 1.5;
 	}
