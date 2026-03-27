@@ -10,7 +10,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d"
 	x:Class="Mesen.Windows.SetupWizardWindow"
-	Width="400" Height="515"
+	Width="400" Height="480"
 	SystemDecorations="None"
 	CanResize="False"
 	WindowStartupLocation="CenterScreen"
@@ -86,7 +86,7 @@
 
 				<c:OptionSection Header="{l:Translate lblMiscOptions}" Margin="0 25 0 0" IsVisible="{Binding !IsOsx}">
 					<CheckBox Content="{l:Translate chkCreateShortcut}" IsChecked="{Binding CreateShortcut}" />
-					<CheckBox Content="{l:Translate chkCheckForUpdates}" IsChecked="{Binding CheckForUpdates}" />
+					<!--<CheckBox Content="{l:Translate chkCheckForUpdates}" IsChecked="{Binding CheckForUpdates}" />-->
 				</c:OptionSection>
 			</StackPanel>
 		</DockPanel>
