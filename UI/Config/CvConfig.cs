@@ -19,7 +19,7 @@ public class CvConfig : BaseConfig<CvConfig>
 	[ValidValues(ConsoleRegion.Auto, ConsoleRegion.Ntsc, ConsoleRegion.Pal)]
 	[Reactive] public ConsoleRegion Region { get; set; } = ConsoleRegion.Auto;
 
-	[Reactive] public RamState RamPowerOnState { get; set; } = RamState.AllZeros;
+	[Reactive] public RamState RamPowerOnState { get; set; } = RamState.Random;
 
 	[Reactive] public bool RemoveSpriteLimit { get; set; } = false;
 	[Reactive] public bool DisableSprites { get; set; } = false;
