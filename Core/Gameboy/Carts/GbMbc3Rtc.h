@@ -37,7 +37,7 @@ public:
 
 	void LoadBattery()
 	{
-		vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery(".rtc");
+		vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery("Gameboy", ".rtc");
 
 		if(rtcData.size() == sizeof(_regs) + sizeof(uint64_t)) {
 			memcpy(_regs, rtcData.data(), sizeof(_regs));
@@ -67,7 +67,7 @@ public:
 			time <<= 8;
 		}
 
-		_emu->GetBatteryManager()->SaveBattery(".rtc", rtcData.data(), (uint32_t)rtcData.size());
+		_emu->GetBatteryManager()->SaveBattery("Gameboy", ".rtc", rtcData.data(), (uint32_t)rtcData.size());
 	}
 
 	void UpdateTime()
