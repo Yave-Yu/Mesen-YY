@@ -318,7 +318,7 @@
 			<Control ID="lblVolume">Channel volume</Control>
 			<Control ID="lblPanning">Channel panning</Control>
 			<Control ID="lblAdvanced">Advanced</Control>
-			<Control ID="chkUseLinearSquareMixer">Use linear square channel mixer for cleaner quality</Control>
+			<Control ID="chkUseLinearSquareMixer">Use linear square channel mixer</Control>
 			<Control ID="chkReduceDmcPopping">Reduce popping sounds on the DMC channel</Control>
 			<Control ID="chkSilenceTriangleHighFreq">Mute ultrasonic frequencies on triangle channel (reduces popping)</Control>
 			<Control ID="chkDisableNoiseModeFlag">Disable noise channel mode flag (mimics oldest Famicom models)</Control>
@@ -852,7 +852,7 @@
 			<Control ID="grpAcknowledgements">Acknowledgements</Control>
 			<Control ID="lblAcknowledgeList">Thank you to the following people/projects for their direct and indirect help in making Mesen possible:</Control>
 			<Control ID="lblUsedSoftware">Mesen uses the following open-source software:</Control>
-			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (bug reports, testing, research, etc.). You are using a fork, this fork has minor changes, by Yave Yu.</Control>
+			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (bug reports, testing, research, etc.). You are using a fork, this fork has some changes, by Yave Yu.</Control>
 
 			<Control ID="btnOk">OK</Control>
 		</Form>
