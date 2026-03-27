@@ -162,14 +162,14 @@ void Gameboy::Run(uint64_t runUntilClock)
 void Gameboy::LoadBattery()
 {
 	if(_hasBattery) {
-		_emu->GetBatteryManager()->LoadBattery("GB", ".sav", _cartRam, _cartRamSize);
+		_emu->GetBatteryManager()->LoadBattery("Gameboy", ".sav", _cartRam, _cartRamSize);
 	}
 }
 
 void Gameboy::SaveBattery()
 {
 	if(_hasBattery) {
-		_emu->GetBatteryManager()->SaveBattery("GB", ".sav", _cartRam, _cartRamSize);
+		_emu->GetBatteryManager()->SaveBattery("Gameboy", ".sav", _cartRam, _cartRamSize);
 	}
 	_cart->SaveBattery();
 }
