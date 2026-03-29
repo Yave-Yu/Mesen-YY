@@ -5,9 +5,10 @@ Mesen is a multi-system emulator (NES, SNES, Game Boy, Game Boy Advance, PC Engi
 Mesen-YY is a fork, improve casual play experience, update it with interest.
 
 Highlight improvement:
-- Separate battery save folder.
-- Louder master volume.
 - Less input lag.
+- Louder master volume.
+- Separate battery save folder.
+- NES core let you use linear square channel mixer to listen cleaner quality, also default palette has changed to truly match NTSC NES, and it don't too unsaturated. In fact, YUV palette is not very match to NTSC NES, such as cyan, brighter color won't change HUE, etc.
 
 ## Compiling
 
