@@ -180,8 +180,8 @@ int16_t NesSoundMixer::GetOutputVolume(bool forRightChannel)
 	double tndOutput = GetChannelOutput(AudioChannel::DMC, forRightChannel) + 2.751671 * GetChannelOutput(AudioChannel::Triangle, forRightChannel) + 1.849359 * GetChannelOutput(AudioChannel::Noise, forRightChannel);
 
 	//Add linear mixer flag
-	double squareVolume = !_console->GetNesConfig().UseLinearSquareMixer ? 95.88 / (8128.0 / squareOutput + 100.0) * 5000.0 : squareOutput / 33.333333 * squareSumFactor[(int)(_volumes[(int)AudioChannel::Square1] + _volumes[(int)AudioChannel::Square2])] * 0.258483 * 5000.0;
-	double tndVolume = 159.79 / (1.0 / (tndOutput / 22638.0) + 100.0) * 5000.0;
+	double squareVolume = !_console->GetNesConfig().UseLinearSquareMixer ? 95.88 / (8128.0 / squareOutput + 100.0) * 5000.0 : 0.00752 * squareOutput * 6500.0;
+	double tndVolume = !_console->GetNesConfig().UseLinearSquareMixer ? 159.79 / (1.0 / (tndOutput / 22638.0) + 100.0) * 5000.0 : 0.00335 * tndOutput * 6500.0;
 
 	return (int16_t)(squareVolume + tndVolume +
 		GetChannelOutput(AudioChannel::FDS, forRightChannel) * 20 +
