@@ -9,7 +9,6 @@ Highlight improvement:
 - Louder master volume.
 - Separate battery save folder.
 - Bigger window size, suitable for 4K.
-- Linear square channel mixer option in NES.
 
 ## Compiling
 
