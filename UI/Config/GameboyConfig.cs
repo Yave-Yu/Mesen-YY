@@ -25,7 +25,7 @@ namespace Mesen.Config
 		[Reactive] public bool DisableSprites { get; set; } = false;
 		[Reactive] public bool HideSgbBorders { get; set; } = false;
 
-		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.Random;
+		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.AllZeros;
 		[Reactive] public bool AllowInvalidInput { get; set; } = false;
 
 		[Reactive] public UInt32[] BgColors { get; set; } = new UInt32[] { 0xFFDEEF94, 0xFFADC642, 0xFF528431, 0xFF214A21 };

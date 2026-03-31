@@ -27,7 +27,7 @@ public class SmsConfig : BaseConfig<SmsConfig>
 	[ValidValues(ConsoleRegion.Auto, ConsoleRegion.Ntsc, ConsoleRegion.NtscJapan, ConsoleRegion.Pal)]
 	[Reactive] public ConsoleRegion GameGearRegion { get; set; } = ConsoleRegion.Auto;
 
-	[Reactive] public RamState RamPowerOnState { get; set; } = RamState.Random;
+	[Reactive] public RamState RamPowerOnState { get; set; } = RamState.AllZeros;
 
 	[Reactive] public SmsRevision Revision { get; set; } = SmsRevision.Compatibility;
 

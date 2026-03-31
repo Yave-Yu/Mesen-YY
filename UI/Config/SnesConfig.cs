@@ -58,7 +58,7 @@ namespace Mesen.Config
 		//Emulation
 		[Reactive] public bool EnableRandomPowerOnState { get; set; } = false;
 		[Reactive] public bool EnableStrictBoardMappings { get; set; } = false;
-		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.Random;
+		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.AllZeros;
 		[Reactive] [MinMax(-999, 999)] public Int32 SpcClockSpeedAdjustment { get; set; } = 40;
 
 		//Overclocking

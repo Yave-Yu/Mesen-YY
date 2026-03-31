@@ -32,7 +32,7 @@ namespace Mesen.Config
 		[Reactive] public bool EnableCdRomForHuCardGames { get; set; } = false;
 		[Reactive] public bool DisableCdRomSaveRamForHuCardGames { get; set; } = false;
 
-		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.Random;
+		[Reactive] public RamState RamPowerOnState { get; set; } = RamState.AllZeros;
 		[Reactive] public bool EnableRandomPowerOnState { get; set; } = false;
 
 		[Reactive][MinMax(0, 100)] public UInt32 Channel1Vol { get; set; } = 100;
