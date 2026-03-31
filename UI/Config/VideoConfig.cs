@@ -20,7 +20,7 @@ namespace Mesen.Config
 		[Reactive] public bool UseBilinearInterpolation { get; set; } = false;
 		[Reactive] public bool UseSoftwareRenderer { get; set; } = false;
 		[Reactive] public bool UseSrgbTextureFormat { get; set; } = false;
-		[Reactive] public bool VerticalSync { get; set; } = false;
+		[Reactive] public bool VerticalSync { get; set; } = true;
 		[Reactive] public bool IntegerFpsMode { get; set; } = false;
 
 		[Reactive] [MinMax(-100, 100)] public int Brightness { get; set; } = 0;
