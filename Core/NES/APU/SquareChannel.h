@@ -19,6 +19,13 @@ protected:
 		{ 1, 1, 1, 1, 1, 1, 0, 0 }
 	};
 
+	static constexpr int8_t _dutySequencesUnbiased[4][8] = {
+		{-1,-1,-1,-1,-1,-1,-1, 7 },
+		{-2,-2,-2,-2,-2,-2, 6, 6 },
+		{-4,-4,-4,-4, 4, 4, 4, 4 },
+		{ 2, 2, 2, 2, 2, 2,-6,-6 },
+	};
+
 	NesConsole* _console = nullptr;
 	ApuEnvelope _envelope;
 	ApuTimer _timer;
@@ -65,7 +72,7 @@ protected:
 		if(_sweepNegate) {
 			_sweepTargetPeriod = _realPeriod - shiftResult;
 			if(_isChannel1) {
-				// As a result, a negative sweep on pulse channel 1 will subtract the shifted period value minus 1
+				//As a result, a negative sweep on pulse channel 1 will subtract the shifted period value minus 1
 				_sweepTargetPeriod--;
 			}
 		} else {
@@ -83,9 +90,9 @@ protected:
 	void UpdateOutput()
 	{
 		if(IsMuted()) {
-			_timer.AddOutput(0);
+			_timer.AddOutput(0, 0);
 		} else {
-			_timer.AddOutput(_dutySequences[_duty][_dutyPos] * _envelope.GetVolume());
+			_timer.AddOutput(_console->GetNesConfig().NonLinearSquareMixer ? _dutySequences[_duty][_dutyPos] * _envelope.GetVolume() : _dutySequencesUnbiased[_duty][_dutyPos] * _envelope.GetVolume(), _envelope.GetVolume());
 		}
 	}
 

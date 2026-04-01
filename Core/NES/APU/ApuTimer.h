@@ -42,8 +42,13 @@ public:
 		SV(_timer); SV(_period); SV(_lastOutput);
 	}
 
-	__forceinline void AddOutput(int8_t output)
+	__forceinline void AddOutput(int8_t output, uint8_t rawVolume)
 	{
+		if(_channel == AudioChannel::Square1 || _channel == AudioChannel::Square2) {
+			//Only square channel needs raw volume, for linear mixing
+			_mixer->RawVolume(_channel, rawVolume);
+		}
+
 		if(output != _lastOutput) {
 			_mixer->AddDelta(_channel, _previousCycle, output - _lastOutput);
 			_lastOutput = output;
