@@ -88,10 +88,10 @@ namespace Mesen.Config
 		[Reactive] [MinMax(0, 1000)] public UInt32 PpuExtraScanlinesAfterNmi { get; set; } = 0;
 
 		//Audio
-		
-		[Reactive] public bool ReduceDmcPopping { get; set; } = false;
-		[Reactive] public bool SilenceTriangleHighFreq { get; set; } = false;
-		[Reactive] public bool UseLinearSquareMixer { get; set; } = false;
+
+		[Reactive] public bool NonLinearSquareMixer { get; set; } = true;
+		[Reactive] public bool ReduceDmcPopping { get; set; } = true;
+		[Reactive] public bool SilenceTriangleHighFreq { get; set; } = true;
 		[Reactive] public bool DisableNoiseModeFlag { get; set; } = false;
 		[Reactive] public bool DisableSquareResetPhase { get; set; } = false;
 		[Reactive] public bool SwapDutyCycles { get; set; } = false;
@@ -212,7 +212,7 @@ namespace Mesen.Config
 
 				ReduceDmcPopping = ReduceDmcPopping,
 				SilenceTriangleHighFreq = SilenceTriangleHighFreq,
-				UseLinearSquareMixer = UseLinearSquareMixer,
+				NonLinearSquareMixer = NonLinearSquareMixer,
 				DisableNoiseModeFlag = DisableNoiseModeFlag,
 				DisableSquareResetPhase = DisableSquareResetPhase,
 				SwapDutyCycles = SwapDutyCycles,
@@ -349,9 +349,9 @@ namespace Mesen.Config
 		public UInt32 PpuExtraScanlinesBeforeNmi;
 		public UInt32 PpuExtraScanlinesAfterNmi;
 
+		[MarshalAs(UnmanagedType.I1)] public bool NonLinearSquareMixer;
 		[MarshalAs(UnmanagedType.I1)] public bool ReduceDmcPopping;
 		[MarshalAs(UnmanagedType.I1)] public bool SilenceTriangleHighFreq;
-		[MarshalAs(UnmanagedType.I1)] public bool UseLinearSquareMixer;
 		[MarshalAs(UnmanagedType.I1)] public bool DisableNoiseModeFlag;
 		[MarshalAs(UnmanagedType.I1)] public bool DisableSquareResetPhase;
 		[MarshalAs(UnmanagedType.I1)] public bool SwapDutyCycles;
