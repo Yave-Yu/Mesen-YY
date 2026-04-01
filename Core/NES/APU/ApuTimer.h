@@ -52,10 +52,8 @@ public:
 
 	__forceinline void SendVolume(uint8_t rawVolume)
 	{
-		if(_channel == AudioChannel::Square1 || _channel == AudioChannel::Square2) {
-			//Only square channel needs raw volume, for linear mixing
-			_mixer->RawVolume(_channel, rawVolume);
-		}
+		//Only square channel needs raw volume, for linear mixing
+		_mixer->RawVolume(_channel, rawVolume);
 	}
 
 	int8_t GetLastOutput()
