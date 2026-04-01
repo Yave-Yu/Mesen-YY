@@ -90,9 +90,11 @@ protected:
 	void UpdateOutput()
 	{
 		if(IsMuted()) {
-			_timer.AddOutput(0, 0);
+			_timer.AddOutput(0);
+			_timer.SendVolume(0);
 		} else {
-			_timer.AddOutput(_console->GetNesConfig().NonLinearSquareMixer ? _dutySequences[_duty][_dutyPos] * _envelope.GetVolume() : _dutySequencesUnbiased[_duty][_dutyPos] * _envelope.GetVolume(), _envelope.GetVolume());
+			_timer.AddOutput(_console->GetNesConfig().NonLinearSquareMixer ? _dutySequences[_duty][_dutyPos] * _envelope.GetVolume() : _dutySequencesUnbiased[_duty][_dutyPos] * _envelope.GetVolume());
+			_timer.SendVolume(_envelope.GetVolume());
 		}
 	}
 
