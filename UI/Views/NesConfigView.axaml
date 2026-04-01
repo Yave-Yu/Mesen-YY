@@ -102,7 +102,7 @@
 				<StackPanel>
 					<c:OptionSection Header="{l:Translate grpGeneral}" Margin="0">
 						<StackPanel>
-							<CheckBox IsChecked="{Binding Config.UseLinearSquareMixer}" Content="{l:Translate chkUseLinearSquareMixer}" />
+							<CheckBox IsChecked="{Binding Config.NonLinearSquareMixer}" Content="{l:Translate chkNonLinearSquareMixer}" />
 							<CheckBox IsChecked="{Binding Config.ReduceDmcPopping}" Content="{l:Translate chkReduceDmcPopping}" />
 							<CheckBox IsChecked="{Binding Config.SilenceTriangleHighFreq}" Content="{l:Translate chkSilenceTriangleHighFreq}" />
 							<c:CheckBoxWarning IsChecked="{Binding Config.DisableNoiseModeFlag}" Text="{l:Translate chkDisableNoiseModeFlag}" />
