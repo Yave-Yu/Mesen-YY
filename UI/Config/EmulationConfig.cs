@@ -13,7 +13,7 @@ namespace Mesen.Config
 	public class EmulationConfig : BaseConfig<EmulationConfig>
 	{
 		[Reactive] [MinMax(0, 5000)] public UInt32 EmulationSpeed { get; set; } = 100;
-		[Reactive] [MinMax(0, 5000)] public UInt32 TurboSpeed { get; set; } = 300;
+		[Reactive] [MinMax(0, 5000)] public UInt32 TurboSpeed { get; set; } = 400;
 		[Reactive] [MinMax(0, 5000)] public UInt32 RewindSpeed { get; set; } = 100;
 
 		[Reactive] [MinMax(0, 10)] public UInt32 RunAheadFrames { get; set; } = 0;
