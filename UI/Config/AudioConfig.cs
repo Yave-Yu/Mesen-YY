@@ -18,7 +18,7 @@ namespace Mesen.Config
 
 		[Reactive] [MinMax(0, 100)] public UInt32 MasterVolume { get; set; } = 100;
 		[Reactive] public AudioSampleRate SampleRate { get; set; } = AudioSampleRate._48000;
-		[Reactive] [MinMax(15, 300)] public UInt32 AudioLatency { get; set; } = 60;
+		[Reactive] [MinMax(15, 300)] public UInt32 AudioLatency { get; set; } = 100;
 
 		[Reactive] public bool MuteSoundInBackground { get; set; } = false;
 		[Reactive] public bool ReduceSoundInBackground { get; set; } = true;
