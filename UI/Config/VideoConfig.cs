@@ -15,7 +15,7 @@ namespace Mesen.Config
 	{
 		[Reactive] [MinMax(0.1, 5.0)] public double CustomAspectRatio { get; set; } = 1.0;
 		[Reactive] public VideoFilterType VideoFilter { get; set; } = VideoFilterType.None;
-		[Reactive] public VideoAspectRatio AspectRatio { get; set; } = VideoAspectRatio.NoStretching;
+		[Reactive] public VideoAspectRatio AspectRatio { get; set; } = VideoAspectRatio.Auto;
 
 		[Reactive] public bool UseBilinearInterpolation { get; set; } = false;
 		[Reactive] public bool UseSoftwareRenderer { get; set; } = false;
