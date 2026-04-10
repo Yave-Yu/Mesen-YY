@@ -21,8 +21,8 @@ public class WsConfig : BaseConfig<WsConfig>
 
 	[Reactive] public bool AutoRotate { get; set; } = true;
 
-	[Reactive] public bool BlendFrames { get; set; } = true;
-	[Reactive] public bool LcdAdjustColors { get; set; } = true;
+	[Reactive] public bool BlendFrames { get; set; } = false;
+	[Reactive] public bool LcdAdjustColors { get; set; } = false;
 	[Reactive] public bool LcdShowIcons { get; set; } = true;
 
 	[Reactive] public bool HideBgLayer1 { get; set; } = false;

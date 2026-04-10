@@ -18,8 +18,8 @@ namespace Mesen.Config
 		[Reactive] public GameboyModel Model { get; set; } = GameboyModel.AutoFavorGbc;
 		[Reactive] public bool UseSgb2 { get; set; } = true;
 
-		[Reactive] public bool BlendFrames { get; set; } = true;
-		[Reactive] public bool GbcAdjustColors { get; set; } = true;
+		[Reactive] public bool BlendFrames { get; set; } = false;
+		[Reactive] public bool GbcAdjustColors { get; set; } = false;
 		
 		[Reactive] public bool DisableBackground { get; set; } = false;
 		[Reactive] public bool DisableSprites { get; set; } = false;

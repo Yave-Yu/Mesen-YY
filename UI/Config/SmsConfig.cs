@@ -32,7 +32,7 @@ public class SmsConfig : BaseConfig<SmsConfig>
 	[Reactive] public SmsRevision Revision { get; set; } = SmsRevision.Compatibility;
 
 	[Reactive] public bool UseSgPalette { get; set; } = true;
-	[Reactive] public bool GgBlendFrames { get; set; } = true;
+	[Reactive] public bool GgBlendFrames { get; set; } = false;
 	[Reactive] public bool RemoveSpriteLimit { get; set; } = false;
 	[Reactive] public bool DisableSprites { get; set; } = false;
 	[Reactive] public bool DisableBackground { get; set; } = false;

@@ -17,8 +17,8 @@ namespace Mesen.Config
 
 		[Reactive] public bool SkipBootScreen { get; set; } = false;
 		[Reactive] public bool DisableFrameSkipping { get; set; } = false;
-		[Reactive] public bool BlendFrames { get; set; } = true;
-		[Reactive] public bool GbaAdjustColors { get; set; } = true;
+		[Reactive] public bool BlendFrames { get; set; } = false;
+		[Reactive] public bool GbaAdjustColors { get; set; } = false;
 		
 		[Reactive] public bool HideBgLayer1 { get; set; } = false;
 		[Reactive] public bool HideBgLayer2 { get; set; } = false;
