@@ -76,6 +76,11 @@ uint8_t WsControlManager::Read()
 	return result;
 }
 
+uint8_t WsControlManager::Peek()
+{
+	return Read();
+}
+
 void WsControlManager::Write(uint8_t value)
 {
 	_state.InputSelect = value & 0x70;

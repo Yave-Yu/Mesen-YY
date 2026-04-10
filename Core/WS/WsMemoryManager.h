@@ -70,18 +70,25 @@ public:
 	__forceinline uint8_t InternalRead(uint32_t addr)
 	{
 		uint8_t* handler = _reads[addr >> 12];
-		uint8_t value = 0x90;
+		uint8_t value = _state.OpenBus;
 		if(handler) {
 			value = handler[addr & 0xFFF];
+			_state.OpenBus = value;
 		}
 
-		//TODOWS open bus
+		return value;
+	}
+
+	__forceinline uint8_t InternalReadForPrefetch(uint32_t addr)
+	{
+		uint8_t value = InternalRead(addr);
+		_emu->ProcessMemoryRead<CpuType::Ws, 1>(addr, value, MemoryOperationType::DummyRead);
 		return value;
 	}
 
 	__forceinline void InternalWrite(uint32_t addr, uint8_t value)
 	{
-		//TODOWS open bus
+		_state.OpenBus = value;
 		uint8_t* handler = _writes[addr >> 12];
 		if(handler) {
 			handler[addr & 0xFFF] = value;

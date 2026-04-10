@@ -33,6 +33,8 @@ private:
 
 	PixelData _rowData[2][224];
 
+	uint8_t _renderRowIndex = 0;
+
 	uint16_t _screenHeight = 0;
 	uint16_t _screenWidth = 0;
 	bool _showIcons = false;

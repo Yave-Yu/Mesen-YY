@@ -227,6 +227,7 @@ struct WsMemoryManagerState
 	uint8_t ActiveIrqs;
 	uint8_t EnabledIrqs;
 	uint8_t IrqVectorOffset;
+	uint8_t OpenBus;
 
 	uint8_t SystemControl2;
 	uint8_t SystemTest;
@@ -236,11 +237,11 @@ struct WsMemoryManagerState
 	bool Enable4bppPacked;
 	
 	bool BootRomDisabled;
-	bool CartWordBus;
+	bool CartWordBus = true;
 	bool SlowRom;
 
-	bool SlowSram;
-	bool SlowPort;
+	bool SlowSram = true;
+	bool SlowPort = true;
 
 	bool EnableLowBatteryNmi;
 	bool PowerOffRequested;
