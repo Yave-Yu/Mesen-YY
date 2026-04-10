@@ -243,7 +243,7 @@ namespace Mesen.Config
 			}
 
 			Type = type;
-			TurboSpeed = 2;
+			TurboSpeed = 1;
 
 			if(mappings.Count > 0) {
 				Mapping1 = mappings[0];
@@ -454,6 +454,8 @@ namespace Mesen.Config
 				case ControllerType.HoriTrack:
 				case ControllerType.BandaiHyperShot:
 				case ControllerType.SmsController:
+				case ControllerType.WsController:
+				case ControllerType.WsControllerVertical:
 					return true;
 			}
 
