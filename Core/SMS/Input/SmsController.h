@@ -29,7 +29,7 @@ protected:
 			
 			SetPressedState(Buttons::Pause, keyMapping.Start);
 
-			uint8_t turboFreq = 1 << (4 - _turboSpeed);
+			uint8_t turboFreq = 5 - _turboSpeed;
 			bool turboOn = (uint8_t)(_emu->GetFrameCount() % turboFreq) < turboFreq / 2;
 			if(turboOn) {
 				SetPressedState(Buttons::A, keyMapping.TurboA);
