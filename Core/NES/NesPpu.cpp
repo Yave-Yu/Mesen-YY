@@ -380,7 +380,7 @@ template<class T> uint8_t NesPpu<T>::ReadRam(uint16_t addr)
 				openBusMask = 0xFF;
 			} else {
 				returnValue = _memoryReadBuffer;
-				// The PPU Read Buffer is not updated until the CPU read ends, and 2 more ppu cycles have passed.
+				//The PPU Read Buffer is not updated until the CPU read ends, and 2 more ppu cycles have passed
 				_ppuMemoryDataReadStateMachine = 5;
 
 				if((_ppuBusAddress & 0x3FFF) >= 0x3F00 && !_console->GetNesConfig().DisablePaletteRead) {
@@ -487,7 +487,7 @@ template<class T> void NesPpu<T>::WriteRam(uint16_t addr, uint8_t value)
 			break;
 
 		case PpuRegisters::VideoMemoryData:
-			// The write to VRAM does not occur until the CPU write ends, and 2 more ppu cycles have passed.
+			//The write to VRAM does not occur until the CPU write ends, and 2 more ppu cycles have passed
 			_ppuMemoryDataWriteStateMachine = 5;
 			_ppuMemoryDataWriteLatch = value;
 			_needStateUpdate = true;
