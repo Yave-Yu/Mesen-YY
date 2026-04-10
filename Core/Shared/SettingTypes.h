@@ -85,7 +85,7 @@ struct VideoConfig
 	VideoAspectRatio AspectRatio = VideoAspectRatio::NoStretching;
 	bool UseBilinearInterpolation = false;
 	bool UseSrgbTextureFormat = false;
-	bool VerticalSync = false;
+	bool VerticalSync = true;
 	bool IntegerFpsMode = false;
 
 	double Brightness = 0;
@@ -661,9 +661,9 @@ struct NesConfig
 	uint32_t PpuExtraScanlinesBeforeNmi = 0;
 	uint32_t PpuExtraScanlinesAfterNmi = 0;
 
-	bool ReduceDmcPopping = false;
-	bool SilenceTriangleHighFreq = false;
-	bool UseLinearSquareMixer = false;
+	bool NonLinearSquareMixer = true;
+	bool ReduceDmcPopping = true;
+	bool SilenceTriangleHighFreq = true;
 	bool DisableNoiseModeFlag = false;
 	bool DisableSquareResetPhase = false;
 	bool SwapDutyCycles = false;
