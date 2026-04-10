@@ -1483,7 +1483,9 @@ void SmsVdp::Serialize(Serializer& s)
 	SV(_state.HCounterLatch);
 	SV(_state.VerticalBlankIrqPending);
 	SV(_state.ScanlineIrqPending);
+	SV(_state.PaletteLatch);
 	SV(_state.SpriteOverflow);
+	SV(_state.SpriteOverflowIndex);
 	SV(_state.SpriteCollision);
 	SV(_state.SpriteTableAddress);
 	SV(_state.SpritePatternSelector);
@@ -1559,6 +1561,8 @@ void SmsVdp::Serialize(Serializer& s)
 		SV(_bgTileIndex);
 		SV(_bgPatternData);
 		SV(_textModeStep);
+
+		SVArray(_memAccess, sizeof(_memAccess));
 
 		SV(_needCramDot);
 		SV(_cramDotColor);
