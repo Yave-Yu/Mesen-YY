@@ -13,8 +13,7 @@ private:
 	uint8_t _regs[5] = {};
 	uint8_t _latchedRegs[5] = {};
 	uint8_t _latchValue = 0;
-	uint64_t _lastMasterClock = 0;
-	uint64_t _tickCounter = 0;
+	uint64_t _lastUpdateTime = 0;
 
 public:
 	bool IsRunning() { return (_regs[4] & 0x40) == 0; }
@@ -31,7 +30,7 @@ public:
 
 	void Init()
 	{
-		_lastMasterClock = 0;
+		_lastUpdateTime = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 		LoadBattery();
 	}
 
@@ -39,10 +38,10 @@ public:
 	{
 		vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery("Gameboy", ".rtc");
 
-		if(rtcData.size() == sizeof(_regs) + sizeof(uint64_t)) {
+		if(rtcData.size() == sizeof(_regs) + sizeof(int64_t)) {
 			memcpy(_regs, rtcData.data(), sizeof(_regs));
 			uint64_t time = 0;
-			for(uint32_t i = 0; i < sizeof(uint64_t); i++) {
+			for(uint32_t i = 0; i < sizeof(int64_t); i++) {
 				time <<= 8;
 				time |= rtcData[sizeof(_regs) + i];
 			}
@@ -58,11 +57,11 @@ public:
 	void SaveBattery()
 	{
 		vector<uint8_t> rtcData;
-		rtcData.resize(sizeof(_regs) + sizeof(uint64_t), 0);
+		rtcData.resize(sizeof(_regs) + sizeof(int64_t), 0);
 
 		memcpy(rtcData.data(), _regs, sizeof(_regs));
 		uint64_t time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-		for(uint32_t i = 0; i < sizeof(uint64_t); i++) {
+		for(uint32_t i = 0; i < sizeof(int64_t); i++) {
 			rtcData[sizeof(_regs) + i] = (time >> 56) & 0xFF;
 			time <<= 8;
 		}
@@ -72,18 +71,16 @@ public:
 
 	void UpdateTime()
 	{
-		uint64_t elaspedClocks = _emu->GetMasterClock() - _lastMasterClock;
-		uint64_t clocksPerTick = _emu->GetMasterClockRate() / 32768;
-		if(IsRunning()) {
-			_tickCounter += elaspedClocks / clocksPerTick;
-			while(_tickCounter >= 32768) {
-				RunForDuration(1);
-				_tickCounter -= 32768;
-			}
+		uint64_t currentTime = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		uint32_t elapsedSeconds = (uint32_t)(currentTime - _lastUpdateTime);
+		if(elapsedSeconds <= 0) {
+			return;
 		}
-		
-		uint64_t remainder = elaspedClocks % clocksPerTick;
-		_lastMasterClock = _emu->GetMasterClock() - remainder;
+
+		//Let RTC running with realtime clock, instead of master clock
+		RunForDuration(elapsedSeconds);
+
+		_lastUpdateTime = currentTime;
 	}
 
 	void RunForDuration(int64_t seconds)
@@ -152,8 +149,7 @@ public:
 				_regs[0] = value & 0x3F;
 
 				//Reset timer
-				_lastMasterClock = _emu->GetMasterClock();
-				_tickCounter = 0;
+				_lastUpdateTime = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 				break;
 
 			case 0x09: _regs[1] = value & 0x3F; break; //Minutes
@@ -168,7 +164,6 @@ public:
 		SVArray(_regs, 5);
 		SVArray(_latchedRegs, 5);
 		SV(_latchValue);
-		SV(_lastMasterClock);
-		SV(_tickCounter);
+		SV(_lastUpdateTime);
 	}
 };

@@ -31,7 +31,7 @@ public:
 
 	void SaveBattery() override
 	{
-		_rtc.SaveBattery();
+		if(_hasRtcTimer) _rtc.SaveBattery();
 	}
 
 	void RefreshMappings() override
