@@ -29,7 +29,7 @@ namespace Mesen.Debugger.Controls
 		public ActionToolbar()
 		{
 			InitializeComponent();
-			_timer = new DispatcherTimer(TimeSpan.FromMilliseconds(100), DispatcherPriority.Normal, (s, e) => UpdateToolbar());
+			_timer = new DispatcherTimer(TimeSpan.FromMilliseconds(200), DispatcherPriority.Normal, (s, e) => UpdateToolbar());
 		}
 
 		private void InitializeComponent()
