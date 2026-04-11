@@ -76,9 +76,14 @@ private:
 		return opCode;
 	}
 
-	void DummyRead()
+	void DummyPcRead()
 	{
 		MemoryRead(_state.PC, MemoryOperationType::DummyRead);
+	}
+
+	void DummyStackRead()
+	{
+		MemoryRead(0x100 + SP(), MemoryOperationType::DummyRead);
 	}
 	
 	uint8_t ReadByte()
@@ -434,12 +439,12 @@ private:
 		if(branch) {
 			//"a taken non-page-crossing branch ignores IRQ/NMI during its last clock, so that next instruction executes before the IRQ"
 			//Fixes "branch_delays_irq" test
-			//Branches actually poll on both the 2nd and 4th cycles. An interrupt is handled even if an IRQ was only seen on the first poll.
+			//Branches actually poll on both the 2nd and 4th cycles. An interrupt is handled even if an IRQ was only seen on the first poll
 			_runIrq = _prevRunIrq;
-			DummyRead();
+			DummyPcRead();
 
 			if(CheckPageCrossed(PC(), offset)) {
-				//Combine the 2nd and 4th cycle IRQ results.
+				//Combine the 2nd and 4th cycle IRQ results
 				_runIrq |= _prevRunIrq;
 				MemoryRead(((PC() & 0xFF00) | ((PC() + offset) & 0xFF)), MemoryOperationType::DummyRead);
 			}
@@ -484,11 +489,11 @@ private:
 		Push((uint8_t)flags);
 	}
 	void PLA() { 
-		DummyRead();
+		DummyStackRead();
 		SetA(Pop()); 
 	}
 	void PLP() { 
-		DummyRead();
+		DummyStackRead();
 		SetPS(Pop()); 
 	}
 
@@ -517,17 +522,17 @@ private:
 
 	void JSR() {
 		uint8_t lo = ReadByte();
-		DummyRead();
+		DummyStackRead();
 		Push(PC());
 		uint16_t addr = (ReadByte() << 8) | lo;
 		JMP(addr);
 	}
 
 	void RTS() {
-		DummyRead();
+		DummyStackRead();
 		uint16_t addr = PopWord();
 		SetPC(addr);
-		DummyRead();
+		DummyPcRead();
 		SetPC(addr + 1);
 	}
 
@@ -574,7 +579,7 @@ private:
 	void BRK();
 	
 	void RTI() {
-		DummyRead();
+		DummyStackRead();
 		SetPS(Pop());
 		SetPC(PopWord());
 	}
