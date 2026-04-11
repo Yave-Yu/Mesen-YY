@@ -49,7 +49,7 @@ public:
 			int64_t elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - time;
 			if(elapsedMs > 0) {
 				//Run clock forward based on how much time has passed since the game was turned off
-				RunForDuration(elapsedMs / 1000);
+				RunForDuration((elapsedMs + 999) / 1000);
 			}
 		}
 	}
