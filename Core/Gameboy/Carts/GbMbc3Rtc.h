@@ -38,10 +38,10 @@ public:
 	{
 		vector<uint8_t> rtcData = _emu->GetBatteryManager()->LoadBattery("Gameboy", ".rtc");
 
-		if(rtcData.size() == sizeof(_regs) + sizeof(int64_t)) {
+		if(rtcData.size() == sizeof(_regs) + sizeof(uint64_t)) {
 			memcpy(_regs, rtcData.data(), sizeof(_regs));
 			uint64_t time = 0;
-			for(uint32_t i = 0; i < sizeof(int64_t); i++) {
+			for(uint32_t i = 0; i < sizeof(uint64_t); i++) {
 				time <<= 8;
 				time |= rtcData[sizeof(_regs) + i];
 			}
@@ -49,7 +49,7 @@ public:
 			int64_t elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count() - time;
 			if(elapsedMs > 0) {
 				//Run clock forward based on how much time has passed since the game was turned off
-				RunForDuration((elapsedMs + 999) / 1000);
+				RunForDuration(elapsedMs / 1000.0);
 			}
 		}
 	}
@@ -57,11 +57,11 @@ public:
 	void SaveBattery()
 	{
 		vector<uint8_t> rtcData;
-		rtcData.resize(sizeof(_regs) + sizeof(int64_t), 0);
+		rtcData.resize(sizeof(_regs) + sizeof(uint64_t), 0);
 
 		memcpy(rtcData.data(), _regs, sizeof(_regs));
 		uint64_t time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
-		for(uint32_t i = 0; i < sizeof(int64_t); i++) {
+		for(uint32_t i = 0; i < sizeof(uint64_t); i++) {
 			rtcData[sizeof(_regs) + i] = (time >> 56) & 0xFF;
 			time <<= 8;
 		}
@@ -77,8 +77,10 @@ public:
 			return;
 		}
 
-		//Let RTC running with realtime clock, instead of master clock
-		RunForDuration(elapsedSeconds);
+		if(IsRunning()) {
+			//Let RTC running with realtime clock, instead of master clock
+			RunForDuration(elapsedSeconds);
+		}
 
 		_lastUpdateTime = currentTime;
 	}
