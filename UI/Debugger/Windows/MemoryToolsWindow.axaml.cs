@@ -664,7 +664,7 @@ namespace Mesen.Debugger.Windows
 					break;
 
 				case ConsoleNotificationType.PpuFrameDone:
-					if(!ToolRefreshHelper.LimitFps(this, 80)) {
+					if(!ToolRefreshHelper.LimitFps(this, 32)) {
 						Dispatcher.UIThread.Post(() => {
 							_editor.InvalidateVisual();
 						});
