@@ -45,7 +45,11 @@ WsPpu::WsPpu(Emulator* emu, WsConsole* console, WsMemoryManager* memoryManager, 
 	_showIcons = _emu->GetSettings()->GetWsConfig().LcdShowIcons;
 }
 
-WsPpu::~WsPpu() = default;
+WsPpu::~WsPpu()
+{
+	delete[] _outputBuffers[0];
+	delete[] _outputBuffers[1];
+}
 
 void WsPpu::SetVideoMode(WsVideoMode mode)
 {
@@ -56,24 +60,12 @@ void WsPpu::ProcessHblank()
 {
 	_timer->TickHorizontalTimer();
 	if(_state.Scanline < WsConstants::ScreenHeight) {
-		//VTOTAL values below 143 repeat rendered scanlines until line 143
-		//Store the original scanline's row buffer index BEFORE modulo swap
-		//So the double-buffer index matches what Exec() uses for output
-		_renderRowIndex = _state.Scanline & 0x01;
-		uint8_t scanline = _state.Scanline;
-		uint8_t visibleScanlineCount = (uint8_t)std::min<uint16_t>((uint16_t)_state.LastScanline + 1, WsConstants::ScreenHeight);
-		if(visibleScanlineCount > 0 && visibleScanlineCount < WsConstants::ScreenHeight) {
-			_state.Scanline = (uint8_t)(_state.Scanline % visibleScanlineCount);
-		}
-
 		switch(_state.Mode) {
 			case WsVideoMode::Monochrome: DrawScanline<WsVideoMode::Monochrome>(); break;
 			case WsVideoMode::Color2bpp: DrawScanline<WsVideoMode::Color2bpp>(); break;
 			case WsVideoMode::Color4bpp: DrawScanline<WsVideoMode::Color4bpp>(); break;
 			case WsVideoMode::Color4bppPacked: DrawScanline<WsVideoMode::Color4bppPacked>(); break;
 		}
-
-		_state.Scanline = scanline;
 	}
 }
 
@@ -89,7 +81,7 @@ void WsPpu::ProcessEndOfScanline()
 	_state.SpritesEnabledLatch = _state.SpritesEnabled;
 	_state.DrawOutsideBgWindowLatch = _state.DrawOutsideBgWindow;
 
-	if(_state.Scanline >= std::max<uint16_t>(WsConstants::ScreenHeight, (uint16_t)_state.LastScanline + 1)) {
+	if(_state.Scanline > _state.LastScanline) {
 		if(_state.Scanline <= 145) {
 			//Support sending frame to LCD even when number of scanlines is less than the 144px resolution
 			SendFrame();
@@ -115,8 +107,8 @@ void WsPpu::ProcessEndOfScanline()
 template<WsVideoMode mode>
 void WsPpu::DrawScanline()
 {
-	uint8_t rowIndex = _renderRowIndex;
-	memset(_rowData[rowIndex], 0, sizeof(PixelData) * WsConstants::ScreenWidth);
+	uint8_t rowIndex = _state.Scanline & 0x01;
+	std::fill(_rowData[rowIndex], _rowData[rowIndex] + WsConstants::ScreenWidth, PixelData{});
 
 	DrawSprites<mode>();
 	DrawBackground<mode, 0>();
@@ -132,7 +124,7 @@ void WsPpu::DrawSprites()
 	}
 
 	uint16_t scanline = _state.Scanline;
-	uint8_t rowIndex = _renderRowIndex;
+	uint8_t rowIndex = _state.Scanline & 0x01;
 
 	constexpr int tileSize = mode >= WsVideoMode::Color4bpp ? 32 : 16;
 	constexpr int tileBytesPerRow = mode >= WsVideoMode::Color4bpp ? 4 : 2;
@@ -202,7 +194,7 @@ void WsPpu::DrawBackground()
 	constexpr int bank1Addr = mode >= WsVideoMode::Color4bpp ? 0x8000 : 0x4000;
 
 	WsConfig& cfg = _emu->GetSettings()->GetWsConfig();
-	uint8_t rowIndex = _renderRowIndex;
+	uint8_t rowIndex = _state.Scanline & 0x01;
 	WsBgLayer& layer = _state.BgLayers[layerIndex];
 	if(cfg.HideBgLayers[layerIndex] || !layer.EnabledLatch) {
 		return;
@@ -489,6 +481,9 @@ void WsPpu::SendFrame()
 	if(_state.SleepEnabled || !_state.LcdEnabled || _state.LastScanline == 255 || _console->IsPowerOff()) {
 		//Screen should be white when in sleep mode, or if the last scanline is set to 255
 		std::fill(_currentBuffer, _currentBuffer + WsConstants::MaxPixelCount, 0xFFF);
+	} else if(_state.LastScanline < 144) {
+		//Clear everything after the last scanline (results in less than 144 visible scanlines)
+		std::fill(_currentBuffer + _state.LastScanline * _screenWidth, _currentBuffer + WsConstants::MaxPixelCount, 0xFFF);
 	}
 
 	if(_showIcons) {
@@ -505,6 +500,7 @@ void WsPpu::SendFrame()
 	RenderedFrame frame(_currentBuffer, width, height, 1.0, _state.FrameCount, _console->GetControlManager()->GetPortStates());
 	bool rewinding = _emu->GetRewindManager()->IsRewinding();
 	_emu->GetVideoDecoder()->UpdateFrame(frame, rewinding, rewinding);
+
 	_emu->ProcessEndOfFrame();
 }
 
