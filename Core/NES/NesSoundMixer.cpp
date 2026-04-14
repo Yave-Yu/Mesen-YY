@@ -178,7 +178,7 @@ double NesSoundMixer::GetChannelOutput(AudioChannel channel, bool forRightChanne
 int16_t NesSoundMixer::GetOutputVolume(bool forRightChannel)
 {
 	double squareOutput = GetChannelOutput(AudioChannel::Square1, forRightChannel) + GetChannelOutput(AudioChannel::Square2, forRightChannel);
-	double tndOutput = GetChannelOutput(AudioChannel::DMC, forRightChannel) + 2.751671 * GetChannelOutput(AudioChannel::Triangle, forRightChannel) + 1.849359 * GetChannelOutput(AudioChannel::Noise, forRightChannel);
+	double tndOutput = GetChannelOutput(AudioChannel::DMC, forRightChannel) + 2.7 * GetChannelOutput(AudioChannel::Triangle, forRightChannel) + 1.8 * GetChannelOutput(AudioChannel::Noise, forRightChannel);
 
 	//Non-linear mixer flag
 	double squareVolume = _console->GetNesConfig().NonLinearSquareMixer ? 
