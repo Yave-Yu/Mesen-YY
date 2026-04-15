@@ -62,22 +62,10 @@
 					<TextBlock Text="{Binding Version, ElementName=root}" />
 				</StackPanel>
 				<StackPanel Orientation="Horizontal" Margin="3">
-					<TextBlock Text="{l:Translate lblBuildDate}" Margin="0 0 5 0" />
-					<TextBlock Text="{Binding BuildDate, ElementName=root}" />
-				</StackPanel>
-				<StackPanel Orientation="Horizontal" Margin="3" IsVisible="{Binding BuildShortSha.Length, ElementName=root}">
-					<TextBlock Text="{l:Translate lblCommitId}" Margin="0 0 5 0" />
-					<TextBlock Text="{Binding BuildShortSha, ElementName=root}" Foreground="{DynamicResource SystemAccentColor}" TextDecorations="Underline" Cursor="Hand" Tapped="OnCommitLinkTapped" />
-				</StackPanel>
-				<StackPanel Orientation="Horizontal" Margin="3">
 					<TextBlock Text="{l:Translate lblRuntimeVersion}" Margin="0 0 5 0" />
 					<TextBlock Text="{Binding RuntimeVersion, ElementName=root}" />
 				</StackPanel>
 				<TextBlock Name="lblCopyright" Margin="3" />
-				<StackPanel Orientation="Horizontal" Margin="3">
-					<TextBlock Text="{l:Translate lblWebsite}" Margin="0 0 5 0" />
-					<TextBlock Text="{l:Translate lblLink}" Foreground="{DynamicResource SystemAccentColor}" TextDecorations="Underline" Cursor="Hand" Tapped="OnMesenLinkTapped" />
-				</StackPanel>
 			</StackPanel>
 		</DockPanel>
 		
@@ -103,7 +91,7 @@
 						/>
 					</Border>
 					<TextBlock Text="{l:Translate lblSpecialThanks}" Margin="0 5 0 5" TextWrapping="Wrap" />
-					<TextBlock Text="{l:Translate lblUsedSoftware}" Margin="0 15 0 5" />
+					<TextBlock Text="{l:Translate lblUsedSoftware}" Margin="0 5 0 5" />
 				</StackPanel>
 
 				<Border BorderBrush="Gray" BorderThickness="1">

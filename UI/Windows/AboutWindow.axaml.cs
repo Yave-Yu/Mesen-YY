@@ -86,7 +86,7 @@ namespace Mesen.Windows
 
 			InitializeComponent();
 
-			this.GetControl<TextBlock>("lblCopyright").Text = $"Copyright 2014-{DateTime.Now.Year} Sour";
+			this.GetControl<TextBlock>("lblCopyright").Text = $"© 2014-2025 Sour";
 		}
 
 		private void InitializeComponent()
@@ -108,12 +108,12 @@ namespace Mesen.Windows
 
 		private void OnMesenLinkTapped(object? sender, TappedEventArgs e)
 		{
-			ApplicationHelper.OpenBrowser("https://www.mesen.ca");
+			ApplicationHelper.OpenBrowser("https://github.com/Yave-Yu/Mesen-YY");
 		}
 
 		private void OnCommitLinkTapped(object? sender, TappedEventArgs e)
 		{
-			ApplicationHelper.OpenBrowser("https://github.com/SourMesen/Mesen2/commit/" + BuildSha);
+			ApplicationHelper.OpenBrowser("https://github.com/Yave-Yu/Mesen-YY/commit/" + BuildSha);
 		}
 	}
 
