@@ -182,7 +182,7 @@ int16_t NesSoundMixer::GetOutputVolume(bool forRightChannel)
 
 	//Non-linear mixer flag
 	double squareVolume = _console->GetNesConfig().NonLinearSquareMixer ? 
-		95.88 / (8128.0 / squareOutput + 60.0) * 5000.0
+		95.88 / (8128.0 / squareOutput + 64.0) * 5000.0
 		: squareOutput / 240.0 * squareSumFactor[_squareVolume[(int)AudioChannel::Square1] + _squareVolume[(int)AudioChannel::Square2]] * 0.258483 * 5000.0;
 	double tndVolume = 159.79 / (1.0 / (tndOutput / 22638.0) + 100.0) * 5000.0;
 
