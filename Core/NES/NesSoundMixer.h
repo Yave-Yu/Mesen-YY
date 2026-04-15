@@ -22,7 +22,7 @@ private:
 	static constexpr uint32_t MaxSampleRate = 96000;
 	static constexpr uint32_t MaxSamplesPerFrame = MaxSampleRate / 60 * 4 * 2; //x4 to allow CPU overclocking up to 10x, x2 for panning stereo
 	static constexpr uint32_t MaxChannelCount = 11;
-	static constexpr double squareSumFactor[31] = { 1.0, 1.359063, 1.349176, 1.339432, 1.329828, 1.320361, 1.311028, 1.301826, 1.292751, 1.283803, 1.274978, 1.266273, 1.257686, 1.249215, 1.240857, 1.232610, 1.224472, 1.216441, 1.208515, 1.200691, 1.192968, 1.185344, 1.177816, 1.170383, 1.163044, 1.155796, 1.148638, 1.141568, 1.134584, 1.127686, 1.120871 };
+	static constexpr double squareSumFactor[31] = { 1.0, 1.358399, 1.347869, 1.337501, 1.327291, 1.317235, 1.307331, 1.297575, 1.287964, 1.278493, 1.269161, 1.259964, 1.250900, 1.241965, 1.233157, 1.224472, 1.215909, 1.207466, 1.199138, 1.190925, 1.182824, 1.174832, 1.166947, 1.159167, 1.151490, 1.143915, 1.136438, 1.129059, 1.121775, 1.114584, 1.107484 };
 
 	NesConsole* _console = nullptr;
 	SoundMixer* _mixer = nullptr;
