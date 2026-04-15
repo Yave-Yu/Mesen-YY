@@ -12,7 +12,7 @@ namespace Mesen.ViewModels
 {
 	public class SetupWizardViewModel : ViewModelBase
 	{
-		[Reactive] public bool StoreInUserProfile { get; set; } = true;
+		[Reactive] public bool StoreInUserProfile { get; set; } = false;
 
 		[Reactive] public bool EnableXboxMappings { get; set; } = true;
 		[Reactive] public bool EnablePsMappings { get; set; }
@@ -22,7 +22,6 @@ namespace Mesen.ViewModels
 		[Reactive] public string InstallLocation { get; set; }
 
 		[Reactive] public bool CreateShortcut { get; set; } = true;
-		[Reactive] public bool CheckForUpdates { get; set; } = false;
 		[Reactive] public bool IsOsx { get; set; } = OperatingSystem.IsMacOS();
 
 		public SetupWizardViewModel()
@@ -90,7 +89,6 @@ namespace Mesen.ViewModels
 			}
 
 			ConfigManager.Config.DefaultKeyMappings = mappingType;
-			ConfigManager.Config.Preferences.AutomaticallyCheckForUpdates = CheckForUpdates;
 			ConfigManager.Config.Save();
 		}
 
