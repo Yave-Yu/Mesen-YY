@@ -499,7 +499,7 @@
 		</Form>
 		
 		<Form ID="PaletteConfig">
-			<Control ID="btnSelectPalette">加载预设调色板</Control>
+			<Control ID="btnSelectPalette">加载预设调色板…</Control>
 			<Control ID="btnExportPalette">导出调色板</Control>
 			<Control ID="btnLoadPalFile">导入调色板</Control>
 		</Form>
@@ -847,12 +847,12 @@
 			<Control ID="grpAcknowledgements">致谢</Control>
 			<Control ID="lblAcknowledgeList">感谢以下开发者或项目提供了直接与间接的帮助，才让Mesen成为可能：</Control>
 			<Control ID="lblUsedSoftware">Mesen用了以下开源软件：</Control>
-			<Control ID="lblSpecialThanks">还要感谢为Mesen作过贡献的人（汇报bug、测试、研究等），以及这是有一些改动的分支版本。</Control>
+			<Control ID="lblSpecialThanks">还要感谢为Mesen作过贡献的人（汇报bug、测试、研究等），以及这是有一些改动的分支版本。© 2026 Yave Yu</Control>
 
 			<Control ID="btnOk">确定</Control>
 		</Form>
 		<Form ID="CommandLineHelpWindow">
-			<Control ID="wndTitle">指令选项</Control>
+			<Control ID="wndTitle">命令行选项</Control>
 			<Control ID="btnOk">关闭</Control>
 		</Form>
 		<Form ID="GetKeyWindow">
@@ -888,7 +888,7 @@
 			<Control ID="lblMiscOptions">其它选项</Control>
 			<Control ID="chkCreateShortcut">创建快捷方式到桌面</Control>
 			<Control ID="btnOk">设置好了</Control>
-			<Control ID="lblCancel">取消</Control>
+			<Control ID="lblCancel">退出</Control>
 		</Form>
 		<Form ID="MovieRecordWindow">
 			<Control ID="wndTitle">影片录制设置</Control>
@@ -952,7 +952,7 @@
 		</Form>
 		
 		<Form ID="CheatDatabaseWindow">
-			<Control ID="wndTitle">从金手指数据库导入…</Control>
+			<Control ID="wndTitle">金手指数据库</Control>
 			<Control ID="lblSearch">搜索：</Control>
 			<Control ID="btnOK">确定</Control>
 			<Control ID="btnCancel">取消</Control>
@@ -1061,9 +1061,9 @@
 			
 			<Control ID="lblHint1">点击上面选择颜色</Control>
 			<Control ID="lblHint2">左键：绘制选择的颜色</Control>
-			<Control ID="lblHint3">Hold shift: Details on pixel under cursor</Control>
-			<Control ID="lblHint4">Shift-click/Right-click: Pick color under cursor</Control>
-			<Control ID="lblHint5">Ctrl-click: Make pixel transparent</Control>
+			<Control ID="lblHint3">按住Shift：查看光标下像素的详情</Control>
+			<Control ID="lblHint4">按Shift/鼠标右键：提取光标下颜色</Control>
+			<Control ID="lblHint5">按Ctrl：让像素透明</Control>
 		</Form>
 		
 		<Form ID="TileViewerWindow">
@@ -1111,55 +1111,55 @@
 			<Control ID="colSpriteIndex">#</Control>
 			<Control ID="colX">X</Control>
 			<Control ID="colY">Y</Control>
-			<Control ID="colSize">Size</Control>
+			<Control ID="colSize">大小</Control>
 			<Control ID="colTileIndex">Tile</Control>
-			<Control ID="colPriority">Priority</Control>
-			<Control ID="colPalette">Palette</Control>
-			<Control ID="colFlags">Flags</Control>
-			<Control ID="colVisible">Visible</Control>
+			<Control ID="colPriority">优先级</Control>
+			<Control ID="colPalette">调色板</Control>
+			<Control ID="colFlags">标记</Control>
+			<Control ID="colVisible">可见</Control>
 
-			<Control ID="chkShowOutline">Show outline around sprites</Control>
-			<Control ID="chkShowListView">Show list view</Control>
-			<Control ID="chkShowOffscreenRegions">Show offscreen regions</Control>
-			<Control ID="chkDimOffscreenSprites">Dim offscreen sprites (grid)</Control>
-			<Control ID="lblBackground">Background:</Control>
-			<Control ID="lblDataSource">Data Source</Control>
-			<Control ID="lblSource">Source:</Control>
-			<Control ID="lblSourceOffset">Offset:</Control>
+			<Control ID="chkShowOutline">显示活动块框</Control>
+			<Control ID="chkShowListView">显示列表视图</Control>
+			<Control ID="chkShowOffscreenRegions">显示屏外制式</Control>
+			<Control ID="chkDimOffscreenSprites">分割屏外活动块（网格）</Control>
+			<Control ID="lblBackground">背景：</Control>
+			<Control ID="lblDataSource">数据源</Control>
+			<Control ID="lblSource">源址：</Control>
+			<Control ID="lblSourceOffset">偏移：</Control>
 		</Form>
 
 		<Form ID="AssemblerWindow">
-			<Control ID="wndTitle">Assembler</Control>
+			<Control ID="wndTitle">汇编器</Control>
 
 			<Control ID="mnuFile">文件(_F)</Control>
-			<Control ID="mnuOptions">_Settings</Control>
+			<Control ID="mnuOptions">设置(_S)</Control>
 			
-			<Control ID="lblStartAddress">Start address: $</Control>
-			<Control ID="lblBytesUsed">Bytes used: </Control>
+			<Control ID="lblStartAddress">起始地址：$</Control>
+			<Control ID="lblBytesUsed">字节用量：</Control>
 
-			<Control ID="lblByteCountExceeded">Warning: The new code exceeds the original code's length.&#13;Applying this modification will overwrite other portions of the code and potentially cause problems.</Control>
-			<Control ID="lblMaxSizeExceeded">Error: Code is too large to fit.</Control>
-			<Control ID="lblCodeMatchesOriginal">Code matches original code</Control>
+			<Control ID="lblByteCountExceeded">警告：新代码超出了原代码的长度。&#13;应用此改动将会覆盖部分其它代码，造成潜在问题。</Control>
+			<Control ID="lblMaxSizeExceeded">错误：代码太长装不下。</Control>
+			<Control ID="lblCodeMatchesOriginal">代码匹配原代码</Control>
 
-			<Control ID="colLine">Line</Control>
-			<Control ID="colError">Error</Control>
-			<Control ID="btnOk">Apply</Control>
+			<Control ID="colLine">行</Control>
+			<Control ID="colError">错误</Control>
+			<Control ID="btnOk">应用</Control>
 			<Control ID="btnCancel">取消</Control>
 		</Form>
 		
 		<Form ID="ScriptWindow">
-			<Control ID="wndTitle">Script Window</Control>
+			<Control ID="wndTitle">Lua脚本</Control>
 
 			<Control ID="mnuFile">文件(_F)</Control>
-			<Control ID="mnuScript">_Script</Control>
-			<Control ID="mnuHelp">_Help</Control>
+			<Control ID="mnuScript">脚本(_S)</Control>
+			<Control ID="mnuHelp">帮助(_H)</Control>
 			
-			<Control ID="btnRun">Run</Control>
-			<Control ID="btnStop">Stop</Control>
+			<Control ID="btnRun">运行</Control>
+			<Control ID="btnStop">停止</Control>
 		</Form>
 		
 		<Form ID="LogWindow">
-			<Control ID="wndTitle">日志窗口</Control>
+			<Control ID="wndTitle">日志</Control>
 			<Control ID="btnClose">关闭</Control>
 		</Form>
 		
@@ -1191,7 +1191,7 @@
 
 			<Control ID="lblFileType">文件类型：</Control>
 			<Control ID="lblMapper">Mapper：</Control>
-			<Control ID="lblSubmapper">子类：</Control>
+			<Control ID="lblSubmapper">子集：</Control>
 			<Control ID="lblMirroringType">映射类型：</Control>
 			<Control ID="lblFrameTiming">帧定时：</Control>
 			<Control ID="lblSystem">系统：</Control>
@@ -1205,9 +1205,9 @@
 			<Control ID="lblSaveRam">Save RAM:</Control>
 			<Control ID="lblChrRam">CHR RAM:</Control>
 			<Control ID="lblChrSaveRam">CHR Save RAM:</Control>
-			
-			<Control ID="chkBattery">Battery</Control>
-			<Control ID="chkTrainer">Trainer</Control>
+
+			<Control ID="chkBattery">电池存档</Control>
+			<Control ID="chkTrainer">训练者</Control>
 
 			<Control ID="btnSaveAs">另存为…</Control>
 			<Control ID="btnCancel">取消</Control>
@@ -1458,14 +1458,14 @@
 		</Form>
 
 		<Form ID="RefreshTimingView">
-			<Control ID="lblScanline">刷新在扫描线（V）</Control>
-			<Control ID="lblCycle">与周期（H）</Control>
+			<Control ID="lblScanline">刷新在扫描线V</Control>
+			<Control ID="lblCycle">与周期H</Control>
 			<Control ID="lblResetToDefault">恢复默认</Control>
 			<Control ID="chkRefreshOnBreakPause">中断时刷新</Control>
 		</Form>
 		
 		<Form ID="GoToAllWindow">
-			<Control ID="wndTitle">前往全部</Control>
+			<Control ID="wndTitle">跳转到全部</Control>
 			<Control ID="lblSearch">搜索：</Control>
 			<Control ID="lblResults">结果</Control>
 			<Control ID="btnSelect">选择</Control>
@@ -1618,7 +1618,7 @@
 		</Form>
 		
 		<Form ID="GoToWindow">
-			<Control ID="wndTitle">前往地址…</Control>
+			<Control ID="wndTitle">跳转到地址…</Control>
 			<Control ID="lblAddress">地址：</Control>
 			<Control ID="btnOk">确定</Control>
 			<Control ID="btnCancel">取消</Control>
@@ -1735,136 +1735,128 @@
 
 		<Message ID="PromptLoadSufamiTurbo">你想加载第二个Sufami Turbo ROM并插入到B槽位吗？</Message>
 
-		<Message ID="UnknownFirmwareHash">This file does not match any of the known firmwares and may not work properly.&#xA;&#xA;Expected (SHA256): {0}&#xA;Current (SHA256): {1}</Message>
-		<Message ID="InvalidFirmwareSize">This file does not have the required size.&#xA;&#xA;Expected: {0} bytes&#xA;Current: {1} bytes</Message>
-		<Message ID="PromptDeleteFirmware">The following file will be deleted permanently. Are you sure?&#xA;&#xA;{0}</Message>
-		<Message ID="OverwriteFirmware">The following file already exists and will be overwritten. This cannot be undone. Are you sure?&#xA;&#xA;{0}</Message>
+		<Message ID="UnknownFirmwareHash">此文件不匹配已知的固件，可能运行不正常。&#xA;&#xA;预期SHA256：{0}&#xA;当前SHA256: {1}</Message>
+		<Message ID="InvalidFirmwareSize">此文件没有需要的大小。&#xA;&#xA;预期大小：{0}字节&#xA;当前大小：{1}字节</Message>
+		<Message ID="PromptDeleteFirmware">下列文件将被永久删除，确定吗？&#xA;&#xA;{0}</Message>
+		<Message ID="OverwriteFirmware">下列文件已存在，将被覆盖掉，且不可撤销，确定吗？&#xA;&#xA;{0}</Message>
 
-		<Message ID="MovieSegment">Segment #{0}</Message>
-		<Message ID="MovieExportEntireSegment">Export entire segment</Message>
-		<Message ID="MovieExportSpecificRange">Export specific range...</Message>
-		<Message ID="MovieSaveError">An error occurred while trying to save the movie file.</Message>
-		<Message ID="FileSaveError">An error occurred while trying to save the file.</Message>
+		<Message ID="MovieSegment">分段#{0}</Message>
+		<Message ID="MovieExportEntireSegment">导出完整分段</Message>
+		<Message ID="MovieExportSpecificRange">导出指定范围…</Message>
+		<Message ID="MovieSaveError">保存影片时发生了一个错误。</Message>
+		<Message ID="FileSaveError">保存文件时发生了一个错误。</Message>
 
-		<Message ID="SetKeyHint">Press any key on your keyboard to set a new binding.</Message>
-		<Message ID="SetKeyMouseHint">Press any key on your keyboard, controller or mouse to set a new binding.</Message>
+		<Message ID="SetKeyHint">按任意一个键设定新绑定。</Message>
+		<Message ID="SetKeyMouseHint">按键盘、控制器、鼠标上任意一个键设定新绑定。</Message>
 
-		<Message ID="ClearHistory">Clear History</Message>
+		<Message ID="ClearHistory">清空历史</Message>
 
 		<Message ID="SpcClockSpeedMsg">= {0} Hz（默认40）</Message>
 E
-		<Message ID="FirmwareNotFound">This game requires a firmware file for the: {0}&#xA;&#xA;  Filename: {1}&#xA;  Size: {2} bytes&#xA;&#xA;Would you like to select it now?</Message>
-		<Message ID="FirmwareMismatch">The selected file does not match the firmware required for the: {0}&#xA;&#xA;Firmware SHA-256:&#xA;{1}&#xA;&#xA;Selected file's SHA-256:&#xA;{2}&#xA;&#xA;Would you like to use this file anyway?</Message>
-		<Message ID="FirmwareFileWrongSize">The selected file does not match the required size ({0} bytes) and cannot be used.</Message>
+		<Message ID="FirmwareNotFound">此游戏需要依靠固件运行：{0}&#xA;&#xA;　文件：{1}&#xA;　大小：{2}字节&#xA;&#xA;选择此文件来加载？</Message>
+		<Message ID="FirmwareMismatch">选择的文件不匹配{0}的要求。&#xA;&#xA;　固件SHA256：&#xA;{1}&#xA;&#xA;此文件SHA256：&#xA;{2}&#xA;&#xA;仍使用此文件继续？</Message>
+		<Message ID="FirmwareFileWrongSize">选择的文件不匹配大小（{0}字节），无法使用。</Message>
 
-		<Message ID="MouseModeEnabled">Mouse enabled - pause to release cursor</Message>
-		<Message ID="BandaiMicrophone">Bandai Microphone</Message>
-		<Message ID="DatachBarcodeReader">Datach Barcode Reader</Message>
+		<Message ID="MouseModeEnabled">已启用鼠标，暂停可释放</Message>
+		<Message ID="BandaiMicrophone">Bandai麦克风</Message>
+		<Message ID="DatachBarcodeReader">Datach刷码机</Message>
 
-		<Message ID="HelpFullscreen">/fullscreen - Start Mesen in fullscreen mode</Message>
-		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings - Prevent settings from being saved to the disk (useful to prevent command line options from becoming the default settings)</Message>
-		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo" - Start recording a movie after the specified game is loaded.</Message>
-		<Message ID="HelpLoadLastSession">/LoadLastSession - Resumes the game in the state it was left in when it was last played.</Message>
+		<Message ID="HelpFullscreen">/fullscreen：开始Mesen直接全屏。</Message>
+		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings：防止设置保存到硬盘（对通过指令选项从默认设置启用的情况很有用）。</Message>
+		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo"：加载游戏后录制影片。</Message>
+		<Message ID="HelpLoadLastSession">/LoadLastSession：从上次关闭的进度继续游戏。</Message>
 
-		<Message ID="RightClickToClearBinding">Right-click to clear binding</Message>
+		<Message ID="RightClickToClearBinding">鼠标右键清除绑定</Message>
 
-		<Message ID="Resume">Resume</Message>
-		<Message ID="Pause">Pause</Message>
-		<Message ID="StartServer">Start Server</Message>
-		<Message ID="StopServer">Stop Server</Message>
-		<Message ID="ConnectToServer">Connect to Server</Message>
-		<Message ID="Disconnect">Disconnect</Message>
-		<Message ID="PlayerNumber">Player {0}</Message>
-		<Message ID="ExpansionDevice">Expansion Device</Message>
+		<Message ID="Resume">继续</Message>
+		<Message ID="Pause">暂停</Message>
+		<Message ID="StartServer">开始服务器</Message>
+		<Message ID="StopServer">停止服务器</Message>
+		<Message ID="ConnectToServer">连接到服务器</Message>
+		<Message ID="Disconnect">断开连接</Message>
+		<Message ID="PlayerNumber">玩家{0}</Message>
+		<Message ID="ExpansionDevice">拓展设备</Message>
 
-		<Message ID="PressToExitFullscreen">Press {0} to exit fullscreen</Message>
-		<Message ID="DefaultResolution">Default</Message>
+		<Message ID="PressToExitFullscreen">按{0}退出全屏</Message>
+		<Message ID="DefaultResolution">默认</Message>
 
-		<Message ID="RomsFound">{0} roms found</Message>
+		<Message ID="RomsFound">找到{0}个ROM</Message>
 
-		<Message ID="ResetSettingsConfirmation">Warning: This will reset ALL settings and cannot be undone!&#xA;&#xA;Continue?</Message>
+		<Message ID="ResetSettingsConfirmation">警告：这将会重置全部设置且无法撤销！&#xA;&#xA;是否继续？</Message>
 
-		<Message ID="ResetWorkspaceConfirmation">Warning: This operation will empty the watch window, remove all breakpoints and reset labels to their default state.&#xA;&#xA;This resets the workspace of all CPUs for the current ROM.&#xA;&#xA;Are you sure?</Message>
-		<Message ID="ImportLabels">Import completed: {0} labels imported.</Message>
-		<Message ID="ImportLabelsWithErrors">Import completed: {0} labels imported (and {1} errors.)</Message>
-		<Message ID="ImportLabelsWithMissingFiles">Import completed: {0} labels imported.&#xA;&#xA;The following files could not be found:&#xA;{1}</Message>
-		<Message ID="ImportLabelsWithErrorsAndMissingFiles">Import completed: {0} labels imported (and {1} errors.)&#xA;&#xA;The following files could not be found:&#xA;{2}</Message>
-		<Message ID="RandomGameNoGameFound">Mesen could not find any games to load.</Message>
+		<Message ID="ResetWorkspaceConfirmation">警告：此操作将会清空监视器、移除全部断点、重置标签为默认状态，&#xA;&#xA;也重置当前ROM的全部CPU的工作区。&#xA;&#xA;是否继续？</Message>
+		<Message ID="ImportLabels">导入完成：已导入{0}个标签。</Message>
+		<Message ID="ImportLabelsWithErrors">导入完成：已导入{0}个标签（{1}个错误）。</Message>
+		<Message ID="ImportLabelsWithMissingFiles">导入完成：已导入{0}个标签。&#xA;&#xA;找不到以下文件：&#xA;{1}</Message>
+		<Message ID="ImportLabelsWithErrorsAndMissingFiles">导入完成：已导入{0}个标签（{1}个错误）。&#xA;&#xA;找不到以下文件：&#xA;{2}</Message>
+		<Message ID="RandomGameNoGameFound">Mesen找不到游戏来加载。</Message>
 
-		<Message ID="InvalidPaletteFile">Invalid palette file (too small or too large.)</Message>
+		<Message ID="InvalidPaletteFile">无效的调色板文件（太小或太大）。</Message>
 
-		<Message ID="CannotWriteToFolder">The selected folder cannot be written to - please select another folder and try again.&#xA;&#xA;Details:&#xA;{0}</Message>
-		<Message ID="InvalidPaths">The following path overrides are invalid:&#xA;&#xA;{0}&#xA;&#xA;Please use valid and writable folders and try again.</Message>
-		<Message ID="CopyMesenDataPrompt">All files will be copied from:&#xA;&#xA;{0}&#xA;to&#xA;{1}&#xA;&#xA;Once the copy is completed, Mesen will restart.&#xA;Continue?</Message>
+		<Message ID="CannotWriteToFolder">选择的目录无法写入，请选择别的目录后重试。&#xA;&#xA;详情：&#xA;{0}</Message>
+		<Message ID="InvalidPaths">以下目录覆盖无效：&#xA;&#xA;{0}&#xA;&#xA;请使用有效及可写的目录后重试。</Message>
+		<Message ID="CopyMesenDataPrompt">将从以下目录复制全部文件：&#xA;&#xA;{0}&#xA;到&#xA;{1}&#xA;&#xA;当文件复制完后，Mesen将重启。&#xA;是否继续？</Message>
 
-		<Message ID="CheatsFound">{0} games in database</Message>
-		<Message ID="CheatsImported">{0} cheats imported for {1}.</Message>
+		<Message ID="CheatsFound">在数据库找到{0}款游戏</Message>
+		<Message ID="CheatsImported">已为{1}导入{0}金手指代码。</Message>
 
-		<Message ID="NsfNextTrack">Next Track (Hold to fast forward)</Message>
-		<Message ID="NsfUnnamedTrack">&lt;no name&gt;</Message>
-		<Message ID="NsfUnknownField">&lt;unknown&gt;</Message>
+		<Message ID="NsfNextTrack">下一曲（按住以快进）</Message>
+		<Message ID="NsfUnnamedTrack">&lt;无名字&gt;</Message>
+		<Message ID="NsfUnknownField">&lt;未知&gt;</Message>
 
-		<Message ID="CouldNotInstallRuntime">The Visual Studio Runtime could not be installed properly.</Message>
+		<Message ID="CouldNotInstallRuntime">无法正确安装Visual Studio运行库。</Message>
 		<Message ID="EmptyState">&lt;空&gt;</Message>
-		<Message ID="AutoUpdateNotSupported">The version of Mesen you're using does not support automatic updates. Please visit the website and manually download the latest release.</Message>
-		<Message ID="ErrorWhileCheckingUpdates">An error has occurred while trying to check for updates. Check your internet connection and try again.&#xA;&#xA;Error details:&#xA;{0}</Message>
-		<Message ID="AutoUpdateInvalidFile">The downloaded file did not match the expected file.&#xA;&#xA;   Expected SHA256 signature: {0}&#xA;&#xA;   File SHA256 signature: {1}&#xA;&#xA;Please visit the website and manually download the latest release.</Message>
-		<Message ID="FileNotFound">File not found: {0}</Message>
-		<Message ID="InvalidArgument">Invalid argument: {0}</Message>
+		<Message ID="FileNotFound">找不到文件：{0}</Message>
+		<Message ID="InvalidArgument">无效参数：{0}</Message>
 
-		<Message ID="MesenUpToDate">You are running the latest version of Mesen.</Message>
-		<Message ID="PatchAndReset">Patch and reset the current game?</Message>
-		<Message ID="SelectRomIps">Please select a ROM for this patch file.</Message>
-		<Message ID="UnableToDownload">Unable to download file. Check your internet connection and try again.&#xA;&#xA;Details:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingSdl">Mesen could not launch because SDL2 could not be found. Install SDL2 using your package manager and try again.&#xA;&#xA;Error details:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingDependencies">Mesen could not launch because of missing dependencies.&#xA;&#xA;Error details:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingFiles">Mesen was unable to start due to missing files.&#xA;&#xA;Error: MesenCore.dll is missing.</Message>
-		<Message ID="UnexpectedError">An unexpected error has occurred.&#xA;&#xA;Error details:&#xA;{0}</Message>
-		<Message ID="UpdateDownloadFailed">Download failed - the file appears to be corrupted. Please visit the Mesen website to download the latest version manually.</Message>
-		<Message ID="UpgradeSuccess">Upgrade completed successfully.</Message>
-		<Message ID="UpdaterNotFound">The update process could not be started due to missing files.</Message>
-		<Message ID="Net45NotFound">The Microsoft .NET Framework 4.5 could not be found. Please download and install the latest version of the .NET Framework from Microsoft's website and try again.</Message>
+		<Message ID="PatchAndReset">打补丁及复位当前游戏？</Message>
+		<Message ID="SelectRomIps">请为此补丁选择ROM。</Message>
+		<Message ID="UnableToStartMissingSdl">因找不到SDL2而无法启动Mesen，安装SDL2后重试。&#xA;&#xA;错误详情：&#xA;{0}</Message>
+		<Message ID="UnableToStartMissingDependencies">因缺少依赖库而无法启动Mesen。&#xA;&#xA;错误详情：&#xA;{0}</Message>
+		<Message ID="UnableToStartMissingFiles">因缺少组件而无法启动Mesen。&#xA;&#xA;错误：找不到MesenCore.dll。</Message>
+		<Message ID="UnexpectedError">发生了未知错误。&#xA;&#xA;错误详情：&#xA;{0}</Message>
+		<Message ID="Net45NotFound">找不到.NET Framework 4.5，请从微软官网下载及安装最新.NET Framework然后重试。</Message>
 
-		<Message ID="InvalidCheatFile">The selected file ({0}) is not a valid cheat file.</Message>
-		<Message ID="InvalidXmlFile">The selected file ({0}) is not a valid XML file.</Message>
-		<Message ID="NoMatchingCheats">The selected cheat file ({0}) contains no cheats that match the selected game.</Message>
+		<Message ID="InvalidCheatFile">选择的文件（{0}）不是有效的金手指。</Message>
+		<Message ID="InvalidXmlFile">选择的文件（{0}）不是有效的XML。</Message>
+		<Message ID="NoMatchingCheats">选择的金手指文件（{0}）不包含匹配当前游戏的代码。</Message>
 
-		<Message ID="ConfirmReset">Are you sure you want to reset?</Message>
-		<Message ID="ConfirmPowerCycle">Are you sure you want to power cycle?</Message>
-		<Message ID="ConfirmReloadRom">Are you sure you want to reload the ROM from the disk?</Message>
-		<Message ID="ConfirmPowerOff">Are you sure you want to power off?</Message>
-		<Message ID="ConfirmExit">Are you sure you want to exit?</Message>
+		<Message ID="ConfirmReset">你确定要复位吗？</Message>
+		<Message ID="ConfirmPowerCycle">你确定要重启电源吗？</Message>
+		<Message ID="ConfirmReloadRom">你确定要重新加载ROM吗？</Message>
+		<Message ID="ConfirmPowerOff">你确定要关机吗？</Message>
+		<Message ID="ConfirmExit">你确定要退出吗？</Message>
 
-		<Message ID="InstallHdPackWrongRom">The selected HD Pack is not compatible with the currently running game and cannot be installed.</Message>
-		<Message ID="InstallHdPackError">An error occurred while trying to install the HD Pack: &#xA;&#xA;{0}</Message>
-		<Message ID="InstallHdPackInvalidPack">The selected file is not a valid HD Pack.</Message>
-		<Message ID="InstallHdPackInvalidZipFile">The selected file is not a valid ZIP file.</Message>
-		<Message ID="InstallHdPackConfirmOverwrite">The destination folder ({0}) already exists - are you sure you want to overwrite it?</Message>
-		<Message ID="InstallHdPackConfirmReset">The HD Pack has been installed successfully. Do you want to reset the game and load the HD Pack now?</Message>
+		<Message ID="InstallHdPackWrongRom">选择的HD包不兼容当前游戏，无法安装。</Message>
+		<Message ID="InstallHdPackError">安装HD包时发生了错误：&#xA;&#xA;{0}</Message>
+		<Message ID="InstallHdPackInvalidPack">选择的文件不是有效的HD包。</Message>
+		<Message ID="InstallHdPackInvalidZipFile">选择的文件不是有效的压缩包。</Message>
+		<Message ID="InstallHdPackConfirmOverwrite">{0}目录已存在，你确定要覆盖吗？</Message>
+		<Message ID="InstallHdPackConfirmReset">安装成功，现在要复位游戏及加载HD包吗？</Message>
 
-		<Message ID="Player">Player</Message>
+		<Message ID="Player">玩家</Message>
 
-		<Message ID="HexEditor_Location">Location: ${0}</Message>
-		<Message ID="HexEditor_Selection">Selection: ${0} - ${1}</Message>
-		<Message ID="HexEditor_Length">Length: {0} bytes (${1})</Message>
+		<Message ID="HexEditor_Location">位置：${0}</Message>
+		<Message ID="HexEditor_Selection">选择：${0} - ${1}</Message>
+		<Message ID="HexEditor_Length">长度：{0}字节（${1}）</Message>
 
-		<Message ID="GoToWindowHint">Hex addresses, labels, and any expression&#13;supported by the watch window can be used.</Message>
+		<Message ID="GoToWindowHint">十六进制地址、标签、任何表达式&#13;均支持在监视器里使用。</Message>
 
-		<Message ID="ViewInAction">View in {0}</Message>
+		<Message ID="ViewInAction">在{0}查看</Message>
 
-		<Message ID="btnOk">确定</Message>
+		<Message ID="btnOK">确定</Message>
 		<Message ID="btnCancel">取消</Message>
 		<Message ID="btnYes">是</Message>
 		<Message ID="btnNo">否</Message>
 
-		<Message ID="ScriptSaveConfirmation">You have unsaved changes for this script - would you like to save them?</Message>
+		<Message ID="ScriptSaveConfirmation">此Lua脚本还有未保存的改动，你想保存吗？</Message>
 		
-		<Message ID="AssemblerConfirmation">{0}&#xA;&#xA;OK?</Message>
-		<Message ID="LabelNameInUse">A label with this name already exists.</Message>
-		<Message ID="InvalidLabel">Label does not follow naming rules.</Message>
-		<Message ID="LabelOrCommentRequired">A label or a comment must be specified.</Message>
-		<Message ID="AddressOutOfRange">The address is out of range.</Message>
-		<Message ID="AddressHasOtherLabel">Another label exists for this address: {0}</Message>
+		<Message ID="AssemblerConfirmation">{0}&#xA;&#xA;可以？</Message>
+		<Message ID="LabelNameInUse">此名字的标签已存在。</Message>
+		<Message ID="InvalidLabel">标签不符合命名规则。</Message>
+		<Message ID="LabelOrCommentRequired">标签或注释必须指定。</Message>
+		<Message ID="AddressOutOfRange">此地址超界了。</Message>
+		<Message ID="AddressHasOtherLabel">另一个标签已存在于{0}</Message>
 	</Messages>
 	<Enums>
 		<Enum ID="EmulatorShortcut">
@@ -2607,8 +2599,8 @@ E
 			<Value ID="Nes2_0">NES 2.0</Value>
 		</Enum>
 		<Enum ID="iNesMirroringType">
-			<Value ID="Horizontal">横屏映射</Value>
-			<Value ID="Vertical">纵屏映射</Value>
+			<Value ID="Horizontal">横向映射</Value>
+			<Value ID="Vertical">纵向映射</Value>
 			<Value ID="FourScreens">四分屏</Value>
 		</Enum>
 		<Enum ID="VsPpuType">
@@ -2689,7 +2681,7 @@ E
 			<Value ID="CityPatrolmanLightgun">City Patrolman光枪</Value>
 			<Value ID="SharpC1CassetteInterface">Sharp C1磁带接口</Value>
 			<Value ID="StandardControllerWithSwappedButtons">互换左右/上下/BA的标准控制器</Value>
-			<Value ID="ExcaliborSudokuPad">Excalibor Sudoku Pad</Value>
+			<Value ID="ExcaliborSudokuPad">Excalibor数独板</Value>
 			<Value ID="AblPinball">ABL弹珠台</Value>
 			<Value ID="GoldenNuggetCasino">Golden Nugget Casino</Value>
 		</Enum>
@@ -2708,13 +2700,13 @@ E
 			<Value ID="Satellaview">Satellaview (BS-X)</Value>
 			<Value ID="Gameboy">Game Boy CPU</Value>
 			<Value ID="GameboyColor">Game Boy Color CPU</Value>
-			<Value ID="GameboyAdvance">Game Boy Advance Boot ROM</Value>
+			<Value ID="GameboyAdvance">Game Boy Advance引导ROM</Value>
 			<Value ID="Sgb1GameboyCpu">SGB1 - Game Boy CPU</Value>
 			<Value ID="Sgb2GameboyCpu">SGB2 - Game Boy CPU</Value>
 			<Value ID="SGB1">SGB1</Value>
 			<Value ID="SGB2">SGB2</Value>
 			<Value ID="FDS">磁碟机</Value>
-			<Value ID="StudyBox">Study Box</Value>
+			<Value ID="StudyBox">学习盒</Value>
 			<Value ID="PceSuperCd">超级CD-ROM²</Value>
 			<Value ID="PceGamesExpress">Games Express Card</Value>
 			<Value ID="ColecoVision">ColecoVision</Value>
@@ -2722,8 +2714,8 @@ E
 			<Value ID="WonderSwanColor">WonderSwan Color</Value>
 			<Value ID="SwanCrystal">SwanCrystal</Value>
 			<Value ID="Ymf288AdpcmRom">YFM288 ADPCM ROM (EPSM)</Value>
-			<Value ID="SmsBootRom">Master System - Boot ROM</Value>
-			<Value ID="GgBootRom">Game Gear - Boot ROM</Value>
+			<Value ID="SmsBootRom">Master System - 引导ROM</Value>
+			<Value ID="GgBootRom">Game Gear - 引导ROM</Value>
 		</Enum>
 
 		<Enum ID="CpuType">
@@ -2743,109 +2735,109 @@ E
 		</Enum>
 		
 		<Enum ID="MemoryType">
-			<Value ID="SnesMemory">CPU Memory</Value>
-			<Value ID="SpcMemory">SPC Memory</Value>
-			<Value ID="Sa1Memory">SA-1 Memory</Value>
-			<Value ID="GsuMemory">GSU Memory</Value>
-			<Value ID="NecDspMemory">DSP-n Memory</Value>
-			<Value ID="Cx4Memory">CX4 Memory</Value>
-			<Value ID="St018Memory">ST018 Memory</Value>
+			<Value ID="SnesMemory">CPU内存</Value>
+			<Value ID="SpcMemory">SPC内存</Value>
+			<Value ID="Sa1Memory">SA-1内存</Value>
+			<Value ID="GsuMemory">GSU内存</Value>
+			<Value ID="NecDspMemory">DSP-n内存</Value>
+			<Value ID="Cx4Memory">CX4内存</Value>
+			<Value ID="St018Memory">ST018内存</Value>
 			<Value ID="SnesPrgRom">PRG ROM</Value>
-			<Value ID="SnesWorkRam">Work RAM</Value>
-			<Value ID="SnesSaveRam">Save RAM</Value>
-			<Value ID="SnesVideoRam">Video RAM</Value>
-			<Value ID="SnesSpriteRam">OAM (Sprites)</Value>
-			<Value ID="SnesCgRam">CG RAM (Palette)</Value>
-			<Value ID="SnesRegister">Register</Value>
+			<Value ID="SnesWorkRam">工作RAM</Value>
+			<Value ID="SnesSaveRam">存档RAM</Value>
+			<Value ID="SnesVideoRam">显示RAM</Value>
+			<Value ID="SnesSpriteRam">OAM（活动块）</Value>
+			<Value ID="SnesCgRam">CG RAM（调色板）</Value>
+			<Value ID="SnesRegister">寄存器</Value>
 			<Value ID="SpcRam">SPC RAM</Value>
 			<Value ID="SpcRom">SPC ROM (IPL)</Value>
-			<Value ID="SpcDspRegisters">SPC DSP Registers</Value>
-			<Value ID="DspProgramRom">DSP-n Program ROM</Value>
-			<Value ID="DspDataRom">DSP-n Data ROM</Value>
-			<Value ID="DspDataRam">DSP-n Data RAM</Value>
+			<Value ID="SpcDspRegisters">SPC DSP寄存器</Value>
+			<Value ID="DspProgramRom">DSP-n 程序ROM</Value>
+			<Value ID="DspDataRom">DSP-n 数据ROM</Value>
+			<Value ID="DspDataRam">DSP-n 数据RAM</Value>
 			<Value ID="Sa1InternalRam">SA-1 IRAM</Value>
-			<Value ID="GsuWorkRam">GSU Work RAM</Value>
-			<Value ID="Cx4DataRam">CX4 Data RAM</Value>
+			<Value ID="GsuWorkRam">GSU 工作RAM</Value>
+			<Value ID="Cx4DataRam">CX4 数据RAM</Value>
 			<Value ID="BsxPsRam">BS-X PSRAM</Value>
-			<Value ID="BsxMemoryPack">BS-X Memory Pack</Value>
+			<Value ID="BsxMemoryPack">BS-X内存包</Value>
 			<Value ID="St018PrgRom">ST018 PRG ROM</Value>
-			<Value ID="St018DataRom">ST018 Data ROM</Value>
-			<Value ID="St018WorkRam">ST018 Work RAM</Value>
-			<Value ID="SufamiTurboFirmware">Sufami Turbo Firmware</Value>
-			<Value ID="SufamiTurboSecondCart">Sufami Slot B ROM</Value>
-			<Value ID="SufamiTurboSecondCartRam">Sufami Slot B RAM</Value>
+			<Value ID="St018DataRom">ST018 数据ROM</Value>
+			<Value ID="St018WorkRam">ST018 工作RAM</Value>
+			<Value ID="SufamiTurboFirmware">Sufami Turbo固件</Value>
+			<Value ID="SufamiTurboSecondCart">Sufami B槽位ROM</Value>
+			<Value ID="SufamiTurboSecondCartRam">Sufami B槽位RAM</Value>
 			
-			<Value ID="GameboyMemory">GB - CPU Memory</Value>
+			<Value ID="GameboyMemory">GB - CPU内存</Value>
 			<Value ID="GbPrgRom">GB - PRG ROM</Value>
-			<Value ID="GbWorkRam">GB - Work RAM</Value>
-			<Value ID="GbCartRam">GB - Cart RAM</Value>
-			<Value ID="GbHighRam">GB - High RAM</Value>
-			<Value ID="GbBootRom">GB - Boot ROM</Value>
-			<Value ID="GbVideoRam">GB - Video RAM</Value>
-			<Value ID="GbSpriteRam">GB - Sprite RAM</Value>
+			<Value ID="GbWorkRam">GB - 工作RAM</Value>
+			<Value ID="GbCartRam">GB - 卡带RAM</Value>
+			<Value ID="GbHighRam">GB - 高页RAM</Value>
+			<Value ID="GbBootRom">GB - 引导ROM</Value>
+			<Value ID="GbVideoRam">GB - 显示RAM</Value>
+			<Value ID="GbSpriteRam">GB - 活动块RAM</Value>
 
-			<Value ID="NesMemory">CPU Memory</Value>
-			<Value ID="NesPpuMemory">PPU Memory</Value>
+			<Value ID="NesMemory">CPU内存</Value>
+			<Value ID="NesPpuMemory">PPU内存</Value>
 			<Value ID="NesPrgRom">PRG ROM</Value>
-			<Value ID="NesInternalRam">System RAM</Value>
-			<Value ID="NesWorkRam">Work RAM</Value>
-			<Value ID="NesSaveRam">Save RAM</Value>
-			<Value ID="NesNametableRam">Nametable RAM (CIRAM)</Value>
+			<Value ID="NesInternalRam">内部RAM</Value>
+			<Value ID="NesWorkRam">工作RAM</Value>
+			<Value ID="NesSaveRam">保存RAM</Value>
+			<Value ID="NesNametableRam">映射表RAM (CIRAM)</Value>
 			<Value ID="NesMapperRam">Mapper RAM (EXRAM)</Value>
-			<Value ID="NesSpriteRam">Sprite RAM (OAM)</Value>
-			<Value ID="NesSecondarySpriteRam">Secondary OAM RAM</Value>
+			<Value ID="NesSpriteRam">活动块RAM (OAM)</Value>
+			<Value ID="NesSecondarySpriteRam">第二OAM RAM</Value>
 			<Value ID="NesChrRom">CHR ROM</Value>
 			<Value ID="NesChrRam">CHR RAM</Value>
-			<Value ID="NesPaletteRam">Palette RAM</Value>
+			<Value ID="NesPaletteRam">调色板RAM</Value>
 			
-			<Value ID="PceMemory">CPU Memory</Value>
-			<Value ID="PcePrgRom">HuCard ROM</Value>
-			<Value ID="PceWorkRam">Work RAM</Value>
-			<Value ID="PceSaveRam">Save RAM</Value>
+			<Value ID="PceMemory">CPU内存</Value>
+			<Value ID="PcePrgRom">Hu卡ROM</Value>
+			<Value ID="PceWorkRam">工作RAM</Value>
+			<Value ID="PceSaveRam">存档RAM</Value>
 			<Value ID="PceCdromRam">CD-ROM RAM</Value>
-			<Value ID="PceCardRam">Card RAM</Value>
+			<Value ID="PceCardRam">卡片RAM</Value>
 			<Value ID="PceAdpcmRam">ADPCM RAM</Value>
-			<Value ID="PceArcadeCardRam">Arcade Card RAM</Value>
-			<Value ID="PceVideoRam">Video RAM</Value>
-			<Value ID="PceVideoRamVdc2">Video RAM (VDC2)</Value>
-			<Value ID="PcePaletteRam">Palette RAM</Value>
-			<Value ID="PceSpriteRam">Sprite RAM</Value>
-			<Value ID="PceSpriteRamVdc2">Sprite RAM (VDC2)</Value>
+			<Value ID="PceArcadeCardRam">街机卡片RAM</Value>
+			<Value ID="PceVideoRam">显示RAM</Value>
+			<Value ID="PceVideoRamVdc2">显示RAM (VDC2)</Value>
+			<Value ID="PcePaletteRam">调色板RAM</Value>
+			<Value ID="PceSpriteRam">活动块RAM</Value>
+			<Value ID="PceSpriteRamVdc2">活动块RAM (VDC2)</Value>
 			
-			<Value ID="SmsMemory">CPU Memory</Value>
+			<Value ID="SmsMemory">CPU内存</Value>
 			<Value ID="SmsPrgRom">ROM</Value>
-			<Value ID="SmsWorkRam">System RAM</Value>
-			<Value ID="SmsCartRam">Cart RAM</Value>
+			<Value ID="SmsWorkRam">系统RAM</Value>
+			<Value ID="SmsCartRam">卡带RAM</Value>
 			<Value ID="SmsBootRom">BIOS ROM</Value>
-			<Value ID="SmsVideoRam">Video RAM</Value>
-			<Value ID="SmsPaletteRam">Palette RAM</Value>
-			<Value ID="SmsPort">I/O Port</Value>
+			<Value ID="SmsVideoRam">显示RAM</Value>
+			<Value ID="SmsPaletteRam">调色板RAM</Value>
+			<Value ID="SmsPort">I/O端口</Value>
 
-			<Value ID="GbaMemory">CPU Memory</Value>
+			<Value ID="GbaMemory">CPU内存</Value>
 			<Value ID="GbaPrgRom">ROM</Value>
-			<Value ID="GbaIntWorkRam">Internal Work RAM</Value>
-			<Value ID="GbaExtWorkRam">External Work RAM</Value>
-			<Value ID="GbaSaveRam">Save RAM</Value>
+			<Value ID="GbaIntWorkRam">内部工作RAM</Value>
+			<Value ID="GbaExtWorkRam">外部工作RAM</Value>
+			<Value ID="GbaSaveRam">存档RAM</Value>
 			<Value ID="GbaBootRom">BIOS ROM</Value>
-			<Value ID="GbaVideoRam">Video RAM</Value>
-			<Value ID="GbaSpriteRam">Sprite RAM</Value>
-			<Value ID="GbaPaletteRam">Palette RAM</Value>
+			<Value ID="GbaVideoRam">显示RAM</Value>
+			<Value ID="GbaSpriteRam">活动块RAM</Value>
+			<Value ID="GbaPaletteRam">调色板RAM</Value>
 
-			<Value ID="WsMemory">CPU Memory</Value>
+			<Value ID="WsMemory">CPU内存</Value>
 			<Value ID="WsPrgRom">ROM</Value>
-			<Value ID="WsWorkRam">Work RAM</Value>
-			<Value ID="WsCartRam">Save RAM</Value>
-			<Value ID="WsCartEeprom">EEPROM (Cart)</Value>
-			<Value ID="WsBootRom">Boot ROM</Value>
-			<Value ID="WsInternalEeprom">IEEPROM (Internal)</Value>
-			<Value ID="WsPort">I/O Port</Value>
+			<Value ID="WsWorkRam">工作RAM</Value>
+			<Value ID="WsCartRam">保存RAM</Value>
+			<Value ID="WsCartEeprom">EEPROM（卡带）</Value>
+			<Value ID="WsBootRom">引导ROM</Value>
+			<Value ID="WsInternalEeprom">IEEPROM（内部）</Value>
+			<Value ID="WsPort">I/O端口</Value>
 
-			<Value ID="None">None</Value>
+			<Value ID="None">无</Value>
 		</Enum>
 		<Enum ID="GameboyModel">
-			<Value ID="AutoFavorGbc">Auto (prefer Game Boy Color)</Value>
-			<Value ID="AutoFavorSgb">Auto (prefer Super Game Boy)</Value>
-			<Value ID="AutoFavorGb">Auto (prefer Game Boy)</Value>
+			<Value ID="AutoFavorGbc">自动（偏好GBC）</Value>
+			<Value ID="AutoFavorSgb">自动（偏好SGB）</Value>
+			<Value ID="AutoFavorGb">自动（偏好GB）</Value>
 			<Value ID="Gameboy">Game Boy</Value>
 			<Value ID="GameboyColor">Game Boy Color</Value>
 			<Value ID="SuperGameboy">Super Game Boy</Value>
@@ -2869,171 +2861,171 @@ E
 			<Value ID="Bpp2">2 BPP</Value>
 			<Value ID="Bpp4">4 BPP</Value>
 			<Value ID="Bpp8">8 BPP</Value>
-			<Value ID="DirectColor">Direct Color</Value>
+			<Value ID="DirectColor">直接颜色</Value>
 			<Value ID="Mode7">Mode 7</Value>
-			<Value ID="Mode7DirectColor">Mode 7 - Direct Color</Value>
+			<Value ID="Mode7DirectColor">Mode 7 - 直接颜色</Value>
 			<Value ID="Mode7ExtBg">Mode 7 - ExtBG</Value>
-			<Valid ID="PceSpriteBpp4">4 BPP (sprites)</Valid>
-			<Valid ID="PceSpriteBpp2Sp01">2 BPP (sprites - SP01)</Valid>
-			<Valid ID="PceSpriteBpp2Sp23">2 BPP (sprites - SP23)</Valid>
-			<Valid ID="PceBackgroundBpp2Cg0">2 BPP (background - CG0)</Valid>
-			<Valid ID="PceBackgroundBpp2Cg1">2 BPP (background - CG1)</Valid>
+			<Valid ID="PceSpriteBpp4">4 BPP（活动块）</Valid>
+			<Valid ID="PceSpriteBpp2Sp01">2 BPP（SP01活动块）</Valid>
+			<Valid ID="PceSpriteBpp2Sp23">2 BPP（SP23活动块）</Valid>
+			<Valid ID="PceBackgroundBpp2Cg0">2 BPP（CG0背景）</Valid>
+			<Valid ID="PceBackgroundBpp2Cg1">2 BPP（CG1背景）</Valid>
 			<Value ID="SmsBpp4">4 BPP</Value>
 			<Value ID="SmsSgBpp1">1 BPP</Value>
 			<Value ID="GbaBpp4">4 BPP</Value>
 			<Value ID="GbaBpp8">8 BPP</Value>
-			<Value ID="WsBpp4Packed">4 BPP (packed)</Value>
+			<Value ID="WsBpp4Packed">4 BPP（打包）</Value>
 		</Enum>
 		<Enum ID="TileLayout">
-			<Value ID="Normal">Normal</Value>
-			<Value ID="SingleLine8x16">8x16 (same line)</Value>
-			<Value ID="SingleLine16x16">16x16 (same line)</Value>
-			<Value ID="Vertical">Vertical</Value>
+			<Value ID="Normal">常规</Value>
+			<Value ID="SingleLine8x16">8x16（同一行）</Value>
+			<Value ID="SingleLine16x16">16x16（同一行）</Value>
+			<Value ID="Vertical">纵向</Value>
 		</Enum>
 		<Enum ID="TileFilter">
-			<Value ID="None">None</Value>
-			<Value ID="HideUsed">Hide used tiles</Value>
-			<Value ID="HideUnused">Hide unused tiles</Value>
+			<Value ID="None">无</Value>
+			<Value ID="HideUsed">隐藏使用的Tile</Value>
+			<Value ID="HideUnused">隐藏未使用的Tile</Value>
 		</Enum>
 		<Enum ID="TileBackground">
-			<Value ID="Default">Default (Color 0)</Value>
-			<Value ID="PaletteColor">Palette Color 0</Value>
-			<Value ID="Transparent">Transparent</Value>
-			<Value ID="Black">Black</Value>
-			<Value ID="White">White</Value>
-			<Value ID="Magenta">Magenta</Value>
+			<Value ID="Default">默认（颜色0）</Value>
+			<Value ID="PaletteColor">调色板颜色0</Value>
+			<Value ID="Transparent">透明</Value>
+			<Value ID="Black">黑</Value>
+			<Value ID="White">白</Value>
+			<Value ID="Magenta">洋红</Value>
 		</Enum>
 		<Enum ID="SpriteBackground">
-			<Value ID="Gray">Gray</Value>
-			<Value ID="Background">Color 0</Value>
-			<Value ID="Transparent">Transparent</Value>
-			<Value ID="Black">Black</Value>
-			<Value ID="White">White</Value>
-			<Value ID="Magenta">Magenta</Value>
+			<Value ID="Gray">灰</Value>
+			<Value ID="Background">颜色0</Value>
+			<Value ID="Transparent">透明</Value>
+			<Value ID="Black">黑</Value>
+			<Value ID="White">白</Value>
+			<Value ID="Magenta">洋红</Value>
 		</Enum>
 		<Enum ID="TilemapDisplayMode">
-			<Value ID="Default">Default</Value>
-			<Value ID="Grayscale">Grayscale</Value>
-			<Value ID="AttributeView">Attribute view</Value>
+			<Value ID="Default">默认</Value>
+			<Value ID="Grayscale">灰</Value>
+			<Value ID="AttributeView">属性视图</Value>
 		</Enum>
 		<Enum ID="TilemapMirroring">
-			<Value ID="None">None</Value>
-			<Value ID="Horizontal">Horizontal</Value>
-			<Value ID="Vertical">Vertical</Value>
-			<Value ID="SingleScreenA">Screen A</Value>
-			<Value ID="SingleScreenB">Screen B</Value>
-			<Value ID="FourScreens">Four Screens</Value>
+			<Value ID="None">无</Value>
+			<Value ID="Horizontal">横向</Value>
+			<Value ID="Vertical">纵向</Value>
+			<Value ID="SingleScreenA">屏幕A</Value>
+			<Value ID="SingleScreenB">屏幕B</Value>
+			<Value ID="FourScreens">四屏幕</Value>
 		</Enum>
 		<Enum ID="TilemapHighlightMode">
-			<Value ID="None">No highlight</Value>
-			<Value ID="Changes">Changes</Value>
-			<Value ID="Writes">Writes</Value>
+			<Value ID="None">无高亮</Value>
+			<Value ID="Changes">变化</Value>
+			<Value ID="Writes">写入</Value>
 		</Enum>
 		<Enum ID="StatusFlagFormat">
-			<Value ID="Hexadecimal">Hexadecimal</Value>
-			<Value ID="Text">Text</Value>
-			<Value ID="CompactText">Text (Active only)</Value>
+			<Value ID="Hexadecimal">十六进制</Value>
+			<Value ID="Text">文本</Value>
+			<Value ID="CompactText">仅活动的文本</Value>
 		</Enum>
 		<Enum ID="BreakSource">
-			<Value ID="Breakpoint">Breakpoint</Value>
-			<Value ID="Pause">Pause</Value>
-			<Value ID="CpuStep">CPU Step</Value>
-			<Value ID="PpuStep">PPU Step</Value>
-			<Value ID="InternalOperation">Pause</Value>
+			<Value ID="Breakpoint">断点</Value>
+			<Value ID="Pause">暂停</Value>
+			<Value ID="CpuStep">CPU步进</Value>
+			<Value ID="PpuStep">PPU步进</Value>
+			<Value ID="InternalOperation">暂停</Value>
 			<Value ID="BreakOnBrk">BRK</Value>
 			<Value ID="BreakOnCop">COP</Value>
 			<Value ID="BreakOnWdm">WDM</Value>
 			<Value ID="BreakOnStp">STP</Value>
-			<Value ID="BreakOnUninitMemoryRead">Uninitialized memory read</Value>
-			<Value ID="GbInvalidOamAccess">Invalid OAM access</Value>
-			<Value ID="GbInvalidVramAccess">Invalid VRAM access</Value>
-			<Value ID="GbDisableLcdOutsideVblank">Disabled LCD outside vblank</Value>
-			<Value ID="GbInvalidOpCode">Invalid instruction</Value>
+			<Value ID="BreakOnUninitMemoryRead">未初始化内存读取</Value>
+			<Value ID="GbInvalidOamAccess">无效OAM访问</Value>
+			<Value ID="GbInvalidVramAccess">无效VRAM访问</Value>
+			<Value ID="GbDisableLcdOutsideVblank">禁用VBlank外的LCD</Value>
+			<Value ID="GbInvalidOpCode">无效指令</Value>
 			<Value ID="GbNopLoad">LD B, B (NOP)</Value>
-			<Value ID="GbOamCorruption">OAM corruption bug triggered</Value>
+			<Value ID="GbOamCorruption">OAM损坏bug触发</Value>
 
 			<Value ID="Irq">IRQ</Value>
 			<Value ID="Nmi">NMI</Value>
 			
-			<Value ID="NesBreakOnDecayedOamRead">Decayed OAM read</Value>
-			<Value ID="NesBreakOnPpu2000ScrollGlitch">$2000/5/6 scroll glitch</Value>
-			<Value ID="NesBreakOnPpu2006ScrollGlitch">$2006 scroll glitch</Value>
-			<Value ID="BreakOnUnofficialOpCode">Unofficial OP</Value>
-			<Value ID="BreakOnUnstableOpCode">Unstable OP</Value>
-			<Value ID="NesBusConflict">Bus conflict</Value>
-			<Value ID="NesBreakOnCpuCrash">CPU crashed</Value>
-			<Value ID="NesBreakOnExtOutputMode">PPU EXT output mode</Value>
-			<Value ID="NesInvalidVramAccess">Invalid VRAM access</Value>
-			<Value ID="NesInvalidOamWrite">Invalid OAM access</Value>
-			<Value ID="NesDmaInputRead">DMA controller read</Value>
+			<Value ID="NesBreakOnDecayedOamRead">衰减OAM读取</Value>
+			<Value ID="NesBreakOnPpu2000ScrollGlitch">$2000/5/6卷屏bug</Value>
+			<Value ID="NesBreakOnPpu2006ScrollGlitch">$2006卷屏bug</Value>
+			<Value ID="BreakOnUnofficialOpCode">非官方操作码</Value>
+			<Value ID="BreakOnUnstableOpCode">不稳定操作码</Value>
+			<Value ID="NesBusConflict">总线冲突</Value>
+			<Value ID="NesBreakOnCpuCrash">CPU崩溃</Value>
+			<Value ID="NesBreakOnExtOutputMode">PPU EXT输出模式</Value>
+			<Value ID="NesInvalidVramAccess">无效VRAM访问</Value>
+			<Value ID="NesInvalidOamWrite">无效OAM访问</Value>
+			<Value ID="NesDmaInputRead">DMA控制器读取</Value>
 			
-			<Value ID="PceBreakOnInvalidVramAddress">Invalid VRAM address (>= $8000)</Value>
+			<Value ID="PceBreakOnInvalidVramAddress">无效VRAM地址（>=$8000）</Value>
 
 			<Value ID="SmsNopLoad">LD B, B (NOP)</Value>
 			
 			<Value ID="GbaNopLoad">MOV R11, R11 (NOP)</Value>
-			<Value ID="GbaInvalidOpCode">Invalid instruction</Value>
-			<Value ID="GbaUnalignedMemoryAccess">Unaligned memory access</Value>
+			<Value ID="GbaInvalidOpCode">无效指令</Value>
+			<Value ID="GbaUnalignedMemoryAccess">未对齐内存访问</Value>
 
-			<Value ID="SnesReadDuringAutoJoy">Controller read during auto-read</Value>
-			<Value ID="SnesInvalidPpuAccess">Invalid PPU memory access</Value>
+			<Value ID="SnesReadDuringAutoJoy">自动读取时控制器访问</Value>
+			<Value ID="SnesInvalidPpuAccess">无效PPU内存访问</Value>
 
-			<Value ID="BreakOnUndefinedOpCode">Undefined OP</Value>
+			<Value ID="BreakOnUndefinedOpCode">未定义操作码</Value>
 		</Enum>
 		<Enum ID="MemoryOperationType">
-			<Value ID="Read">Read</Value>
-			<Value ID="Write">Write</Value>
-			<Value ID="ExecOpCode">Exec</Value>
-			<Value ID="ExecOperand">Exec</Value>
-			<Value ID="DmaRead">DMA Read</Value>
-			<Value ID="DmaWrite">DMA Write</Value>
-			<Value ID="DummyRead">Dummy Read</Value>
-			<Value ID="DummyWrite">Dummy Write</Value>
-			<Value ID="PpuRenderingRead">PPU Rendering Read</Value>
-			<Value ID="Idle">Idle</Value>
+			<Value ID="Read">读取</Value>
+			<Value ID="Write">写入</Value>
+			<Value ID="ExecOpCode">执行</Value>
+			<Value ID="ExecOperand">执行</Value>
+			<Value ID="DmaRead">DMA读取</Value>
+			<Value ID="DmaWrite">DMA写入</Value>
+			<Value ID="DummyRead">虚拟读取</Value>
+			<Value ID="DummyWrite">虚拟写入</Value>
+			<Value ID="PpuRenderingRead">PPU渲染读取</Value>
+			<Value ID="Idle">空闲</Value>
 		</Enum>
 		<Enum ID="HighlightFadeSpeed">
-			<Value ID="NoFade">Do not fade</Value>
-			<Value ID="Slow">Slow</Value>
-			<Value ID="Normal">Normal</Value>
-			<Value ID="Fast">Fast</Value>
+			<Value ID="NoFade">不淡出</Value>
+			<Value ID="Slow">慢</Value>
+			<Value ID="Normal">中</Value>
+			<Value ID="Fast">快</Value>
 		</Enum>
 		<Enum ID="NavType">
-			<Value ID="PrevCode">Navigate to: Previous code block</Value>
-			<Value ID="NextCode">Navigate to: Next code block</Value>
-			<Value ID="PrevData">Navigate to: Previous data block</Value>
-			<Value ID="NextData">Navigate to: Next data block</Value>
-			<Value ID="PrevUnknown">Navigate to: Previous unidentified block</Value>
-			<Value ID="NextUnknown">Navigate to: Next unidentified block</Value>
+			<Value ID="PrevCode">导航到上一代码区块</Value>
+			<Value ID="NextCode">导航到下一代码区块</Value>
+			<Value ID="PrevData">导航到上一数据区块</Value>
+			<Value ID="NextData">导航到下一数据区块</Value>
+			<Value ID="PrevUnknown">导航到上一未识别区块</Value>
+			<Value ID="NextUnknown">导航到下一未识别区块</Value>
 
-			<Value ID="PrevRead">Navigate to: Previous read block</Value>
-			<Value ID="NextRead">Navigate to: Next read block</Value>
-			<Value ID="PrevWrite">Navigate to: Previous write block</Value>
-			<Value ID="NextWrite">Navigate to: Next write block</Value>
-			<Value ID="PrevExec">Navigate to: Previous exec block</Value>
-			<Value ID="NextExec">Navigate to: Next exec block</Value>
+			<Value ID="PrevRead">导航到上一读取区块</Value>
+			<Value ID="NextRead">导航到下一读取区块</Value>
+			<Value ID="PrevWrite">导航到上一写入区块</Value>
+			<Value ID="NextWrite">导航到下一写入区块</Value>
+			<Value ID="PrevExec">导航到上一执行区块</Value>
+			<Value ID="NextExec">导航到下一执行区块</Value>
 		</Enum>
 		<Enum ID="SearchDataType">
-			<Value ID="Hex">Hexadecimal</Value>
-			<Value ID="String">String</Value>
-			<Value ID="Integer">Integer</Value>
+			<Value ID="Hex">十六进制</Value>
+			<Value ID="String">字符串</Value>
+			<Value ID="Integer">整数</Value>
 		</Enum>
 		<Enum ID="SearchIntType">
-			<Value ID="IntAuto">Any size</Value>
-			<Value ID="Int8">8-bit integer</Value>
-			<Value ID="Int16">16-bit integer</Value>
-			<Value ID="Int32">32-bit integer</Value>
+			<Value ID="IntAuto">任意大小</Value>
+			<Value ID="Int8">8位整数</Value>
+			<Value ID="Int16">16位整数</Value>
+			<Value ID="Int32">32位整数</Value>
 		</Enum>
 		<Enum ID="CodeDisplayMode">
-			<Value ID="Hide">Hide</Value>
-			<Value ID="Show">Show</Value>
-			<Value ID="Disassemble">Disassemble</Value>
+			<Value ID="Hide">隐藏</Value>
+			<Value ID="Show">显示</Value>
+			<Value ID="Disassemble">汇编</Value>
 		</Enum>
 		<Enum ID="AddressDisplayType">
 			<Value ID="CpuAddress">CPU地址</Value>
 			<Value ID="AbsAddress">ROM地址</Value>
 			<Value ID="Both">两者</Value>
-			<Value ID="BothCompact">两者（紧凑）</Value>
+			<Value ID="BothCompact">两者（简化）</Value>
 		</Enum>
 		<Enum ID="MemorySearchFormat">
 			<Value ID="Hex">十六进制</Value>
@@ -3078,51 +3070,51 @@ E
 			<Value ID="Background">背景</Value>
 		</Enum>
 		<Enum ID="GbaBgStereoMode">
-			<Value ID="Disabled">Disabled</Value>
-			<Value ID="EvenColumns">Even columns</Value>
-			<Value ID="OddColumns">Odd columns</Value>
-			<Value ID="Both">Both (odd)</Value>
+			<Value ID="Disabled">禁用</Value>
+			<Value ID="EvenColumns">偶数列</Value>
+			<Value ID="OddColumns">奇数列</Value>
+			<Value ID="Both">两者（奇数）</Value>
 		</Enum>
 		<Enum ID="DebugSpriteMode">
 			<Value ID="Undefined">-</Value>
-			<Value ID="Normal">Normal</Value>
-			<Value ID="Blending">Blending</Value>
-			<Value ID="Window">Window</Value>
-			<Value ID="Stereoscopic">Stereoscopic</Value>
+			<Value ID="Normal">常规</Value>
+			<Value ID="Blending">混合</Value>
+			<Value ID="Window">窗口</Value>
+			<Value ID="Stereoscopic">立体</Value>
 		</Enum>
 		<Enum ID="SpriteVisibility">
-			<Value ID="Visible">Visible</Value>
-			<Value ID="Offscreen">Offscreen</Value>
-			<Value ID="Disabled">Disabled</Value>
+			<Value ID="Visible">可见</Value>
+			<Value ID="Offscreen">屏外</Value>
+			<Value ID="Disabled">禁用</Value>
 		</Enum>
 
 		<Enum ID="DocEntryCategory">
-			<Value ID="Callbacks">Callbacks</Value>
-			<Value ID="Drawing">Drawing</Value>
-			<Value ID="Emulation">Emulation</Value>
-			<Value ID="Input">Input</Value>
-			<Value ID="Logging">Logging</Value>
-			<Value ID="MemoryAccess">Memory Access</Value>
-			<Value ID="Miscellaneous">Miscellaneous</Value>
-			<Value ID="Enums">Enums</Value>
+			<Value ID="Callbacks">回调</Value>
+			<Value ID="Drawing">绘制</Value>
+			<Value ID="Emulation">模拟</Value>
+			<Value ID="Input">输入</Value>
+			<Value ID="Logging">记录</Value>
+			<Value ID="MemoryAccess">内存访问</Value>
+			<Value ID="Miscellaneous">杂项</Value>
+			<Value ID="Enums">枚举</Value>
 		</Enum>
 		<Enum ID="DocEntrySubcategory">
-			<Value ID="AccessCounters">Access Counters</Value>
-			<Value ID="Cdl">Code/Data Log</Value>
-			<Value ID="Cheats">Cheats</Value>
-			<Value ID="SaveStates">Save States</Value>
-			<Value ID="Others">Others</Value>
+			<Value ID="AccessCounters">访问计数器</Value>
+			<Value ID="Cdl">代码/数据记录</Value>
+			<Value ID="Cheats">金手指</Value>
+			<Value ID="SaveStates">进度</Value>
+			<Value ID="Others">其它</Value>
 		</Enum>
 
 		<Enum ID="DebugEventType">
-			<Value ID="Register">Register</Value>
+			<Value ID="Register">寄存器</Value>
 			<Value ID="Nmi">NMI</Value>
 			<Value ID="Irq">IRQ</Value>
-			<Value ID="Breakpoint">Breakpoint</Value>
-			<Value ID="BgColorChange">BG Change</Value>
-			<Value ID="SpriteZeroHit">Sprite 0 Hit</Value>
-			<Value ID="DmcDmaRead">DMC Read</Value>
-			<Value ID="DmaRead">OAM/Other DMA Read</Value>
+			<Value ID="Breakpoint">断点</Value>
+			<Value ID="BgColorChange">背景变化</Value>
+			<Value ID="SpriteZeroHit">活动块0击中</Value>
+			<Value ID="DmcDmaRead">DMC读取</Value>
+			<Value ID="DmaRead">OAM/其它DMA读取</Value>
 		</Enum>
 		<Enum ID="AddrMode">
 			<Value ID="None">None</Value>
@@ -3175,24 +3167,24 @@ E
 			<Value ID="ZeroRel">z,r - Zero Page Relative</Value>
 		</Enum>
 		<Enum ID="DebuggerShortcut">
-			<Value ID="IncreaseFontSize">Increase Font Size</Value>
-			<Value ID="DecreaseFontSize">Decrease Font Size</Value>
-			<Value ID="ResetFontSize">Reset Font Size</Value>
-			<Value ID="GoTo">Go to...</Value>
-			<Value ID="Find">Find</Value>
-			<Value ID="FindNext">Find Next</Value>
-			<Value ID="FindPrev">Find Previous</Value>
-			<Value ID="Undo">Undo</Value>
-			<Value ID="Copy">Copy</Value>
-			<Value ID="Cut">Cut</Value>
-			<Value ID="Paste">Paste</Value>
-			<Value ID="SelectAll">Select All</Value>
-			<Value ID="Undo">Undo</Value>
-			<Value ID="Refresh">Refresh</Value>
-			<Value ID="MarkAsCode">Mark Selection as Code</Value>
-			<Value ID="MarkAsData">Mark Selection as Data</Value>
-			<Value ID="MarkAsUnidentified">Mark Selection as Unidentified</Value>
-			<Value ID="GoToAll">Go to All</Value>
+			<Value ID="IncreaseFontSize">加大字号</Value>
+			<Value ID="DecreaseFontSize">减小字号</Value>
+			<Value ID="ResetFontSize">重置字号</Value>
+			<Value ID="GoTo">跳转…</Value>
+			<Value ID="Find">寻找</Value>
+			<Value ID="FindNext">寻找下一个</Value>
+			<Value ID="FindPrev">寻找上一个</Value>
+			<Value ID="Undo">撤销</Value>
+			<Value ID="Copy">复制</Value>
+			<Value ID="Cut">剪切</Value>
+			<Value ID="Paste">粘贴</Value>
+			<Value ID="SelectAll">全选</Value>
+			<Value ID="Undo">撤销</Value>
+			<Value ID="Refresh">刷新</Value>
+			<Value ID="MarkAsCode">标记选中的部分为代码</Value>
+			<Value ID="MarkAsData">标记选中的部分为数据</Value>
+			<Value ID="MarkAsUnidentified">标记选中的部分为未识别</Value>
+			<Value ID="GoToAll">跳转到全部</Value>
 			<Value ID="ZoomIn">放大</Value>
 			<Value ID="ZoomOut">缩小</Value>
 			<Value ID="SaveAsPng">另存为到PNG</Value>
@@ -3229,9 +3221,9 @@ E
 			<Value ID="StepInto">步进</Value>
 			<Value ID="StepOver">步进跳过子程序</Value>
 			<Value ID="StepOut">退出子程序</Value>
-			<Value ID="StepBack">后退</Value>
-			<Value ID="StepBackScanline">后退（1条扫描线）</Value>
-			<Value ID="StepBackFrame">后退（1帧）</Value>
+			<Value ID="StepBack">步退</Value>
+			<Value ID="StepBackScanline">步退（1条扫描线）</Value>
+			<Value ID="StepBackFrame">步退（1帧）</Value>
 			<Value ID="RunCpuCycle">运行1个CPU周期</Value>
 			<Value ID="RunPpuCycle">运行1个PPU周期</Value>
 			<Value ID="RunPpuScanline">运行1条PPU扫描线</Value>
@@ -3274,18 +3266,18 @@ E
 			<Value ID="LabelList_Delete">标签列表：删除标签</Value>
 			<Value ID="LabelList_ToggleBreakpoint">标签列表：切换断点</Value>
 			<Value ID="LabelList_AddToWatch">标签列表：添加到监视器</Value>
-			<Value ID="LabelList_GoToLocation">标签列表：前往地址</Value>
+			<Value ID="LabelList_GoToLocation">标签列表：跳转到地址</Value>
 			<Value ID="LabelList_FindOccurrences">标签列表：搜索并显示全部结果</Value>
 			<Value ID="LabelList_ViewInMemoryViewer">标签列表：用内存查看器查看</Value>
 			<Value ID="FunctionList_EditLabel">功能列表：编辑标签</Value>
 			<Value ID="FunctionList_ToggleBreakpoint">功能列表：切换断点</Value>
-			<Value ID="FunctionList_GoToLocation">功能列表：前往地址</Value>
+			<Value ID="FunctionList_GoToLocation">功能列表：跳转到地址</Value>
 			<Value ID="FunctionList_FindOccurrences">标签列表：搜索并显示全部结果</Value>
 			<Value ID="FunctionList_ViewInMemoryViewer">功能列表：用内存查看器查看</Value>
 			<Value ID="BreakpointList_Add">断点列表：添加断点</Value>
 			<Value ID="BreakpointList_AddForbid">断点列表：屏蔽断点</Value>
 			<Value ID="BreakpointList_Edit">断点列表：编辑断点</Value>
-			<Value ID="BreakpointList_GoToLocation">断点列表：前往地址</Value>
+			<Value ID="BreakpointList_GoToLocation">断点列表：跳转到位置</Value>
 			<Value ID="BreakpointList_ViewInMemoryViewer">断点列表：用内存查看器查看</Value>
 			<Value ID="BreakpointList_Delete">断点列表：删除断点</Value>
 			<Value ID="BreakpointList_EnableBreakpoint">断点列表：启用断点</Value>
@@ -3296,9 +3288,9 @@ E
 			<Value ID="WatchList_MoveUp">监视列表：上移</Value>
 			<Value ID="WatchList_MoveDown">监视列表：下移</Value>
 			<Value ID="CallStack_EditLabel">调用栈：编辑标签</Value>
-			<Value ID="CallStack_GoToLocation">调用栈：前往地址</Value>
+			<Value ID="CallStack_GoToLocation">调用栈：跳转到位置</Value>
 			<Value ID="FindResultList_AddWatch">寻找结果：添加到监视器</Value>
-			<Value ID="FindResultList_GoToLocation">寻找结果：前往地址</Value>
+			<Value ID="FindResultList_GoToLocation">寻找结果：跳转到位置</Value>
 			<Value ID="FindResultList_ToggleBreakpoint">寻找结果：切换断点</Value>
 			<Value ID="SaveRom">保存ROM</Value>
 			<Value ID="SaveRomAs">另存为ROM…</Value>
@@ -3348,23 +3340,23 @@ E
 			<Value ID="ScriptWindow_RunScript">运行Lua脚本</Value>
 			<Value ID="ScriptWindow_StopScript">停止Lua脚本</Value>
 
-			<Value ID="TraceLogger_EditBreakpoint">Trace Logger - Edit Breakpoint</Value>
-			<Value ID="TraceLogger_EditLabel">Trace Logger - Edit Label</Value>
-			<Value ID="TraceLogger_ViewInDebugger">Trace Logger - View in调试器</Value>
-			<Value ID="TraceLogger_ViewInMemoryViewer">Trace Logger - View in Memory Viewer</Value>
+			<Value ID="TraceLogger_EditBreakpoint">跟踪记录器：编辑断点</Value>
+			<Value ID="TraceLogger_EditLabel">跟踪记录器：编辑标签</Value>
+			<Value ID="TraceLogger_ViewInDebugger">跟踪记录器：用调试器查看</Value>
+			<Value ID="TraceLogger_ViewInMemoryViewer">跟踪记录器：用内存查看器查看</Value>
 
-			<Value ID="RegisterViewer_EditBreakpoint">Register Viewer - Edit Breakpoint</Value>
+			<Value ID="RegisterViewer_EditBreakpoint">寄存器查看器：编辑断点</Value>
 
-			<Value ID="TileEditor_RotateLeft">Tile Editor - Rotate left</Value>
-			<Value ID="TileEditor_RotateRight">Tile Editor - Rotate right</Value>
+			<Value ID="TileEditor_RotateLeft">Tile编辑器：向左旋转</Value>
+			<Value ID="TileEditor_RotateRight">Tile编辑器：向右旋转</Value>
 
-			<Value ID="TileEditor_FlipHorizontal">Tile Editor - Flip horizontal</Value>
-			<Value ID="TileEditor_FlipVertical">Tile Editor - Flip vertical</Value>
+			<Value ID="TileEditor_FlipHorizontal">Tile编辑器：横向翻转</Value>
+			<Value ID="TileEditor_FlipVertical">Tile编辑器：纵向翻转</Value>
 
-			<Value ID="TileEditor_TranslateLeft">Tile Editor - Translate left</Value>
-			<Value ID="TileEditor_TranslateRight">Tile Editor - Translate right</Value>
-			<Value ID="TileEditor_TranslateUp">Tile Editor - Translate up</Value>
-			<Value ID="TileEditor_TranslateDown">Tile Editor - Translate down</Value>
+			<Value ID="TileEditor_TranslateLeft">Tile编辑器：向左平移</Value>
+			<Value ID="TileEditor_TranslateRight">Tile编辑器：向右平移</Value>
+			<Value ID="TileEditor_TranslateUp">Tile编辑器：向上平移</Value>
+			<Value ID="TileEditor_TranslateDown">Tile编辑器：向下平移</Value>
 		</Enum>
 		<Enum ID="ActionType">
 			<Value ID="Copy">复制</Value>
@@ -3414,16 +3406,16 @@ E
 			<Value ID="Import">导入…</Value>
 			<Value ID="Export">导出…</Value>
 
-			<Value ID="ShowBreakpointList">Show breakpoint list</Value>
-			<Value ID="ShowLabelList">Show label list</Value>
-			<Value ID="ShowFunctionList">Show function list</Value>
-			<Value ID="ShowWatchList">Show watch list</Value>
-			<Value ID="ShowCallStack">Show call stack</Value>
-			<Value ID="ShowConsoleStatus">Show console status</Value>
-			<Value ID="ShowControllers">Show controllers</Value>
+			<Value ID="ShowBreakpointList">显示断点列表</Value>
+			<Value ID="ShowLabelList">显示标签列表</Value>
+			<Value ID="ShowFunctionList">显示功能列表</Value>
+			<Value ID="ShowWatchList">显示监视列表</Value>
+			<Value ID="ShowCallStack">显示调用栈</Value>
+			<Value ID="ShowConsoleStatus">显示主机状态</Value>
+			<Value ID="ShowControllers">显示控制器</Value>
 			
-			<Value ID="ShowSettingsPanel">Show settings panel</Value>
-			<Value ID="ShowMemoryMappings">Show memory mappings</Value>
+			<Value ID="ShowSettingsPanel">显示设置面板</Value>
+			<Value ID="ShowMemoryMappings">显示内存映射</Value>
 
 			<Value ID="Preferences">首选项</Value>
 
@@ -3432,25 +3424,25 @@ E
 			<Value ID="Reset">复位</Value>
 			<Value ID="PowerCycle">重启电源</Value>
 			<Value ID="ReloadRom">重新加载ROM</Value>
-			<Value ID="StepInto">Step into</Value>
-			<Value ID="StepOut">Step out</Value>
-			<Value ID="StepOver">Step over</Value>
-			<Value ID="StepBack">Step back</Value>
-			<Value ID="StepBackScanline">Step back (1 scanline)</Value>
-			<Value ID="StepBackFrame">Step back (1 frame)</Value>
-			<Value ID="RunCpuCycle">Run one CPU Cycle</Value>
-			<Value ID="RunPpuCycle">Run one PPU cycle</Value>
-			<Value ID="RunPpuScanline">Run one scanline</Value>
-			<Value ID="RunPpuFrame">Run one frame</Value>
-			<Value ID="RunToIrq">Run to IRQ</Value>
-			<Value ID="RunToNmi">Run to NMI</Value>
-			<Value ID="BreakIn">Break in...</Value>
-			<Value ID="BreakOn">Run to scanline...</Value>
+			<Value ID="StepInto">步进</Value>
+			<Value ID="StepOut">退出子程序</Value>
+			<Value ID="StepOver">步进跳过子程序</Value>
+			<Value ID="StepBack">步退</Value>
+			<Value ID="StepBackScanline">步退（1条扫描线）</Value>
+			<Value ID="StepBackFrame">步退（1帧）</Value>
+			<Value ID="RunCpuCycle">运行1个CPU周期</Value>
+			<Value ID="RunPpuCycle">运行1个PPU周期</Value>
+			<Value ID="RunPpuScanline">运行1条扫描线</Value>
+			<Value ID="RunPpuFrame">运行1帧</Value>
+			<Value ID="RunToIrq">运行到IRQ</Value>
+			<Value ID="RunToNmi">运行到NMI</Value>
+			<Value ID="BreakIn">中断于…</Value>
+			<Value ID="BreakOn">运行到扫描线…</Value>
 
-			<Value ID="RunScript">运行Lua脚本</Value>
-			<Value ID="StopScript">停止Lua脚本</Value>
-			<Value ID="NewScript">新建Lua脚本窗口</Value>
-			<Value ID="BuiltInScripts">内置Lua脚本</Value>
+			<Value ID="RunScript">运行</Value>
+			<Value ID="StopScript">停止</Value>
+			<Value ID="NewScript">新建窗口</Value>
+			<Value ID="BuiltInScripts">内置脚本</Value>
 
 			<Value ID="Open">打开</Value>
 			<Value ID="Save">保存</Value>
@@ -3475,10 +3467,10 @@ E
 			<Value ID="LoadTblFile">加载TBL文件…</Value>
 			<Value ID="ResetTblMappings">重置TBL映射</Value>
 
-			<Value ID="GoTo">前往…</Value>
-			<Value ID="GoToAddress">前往地址…</Value>
+			<Value ID="GoTo">跳转到…</Value>
+			<Value ID="GoToAddress">跳转到地址…</Value>
 			<Value ID="GoToProgramCounter">程序计数器</Value>
-			<Value ID="GoToAll">前往全部…</Value>
+			<Value ID="GoToAll">跳转到全部…</Value>
 
 			<Value ID="OpenAssembler">汇编器</Value>
 			<Value ID="OpenDebugger">调试器</Value>
@@ -3526,10 +3518,7 @@ E
 			<Value ID="HdPackBuilder">创建HD包</Value>
 			<Value ID="TakeScreenshot">截图</Value>
 
-			<Value ID="OnlineHelp">在线帮助</Value>
-			<Value ID="CommandLineHelp">指令选项</Value>
-			<Value ID="CheckForUpdates">检查更新</Value>
-			<Value ID="ReportBug">汇报bug</Value>
+			<Value ID="CommandLineHelp">命令行选项</Value>
 			<Value ID="About">关于</Value>
 
 			<Value ID="Speed">速度</Value>
@@ -3665,8 +3654,8 @@ E
 			<Value ID="CheatDatabase">金手指数据库</Value>
 			<Value ID="ToggleBilinearInterpolation">双线性插值</Value>
 
-			<Value ID="RotateLeft">逆向旋转֎</Value>
-			<Value ID="RotateRight">顺向旋转֍</Value>
+			<Value ID="RotateLeft">逆向旋转</Value>
+			<Value ID="RotateRight">顺向旋转</Value>
 
 			<Value ID="FlipHorizontal">横向翻转</Value>
 			<Value ID="FlipVertical">纵向翻转</Value>
