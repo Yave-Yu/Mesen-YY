@@ -9,6 +9,7 @@ using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,7 @@ namespace Mesen.Config
 		[Reactive] public MainWindowConfig MainWindow { get; set; } = new();
 		
 		public DefaultKeyMappingType DefaultKeyMappings { get; set; } = DefaultKeyMappingType.Xbox | DefaultKeyMappingType.ArrowKeys;
+		public bool ApplyChinese { get; set; } = CultureInfo.InstalledUICulture.Name == "zh-CN";
 
 		public Configuration()
 		{
