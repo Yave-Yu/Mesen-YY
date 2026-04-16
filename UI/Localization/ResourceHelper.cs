@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Mesen.Config;
+using Mesen.Interop;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
-using Mesen.Interop;
 
 namespace Mesen.Localization
 {
@@ -21,7 +23,7 @@ namespace Mesen.Localization
 			try {
 				Assembly assembly = Assembly.GetExecutingAssembly();
 
-				using(StreamReader reader = new StreamReader(assembly.GetManifestResourceStream("Mesen.Localization.resources.en.xml")!)) {
+				using(StreamReader reader = new StreamReader(assembly.GetManifestResourceStream(ConfigManager.Config.ApplyChinese ? "Mesen.Localization.resources.zh.xml" : "Mesen.Localization.resources.en.xml")!)) {
 					_resources.LoadXml(reader.ReadToEnd());
 				}
 
