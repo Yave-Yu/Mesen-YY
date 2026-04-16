@@ -28,10 +28,10 @@ public class MemorySearchViewModel : DisposableViewModel
 	[Reactive] public Enum[] AvailableMemoryTypes { get; set; } = Array.Empty<Enum>();
 
 	[Reactive] public MemoryType MemoryType { get; set; } = MemoryType.SnesMemory;
-	[Reactive] public MemorySearchFormat Format { get; set; } = MemorySearchFormat.Hex;
+	[Reactive] public MemorySearchFormat Format { get; set; } = MemorySearchFormat.Unsigned;
 	[Reactive] public MemorySearchValueSize ValueSize { get; set; } = MemorySearchValueSize.Byte;
 
-	[Reactive] public MemorySearchCompareTo CompareTo { get; set; } = MemorySearchCompareTo.PreviousRefreshValue;
+	[Reactive] public MemorySearchCompareTo CompareTo { get; set; } = MemorySearchCompareTo.PreviousSearchValue;
 	[Reactive] public MemorySearchOperator Operator { get; set; } = MemorySearchOperator.Equal;
 
 	[Reactive] public MesenList<MemoryAddressViewModel> ListData { get; private set; } = new();
