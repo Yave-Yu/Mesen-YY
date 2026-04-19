@@ -1387,8 +1387,8 @@
 			<Control ID="chkUsePredictiveBreakpoints">使用预测断点</Control>
 			<Control ID="chkUsePredictiveBreakpointsHint">启用后调试器会在读写之前断点，若你不希望&#xA;像这样突然断点，关掉此选项即可。</Control>
 			<Control ID="chkSingleBreakpointPerInstruction">每条指令只断点一次</Control>
-			<Control ID="chkSnesIgnoreDspReadWrites">忽视DSP读写</Control>
-			<Control ID="chkSnesIgnoreDspReadWritesHint">调试器将会忽视DSP读写到SPC RAM，于是这种行为&#xA;不会触发断点，也不会被统计访问计数等。&#xA;能稍微提升调试运行效率。</Control>
+			<Control ID="chkSnesIgnoreDspReadWrites">忽略DSP读写</Control>
+			<Control ID="chkSnesIgnoreDspReadWritesHint">调试器将会忽略DSP读写到SPC RAM，于是这种行为&#xA;不会触发断点，也不会被统计访问计数等。&#xA;能稍微提升调试运行效率。</Control>
 		</Form>
 
 		<Form ID="MemoryToolsWindow">
