@@ -23,6 +23,9 @@ namespace Mesen.Config
 
 		public string Version { get; set; } = "2.1.1";
 		public int ConfigUpgrade { get; set; } = 0;
+		public bool EnableTestMode { get; set; } = false;
+		public bool ApplyChinese { get; set; } = CultureInfo.InstalledUICulture.Name == "zh-CN";
+		public DefaultKeyMappingType DefaultKeyMappings { get; set; } = DefaultKeyMappingType.Xbox | DefaultKeyMappingType.ArrowKeys;
 
 		[Reactive] public VideoConfig Video { get; set; } = new();
 		[Reactive] public AudioConfig Audio { get; set; } = new();
@@ -47,9 +50,6 @@ namespace Mesen.Config
 		[Reactive] public NetplayConfig Netplay { get; set; } = new();
 		[Reactive] public HistoryViewerConfig HistoryViewer { get; set; } = new();
 		[Reactive] public MainWindowConfig MainWindow { get; set; } = new();
-		
-		public DefaultKeyMappingType DefaultKeyMappings { get; set; } = DefaultKeyMappingType.Xbox | DefaultKeyMappingType.ArrowKeys;
-		public bool ApplyChinese { get; set; } = CultureInfo.InstalledUICulture.Name == "zh-CN";
 
 		public Configuration()
 		{
