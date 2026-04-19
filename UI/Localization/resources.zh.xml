@@ -302,7 +302,7 @@
 			<Control ID="chkUseCustomVsPalette">VS系统使用此调色板</Control>
 
 			<Control ID="chkRemoveSpriteLimit">移除活动块限制（减少闪烁）</Control>
-			<Control ID="chkAdaptiveSpriteLimit">特殊情况重新限制活动块（如恶魔城2的沼泽）</Control>
+			<Control ID="chkAdaptiveSpriteLimit">特殊情况重新限制活动块（如魔城传说2的进门）</Control>
 			<Control ID="chkEnablePalBorders">启用PAL黑边框（PAL/Dendy制式专属）</Control>
 			<Control ID="chkDisableBackground">禁用背景</Control>
 			<Control ID="chkDisableSprites">禁用活动块</Control>
@@ -321,7 +321,7 @@
 			<Control ID="chkNonLinearSquareMixer">非线性方波混音器</Control>
 			<Control ID="chkReduceDmcPopping">减少DMC通道爆音</Control>
 			<Control ID="chkSilenceTriangleHighFreq">静音超声三角波（减少破音）</Control>
-			<Control ID="chkDisableNoiseModeFlag">禁用噪波模式标记（模仿83红白机）</Control>
+			<Control ID="chkDisableNoiseModeFlag">禁用噪波模式标志（模仿83红白机）</Control>
 			<Control ID="chkDisableSquareResetPhase">不重置方波相位（模仿1类豆机）</Control>
 			<Control ID="chkSwapDutyCycles">互换25%与50%方波音色（模仿2类豆机）</Control>
 			<Control ID="chkReverseDpcmBitOrder">反向播放DPCM位（音质更好还是更坏取决于游戏）</Control>		
@@ -344,21 +344,21 @@
 			<Control ID="chkMapperRandomPowerOnState">随机Mapper开机状态</Control>
 			<Control ID="chkRandomizeCpuPpuAlignment">随机CPU/PPU开机/复位对齐</Control>
 			<Control ID="chkEnableOamDecay">启用PPU OAM衰减</Control>
-			<Control ID="chkEnablePpuOamRowCorruption">启用PPU OAM行损坏模拟</Control>
-			<Control ID="chkEnablePpu2006ScrollGlitch">启用PPU $2006卷屏bug模拟</Control>
-			<Control ID="chkEnablePpu2000ScrollGlitch">启用PPU $2000/$2005/$2006首次写入卷屏bug模拟</Control>
+			<Control ID="chkEnablePpuOamRowCorruption">模拟PPU OAM行损坏</Control>
+			<Control ID="chkEnablePpu2006ScrollGlitch">模拟$2006卷屏故障</Control>
+			<Control ID="chkEnablePpu2000ScrollGlitch">模拟PPU $2000/$2005/$2006首次写入卷屏故障</Control>
 			<Control ID="chkRestrictPpuAccessOnFirstFrame">开机/复位后的首帧清除PPU $2000/1/5/6/7</Control>
 
 			<Control ID="lblMiscSettings">杂项设置</Control>
-			<Control ID="chkDisableOamAddrBug">禁用PPU OAMADDR的bug模拟</Control>
-			<Control ID="chkDisablePaletteRead">禁用PPU调色板读取</Control>
-			<Control ID="chkDisablePpu2004Reads">禁用PPU $2004读取</Control>
+			<Control ID="chkDisableOamAddrBug">禁用模拟PPU OAMADDR的故障</Control>
+			<Control ID="chkDisablePaletteRead">禁用读取PPU调色板</Control>
+			<Control ID="chkDisablePpu2004Reads">禁用读取PPU $2004</Control>
 			<Control ID="chkEnablePpuSpriteEvalBug">启用位于255横轴的错误活动块像素（2C02B或更早）</Control>
 			<Control ID="chkDisablePpuReset">复位时不重置PPU（FC行为）</Control>
-			<Control ID="chkDisableGameGenieBusConflicts">禁用Game Genie总线冲突模拟</Control>
+			<Control ID="chkDisableGameGenieBusConflicts">禁用模拟Game Genie总线冲突</Control>
 			<Control ID="chkDisableFlashSaves">禁用闪存存档（UNROM512、GTROM、Rainbow）</Control>
 			<Control ID="chkOverwriteOriginalRom">直接将存档写入磁碟机/闪存游戏的ROM文件</Control>
-			<Control ID="chkEnableDmcSampleDuplicationGlitch">启用DMC采样副本bug（晚期G、H的CPU行为)</Control>
+			<Control ID="chkEnableDmcSampleDuplicationGlitch">启用DMC采样副本故障（后期G、H的CPU行为)</Control>
 			<Control ID="chkEnableCpuTestMode">启用CPU测试模式的寄存器</Control>
 			<Control ID="lblConsoleType">主机型号：</Control>
 		</Form>
@@ -876,7 +876,7 @@
 		<Form ID="SetupWizardWindow">
 			<Control ID="wndTitle">Mesen</Control>
 			<Control ID="lblMesen">Mesen模拟器</Control>
-			<Control ID="lblConfigWizard">配置</Control>
+			<Control ID="lblConfigWizard">设置向导</Control>
 			<Control ID="lblInitialSetup">请花点时间选择你偏好的设置</Control>
 			<Control ID="lblStorageLocation">数据存放位置</Control>
 			<Control ID="lblStorageHint">选择你想要的数据存放位置：</Control>
@@ -1115,7 +1115,7 @@
 			<Control ID="colTileIndex">Tile</Control>
 			<Control ID="colPriority">优先级</Control>
 			<Control ID="colPalette">调色板</Control>
-			<Control ID="colFlags">标记</Control>
+			<Control ID="colFlags">标志</Control>
 			<Control ID="colVisible">可见</Control>
 
 			<Control ID="chkShowOutline">显示活动块框</Control>
@@ -1215,26 +1215,26 @@
 		
 		<Form ID="TraceLoggerWindow">
 			<Control ID="wndTitle">跟踪记录器</Control>
-			<Control ID="lblCondition">条件：</Control>
+			<Control ID="lblCondition">筛选条件：</Control>
 			<Control ID="chkEnabled">已启用</Control>
 			
-			<Control ID="grpLogOptions">{0}跟踪设置</Control>
+			<Control ID="grpLogOptions">{0}日志设置</Control>
 
 			<Control ID="chkCustomFormat">自定义格式：</Control>
 
 			<Control ID="chkRegisters">显示寄存器</Control>
-			<Control ID="chkStatusFlags">显示状态标记</Control>
-			<Control ID="lblFlagFormat">标记格式：</Control>
+			<Control ID="chkStatusFlags">显示状态标志</Control>
+			<Control ID="lblFlagFormat">标志格式：</Control>
 			<Control ID="chkByteCode">显示字节码</Control>
 			<Control ID="chkEffectiveAddress">显示有效地址</Control>
 			<Control ID="chkMemoryValue">显示内存数值</Control>
 
-			<Control ID="chkClockCounter">显示时钟计数器</Control>
-			<Control ID="chkFrameCounter">显示帧计数器</Control>
-			<Control ID="chkFramePosition">显示帧位置</Control>
+			<Control ID="chkClockCounter">显示时钟周期</Control>
+			<Control ID="chkFrameCounter">显示总帧数</Control>
+			<Control ID="chkFramePosition">显示PPU位置</Control>
 
 			<Control ID="chkUseLabels">使用标签</Control>
-			<Control ID="chkIndentCode">基于堆指针缩进</Control>
+			<Control ID="chkIndentCode">按栈指针缩进</Control>
 			
 			<Control ID="lblConditionError">包含无效语法/符号的条件</Control>
 
@@ -1332,7 +1332,7 @@
 			<Control ID="chkShowByteCode">显示字节码</Control>
 			<Control ID="chkShowMemoryValues">显示内存数值</Control>
 			<Control ID="chkUseLowerCaseDisassembly">以小写显示</Control>
-			<Control ID="chkShowJumpLabels">显示Jump/Sub标签</Control>
+			<Control ID="chkShowJumpLabels">显示跳转/子标签</Control>
 			<Control ID="chkSnesUseAltSpcOpNames">使用6502风格助记符</Control>
 			<Control ID="lblDisassemblyMode">CPU模式：</Control>
 			<Control ID="lblDisassemblyModeHint">控制用ARM还是Thumb解析未识别代码</Control>
@@ -1347,20 +1347,20 @@
 			
 			<Control ID="chkSpcBreakOnStpSleep">停止/休眠</Control>
 			
-			<Control ID="chkBreakOnUninitRead">未初始化内存读取</Control>
-			<Control ID="chkBreakOnOpen">已打开调试器</Control>
-			<Control ID="chkBreakOnPowerCycleReset">电源/复位</Control>
+			<Control ID="chkBreakOnUninitRead">读取未初始化内存</Control>
+			<Control ID="chkBreakOnOpen">打开调试器</Control>
+			<Control ID="chkBreakOnPowerCycleReset">重启电源/复位</Control>
 
 			<Control ID="chkBreakOnUnofficialOpCode">非官方操作码</Control>
 			<Control ID="chkBreakOnUnstableOpCode">不稳定操作码</Control>
 			<Control ID="chkBreakOnUnstableOpCodeHint">中断在ANE #imm（$8B）与LAX #imm（$AB）&#10;这俩操作码在实机上都不稳定，其结果通常不可靠。</Control>
 			<Control ID="chkBreakOnCpuCrash">CPU崩溃</Control>
 			<Control ID="chkBreakOnBusConflict">总线冲突</Control>
-			<Control ID="chkBreakOnDecayedOamRead">衰减OAM读取</Control>
-			<Control ID="chkBreakOnPpuScrollGlitch">PPU卷屏bug</Control>
+			<Control ID="chkBreakOnDecayedOamRead">读取衰减OAM</Control>
+			<Control ID="chkBreakOnPpuScrollGlitch">PPU卷屏故障</Control>
 			<Control ID="chkNesInvalidVramAccess">无效VRAM访问</Control>
 			<Control ID="chkNesInvalidOamWrite">无效OAM写入</Control>
-			<Control ID="chkNesDmaInputRead">DMA控制器读取</Control>
+			<Control ID="chkNesDmaInputRead">DMA读取控制器</Control>
 			<Control ID="chkNesBreakOnExtOutputMode">PPU EXT输出模式</Control>
 
 			<Control ID="chkGbBreakOnInvalidOamAccess">无效OAM访问</Control>
@@ -1386,7 +1386,7 @@
 			<Control ID="chkDrawPartialFrame">绘制部分帧</Control>
 			<Control ID="chkUsePredictiveBreakpoints">使用预测断点</Control>
 			<Control ID="chkUsePredictiveBreakpointsHint">启用后调试器会在读写之前断点，若你不希望&#xA;像这样突然断点，关掉此选项即可。</Control>
-			<Control ID="chkSingleBreakpointPerInstruction">每条指令断点一次</Control>
+			<Control ID="chkSingleBreakpointPerInstruction">每条指令只断点一次</Control>
 			<Control ID="chkSnesIgnoreDspReadWrites">忽视DSP读写</Control>
 			<Control ID="chkSnesIgnoreDspReadWritesHint">调试器将会忽视DSP读写到SPC RAM，于是这种行为&#xA;不会触发断点，也不会被统计访问计数等。&#xA;能稍微提升调试运行效率。</Control>
 		</Form>
@@ -1424,7 +1424,7 @@
 			<Control ID="chkShowTooltips">显示提示</Control>
 		</Form>
 		<Form ID="MemoryViewerFindWindow">
-			<Control ID="wndTitle">寻找…</Control>
+			<Control ID="wndTitle">查找…</Control>
 			<Control ID="lblSearch">搜索：</Control>
 			<Control ID="lblDataType">数据类型：</Control>
 			<Control ID="lblIntType">格式：</Control>
@@ -1465,7 +1465,7 @@
 		</Form>
 		
 		<Form ID="GoToAllWindow">
-			<Control ID="wndTitle">跳转到全部</Control>
+			<Control ID="wndTitle">搜索标签</Control>
 			<Control ID="lblSearch">搜索：</Control>
 			<Control ID="lblResults">结果</Control>
 			<Control ID="btnSelect">选择</Control>
@@ -1629,7 +1629,7 @@
 			<Control ID="lblSearch">搜索：</Control>
 			<Control ID="chkMatchCase">匹配条件</Control>
 			<Control ID="chkMatchWholeWord">匹配整个词</Control>
-			<Control ID="btnFind">寻找</Control>
+			<Control ID="btnFind">查找</Control>
 			<Control ID="btnCancel">取消</Control>
 		</Form>
 
@@ -1700,14 +1700,14 @@
 			
 			<Control ID="lblCondition">条件：</Control>
 
-			<Control ID="chkIgnoreDummyOperations">忽视虚拟读写</Control>
-			<Control ID="chkMark">标注在事件查看器</Control>
-			<Control ID="chkEnable">中断执行</Control>
+			<Control ID="chkIgnoreDummyOperations">忽略虚拟读写</Control>
+			<Control ID="chkMark">在事件查看器上显示</Control>
+			<Control ID="chkEnable">启用中断</Control>
 			<Control ID="chkEnableForbid">已启用</Control>
 
 			<Control ID="lblConditionError">条件包含无效语法/符号。</Control>
 
-			<Control ID="btnOk">确定</Control>
+			<Control ID="btnOK">确定</Control>
 			<Control ID="btnCancel">取消</Control>
 		</Form>
 
@@ -1761,14 +1761,14 @@ E
 		<Message ID="BandaiMicrophone">Bandai麦克风</Message>
 		<Message ID="DatachBarcodeReader">Datach刷码机</Message>
 
-		<Message ID="HelpFullscreen">/fullscreen：开始Mesen直接全屏。</Message>
+		<Message ID="HelpFullscreen">/fullscreen：启动Mesen直接全屏。</Message>
 		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings：防止设置保存到硬盘（对通过指令选项从默认设置启用的情况很有用）。</Message>
 		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo"：加载游戏后录制影片。</Message>
 		<Message ID="HelpLoadLastSession">/LoadLastSession：从上次关闭的进度继续游戏。</Message>
 
 		<Message ID="RightClickToClearBinding">鼠标右键清除绑定</Message>
 
-		<Message ID="Resume">继续</Message>
+		<Message ID="Resume">运行</Message>
 		<Message ID="Pause">暂停</Message>
 		<Message ID="StartServer">开始服务器</Message>
 		<Message ID="StopServer">停止服务器</Message>
@@ -2936,20 +2936,20 @@ E
 			<Value ID="BreakOnCop">COP</Value>
 			<Value ID="BreakOnWdm">WDM</Value>
 			<Value ID="BreakOnStp">STP</Value>
-			<Value ID="BreakOnUninitMemoryRead">未初始化内存读取</Value>
+			<Value ID="BreakOnUninitMemoryRead">读取未初始化内存</Value>
 			<Value ID="GbInvalidOamAccess">无效OAM访问</Value>
 			<Value ID="GbInvalidVramAccess">无效VRAM访问</Value>
 			<Value ID="GbDisableLcdOutsideVblank">禁用VBlank外的LCD</Value>
 			<Value ID="GbInvalidOpCode">无效指令</Value>
 			<Value ID="GbNopLoad">LD B, B (NOP)</Value>
-			<Value ID="GbOamCorruption">OAM损坏bug触发</Value>
+			<Value ID="GbOamCorruption">OAM损坏故障触发</Value>
 
 			<Value ID="Irq">IRQ</Value>
 			<Value ID="Nmi">NMI</Value>
 			
-			<Value ID="NesBreakOnDecayedOamRead">衰减OAM读取</Value>
-			<Value ID="NesBreakOnPpu2000ScrollGlitch">$2000/5/6卷屏bug</Value>
-			<Value ID="NesBreakOnPpu2006ScrollGlitch">$2006卷屏bug</Value>
+			<Value ID="NesBreakOnDecayedOamRead">读取衰减OAM</Value>
+			<Value ID="NesBreakOnPpu2000ScrollGlitch">$2000/5/6卷屏故障</Value>
+			<Value ID="NesBreakOnPpu2006ScrollGlitch">$2006卷屏故障</Value>
 			<Value ID="BreakOnUnofficialOpCode">非官方操作码</Value>
 			<Value ID="BreakOnUnstableOpCode">不稳定操作码</Value>
 			<Value ID="NesBusConflict">总线冲突</Value>
@@ -2957,7 +2957,7 @@ E
 			<Value ID="NesBreakOnExtOutputMode">PPU EXT输出模式</Value>
 			<Value ID="NesInvalidVramAccess">无效VRAM访问</Value>
 			<Value ID="NesInvalidOamWrite">无效OAM访问</Value>
-			<Value ID="NesDmaInputRead">DMA控制器读取</Value>
+			<Value ID="NesDmaInputRead">DMA读取控制器</Value>
 			
 			<Value ID="PceBreakOnInvalidVramAddress">无效VRAM地址（>=$8000）</Value>
 
@@ -3171,9 +3171,9 @@ E
 			<Value ID="DecreaseFontSize">减小字号</Value>
 			<Value ID="ResetFontSize">重置字号</Value>
 			<Value ID="GoTo">跳转…</Value>
-			<Value ID="Find">寻找</Value>
-			<Value ID="FindNext">寻找下一个</Value>
-			<Value ID="FindPrev">寻找上一个</Value>
+			<Value ID="Find">查找</Value>
+			<Value ID="FindNext">向下查找</Value>
+			<Value ID="FindPrev">向上查找</Value>
 			<Value ID="Undo">撤销</Value>
 			<Value ID="Copy">复制</Value>
 			<Value ID="Cut">剪切</Value>
@@ -3216,7 +3216,7 @@ E
 			<Value ID="PowerCycle">重启电源</Value>
 			<Value ID="ReloadRom">重新加载ROM</Value>
 			<Value ID="ToggleBreakContinue">切换中断/继续</Value>
-			<Value ID="Continue">继续</Value>
+			<Value ID="Continue">运行</Value>
 			<Value ID="Break">中断</Value>
 			<Value ID="StepInto">步进</Value>
 			<Value ID="StepOver">步进跳过子程序</Value>
@@ -3228,7 +3228,7 @@ E
 			<Value ID="RunPpuCycle">运行1个PPU周期</Value>
 			<Value ID="RunPpuScanline">运行1条PPU扫描线</Value>
 			<Value ID="RunPpuFrame">运行1帧PPU</Value>
-			<Value ID="BreakIn">中断于…</Value>
+			<Value ID="BreakIn">中断在…</Value>
 			<Value ID="BreakOn">运行到扫描线…</Value>
 			<Value ID="RunToNmi">运行到NMI</Value>
 			<Value ID="RunToIrq">运行到IRQ</Value>
@@ -3252,8 +3252,8 @@ E
 			<Value ID="CodeWindow_NavigateForward">代码窗口：向前导航</Value>
 			<Value ID="CodeWindow_MoveProgramCounter">代码窗口：跳转到此处</Value>
 			<Value ID="CodeWindow_RunToLocation">代码窗口：跳转到地址</Value>
-			<Value ID="CodeWindow_EditSelectedCode">代码窗口：编辑选中的代码</Value>
-			<Value ID="CodeWindow_EditSourceFile">代码窗口：编辑选中的代码（源码视图）</Value>
+			<Value ID="CodeWindow_EditSelectedCode">代码窗口：编辑所选代码</Value>
+			<Value ID="CodeWindow_EditSourceFile">代码窗口：编辑所选代码（源码视图）</Value>
 			<Value ID="CodeWindow_EditLabel">代码窗口：编辑标签</Value>
 			<Value ID="CodeWindow_EditComment">代码窗口：编辑注释</Value>
 			<Value ID="CodeWindow_NavigateBack">代码窗口：向后导航</Value>
@@ -3289,12 +3289,12 @@ E
 			<Value ID="WatchList_MoveDown">监视列表：下移</Value>
 			<Value ID="CallStack_EditLabel">调用栈：编辑标签</Value>
 			<Value ID="CallStack_GoToLocation">调用栈：跳转到位置</Value>
-			<Value ID="FindResultList_AddWatch">寻找结果：添加到监视器</Value>
-			<Value ID="FindResultList_GoToLocation">寻找结果：跳转到位置</Value>
-			<Value ID="FindResultList_ToggleBreakpoint">寻找结果：切换断点</Value>
+			<Value ID="FindResultList_AddWatch">查找结果：添加到监视器</Value>
+			<Value ID="FindResultList_GoToLocation">查找结果：跳转到位置</Value>
+			<Value ID="FindResultList_ToggleBreakpoint">查找结果：切换断点</Value>
 			<Value ID="SaveRom">保存ROM</Value>
 			<Value ID="SaveRomAs">另存为ROM…</Value>
-			<Value ID="SaveEditAsIps">保存改动到IPS补丁…</Value>
+			<Value ID="SaveEditAsIps">将改动另存为IPS补丁…</Value>
 			<Value ID="ResetCdl">重置CDL数据</Value>
 			<Value ID="LoadCdl">加载CDL数据</Value>
 			<Value ID="SaveCdl">保存CDL数据</Value>
@@ -3406,20 +3406,20 @@ E
 			<Value ID="Import">导入…</Value>
 			<Value ID="Export">导出…</Value>
 
-			<Value ID="ShowBreakpointList">显示断点列表</Value>
-			<Value ID="ShowLabelList">显示标签列表</Value>
-			<Value ID="ShowFunctionList">显示功能列表</Value>
-			<Value ID="ShowWatchList">显示监视列表</Value>
-			<Value ID="ShowCallStack">显示调用栈</Value>
-			<Value ID="ShowConsoleStatus">显示主机状态</Value>
-			<Value ID="ShowControllers">显示控制器</Value>
+			<Value ID="ShowBreakpointList">断点列表</Value>
+			<Value ID="ShowLabelList">标签列表</Value>
+			<Value ID="ShowFunctionList">功能列表</Value>
+			<Value ID="ShowWatchList">监视列表</Value>
+			<Value ID="ShowCallStack">调用堆栈</Value>
+			<Value ID="ShowConsoleStatus">CPU控制台</Value>
+			<Value ID="ShowControllers">控制器</Value>
 			
-			<Value ID="ShowSettingsPanel">显示设置面板</Value>
-			<Value ID="ShowMemoryMappings">显示内存映射</Value>
+			<Value ID="ShowSettingsPanel">设置面板</Value>
+			<Value ID="ShowMemoryMappings">内存映射</Value>
 
 			<Value ID="Preferences">首选项</Value>
 
-			<Value ID="Continue">继续</Value>
+			<Value ID="Continue">运行</Value>
 			<Value ID="Break">中断</Value>
 			<Value ID="Reset">复位</Value>
 			<Value ID="PowerCycle">重启电源</Value>
@@ -3436,7 +3436,7 @@ E
 			<Value ID="RunPpuFrame">运行1帧</Value>
 			<Value ID="RunToIrq">运行到IRQ</Value>
 			<Value ID="RunToNmi">运行到NMI</Value>
-			<Value ID="BreakIn">中断于…</Value>
+			<Value ID="BreakIn">中断在…</Value>
 			<Value ID="BreakOn">运行到扫描线…</Value>
 
 			<Value ID="RunScript">运行</Value>
@@ -3458,7 +3458,7 @@ E
 			<Value ID="HelpApiReference">API引用</Value>
 			<Value ID="RecentScripts">最近脚本</Value>
 
-			<Value ID="GoToLocation">查看地址</Value>
+			<Value ID="GoToLocation">跳转到地址</Value>
 			
 			<Value ID="ExportToPng">导出PNG</Value>
 			<Value ID="ViewInTileViewer">用Tile查看器查看</Value>
@@ -3469,8 +3469,8 @@ E
 
 			<Value ID="GoTo">跳转到…</Value>
 			<Value ID="GoToAddress">跳转到地址…</Value>
-			<Value ID="GoToProgramCounter">程序计数器</Value>
-			<Value ID="GoToAll">跳转到全部…</Value>
+			<Value ID="GoToProgramCounter">跳转到PC</Value>
+			<Value ID="GoToAll">跳转到列表…</Value>
 
 			<Value ID="OpenAssembler">汇编器</Value>
 			<Value ID="OpenDebugger">调试器</Value>
@@ -3576,11 +3576,11 @@ E
 
 			<Value ID="SaveRom">保存ROM</Value>
 			<Value ID="SaveRomAs">另存为ROM…</Value>
-			<Value ID="SaveEditsAsIps">保存改动到IPS补丁…</Value>
+			<Value ID="SaveEditsAsIps">将改动另存为IPS补丁…</Value>
 			<Value ID="ResetLayout">重置为默认布局</Value>
 
 			<Value ID="ToggleBreakpoint">切换断点</Value>
-			<Value ID="EditSelectedCode">编辑选中的代码</Value>
+			<Value ID="EditSelectedCode">编辑所选代码</Value>
 			<Value ID="ViewInDebugger">用调试器查看</Value>
 			
 			<Value ID="EnableBreakpoint">启用断点</Value>
@@ -3594,8 +3594,8 @@ E
 			<Value ID="LoadCdl">加载CDL数据…</Value>
 			<Value ID="SaveCdl">保存CDL数据…</Value>
 
-			<Value ID="MoveProgramCounter">移动程序计数器</Value>
-			<Value ID="RunToLocation">运行到指定位置</Value>
+			<Value ID="MoveProgramCounter">设置PC</Value>
+			<Value ID="RunToLocation">运行到此处</Value>
 
 			<Value ID="ShowToolbar">显示工具栏</Value>
 			<Value ID="ShowListView">显示列表视图</Value>
@@ -3614,9 +3614,9 @@ E
 			<Value ID="CdlRomStripUnused">去除未使用数据</Value>
 			<Value ID="CdlRomStripUsed">去除使用的数据</Value>
 
-			<Value ID="Find">寻找…</Value>
-			<Value ID="FindNext">寻找下一个</Value>
-			<Value ID="FindPrev">寻找上一个</Value>
+			<Value ID="Find">查找…</Value>
+			<Value ID="FindNext">向下查找</Value>
+			<Value ID="FindPrev">向上查找</Value>
 			<Value ID="FindOccurrences">搜索并显示全部结果</Value>
 
 			<Value ID="EditTile">编辑Tile</Value>
