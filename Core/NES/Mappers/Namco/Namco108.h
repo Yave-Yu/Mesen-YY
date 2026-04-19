@@ -40,9 +40,9 @@ protected:
 		_registers[4] = GetPowerOnByte(6);
 		_registers[5] = GetPowerOnByte(7);
 		_registers[6] = GetPowerOnByte(0);
-		_registers[7] = GetPowerOnByte(1); // For compatibility
+		_registers[7] = GetPowerOnByte(1); //For compatibility
 
-		_irqCounter = 0; // doesn't exist but should be initialized
+		_irqCounter = 0; //Doesn't exist but should be initialized
 		_irqReloadValue = 0;
 		_irqReload = 0;
 		_irqEnabled = 0;
@@ -53,10 +53,37 @@ protected:
 		ResetNamco108();
 		SetCpuMemoryMapping(0x6000, 0x7FFF, 0, HasBattery() ? PrgMemoryType::SaveRam : PrgMemoryType::WorkRam);
 		UpdateState();
-		// N108 uses hardwired mirroring, so let the header deal with that
+		//N108 uses hardwired mirroring, so let the header deal with that
 	}
 
-	// more thorough IRQ removal
+	void UpdateState() override
+	{
+		MMC3::UpdateState();
+		if(_romInfo.MapperID == 206 && _romInfo.SubMapperID == 1) {
+			//SubMapper 1
+			//"206: 1 Namcot 3407, 3417 and 3451 PCBs with unbanked 32 KiB PRG-ROM."
+			SelectPrgPage4x(0, 0);
+		}
+	}
+
+	vector<MapperStateEntry> GetMapperStateEntries() override
+	{
+		vector<MapperStateEntry> entries;
+		entries.push_back(MapperStateEntry("$8000.0-2", "Current Register", MMC3::GetCurrentRegister(), MapperStateValueType::Number8));
+
+		entries.push_back(MapperStateEntry("", "Register 0 (CHR)", _registers[0], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 1 (CHR)", _registers[1], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 2 (CHR)", _registers[2], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 3 (CHR)", _registers[3], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 4 (CHR)", _registers[4], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 5 (CHR)", _registers[5], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 6 (PRG)", _registers[6], MapperStateValueType::Number8));
+		entries.push_back(MapperStateEntry("", "Register 7 (PRG)", _registers[7], MapperStateValueType::Number8));
+
+		return entries;
+	}
+
+	//more thorough IRQ removal
 	void NotifyVramAddressChange(uint16_t addr) override
 	{
 	}
