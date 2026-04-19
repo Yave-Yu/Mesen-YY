@@ -3,6 +3,7 @@
 #include "Utilities/Serializer.h"
 #include "Shared/Emulator.h"
 #include "Shared/BatteryManager.h"
+#include <Utilities/TimeUtilities.h>
 
 GbaRtc::GbaRtc(Emulator* emu)
 {
@@ -194,7 +195,7 @@ void GbaRtc::UpdateTime()
 	tm.tm_mon = (month & 0x0F) + ((month >> 4) * 10);
 	tm.tm_year = 100 + (_state.Year & 0x0F) + ((_state.Year >> 4) * 10);
 
-	std::time_t tt = mktime(&tm);
+	std::time_t tt = TimeUtilities::TmToUtc(&tm);
 	if(tt == -1) {
 		//Invalid time
 		_lastUpdateTime = currentTime;
@@ -214,9 +215,9 @@ void GbaRtc::UpdateTime()
 	std::time_t newTime = system_clock::to_time_t(timePoint);
 	std::tm newTm;
 #if (defined(WIN32) || defined(_WIN32) || defined(__WIN32__))
-	localtime_s(&newTm, &newTime);
+	gmtime_s(&newTm, &newTime);
 #else
-	localtime_r(&newTime, &newTm);
+	gmtime_r(&newTime, &newTm);
 #endif
 
 	_state.Second = (newTm.tm_sec % 10) + ((newTm.tm_sec / 10) << 4);
