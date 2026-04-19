@@ -222,7 +222,7 @@ namespace Mesen.Config
 		public static FontConfig GetDefaultFont()
 		{
 			if(OperatingSystem.IsWindows()) {
-				return new FontConfig() { FontFamily = "Microsoft Sans Serif", FontSize = 11 };
+				return ConfigManager.Config.ApplyChinese ? new FontConfig() { FontFamily = "Segoe UI", FontSize = 12 } : new FontConfig() { FontFamily = "Microsoft Sans Serif", FontSize = 11 };
 			} else if(OperatingSystem.IsMacOS()) {
 				return new FontConfig() { FontFamily = FindMatchingFont("Microsoft Sans Serif"), FontSize = 11 };
 			} else {
