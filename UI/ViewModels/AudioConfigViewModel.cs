@@ -32,7 +32,7 @@ namespace Mesen.ViewModels
 			}
 
 			AddDisposable(this.WhenAnyValue(x => x.Config.AudioLatency).Subscribe(x => {
-				ShowLatencyWarning = Config.AudioLatency <= 55;
+				ShowLatencyWarning = Config.AudioLatency < 50;
 			}));
 
 			AddDisposable(ReactiveHelper.RegisterRecursiveObserver(Config, (s, e) => { Config.ApplyConfig(); }));
