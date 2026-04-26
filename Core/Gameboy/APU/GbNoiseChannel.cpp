@@ -63,7 +63,7 @@ uint8_t GbNoiseChannel::GetRawOutput()
 double GbNoiseChannel::GetOutput()
 {
 	//"If a DAC is enabled, the digital range $0 to $F is linearly translated to the analog range -1 to 1, 
-	//in arbitrary units. Importantly, the slope is negative: “digital 0” maps to “analog 1”, not “analog -1”."	
+	//in arbitrary units. Importantly, the slope is negative: 'digital 0' maps to 'analog 1', not 'analog -1'"	
 
 	//Return -7 to 7 "analog" range (higher digital value = lower analog value)
 	return (7 - (int8_t)_state.Output) * (double)_dac.GetDacVolume() / 100;
@@ -87,7 +87,7 @@ void GbNoiseChannel::Exec(uint32_t clocksToRun)
 	}
 
 	if(_state.PeriodShift >= 14) {
-		//Using a noise channel clock shift of 14 or 15 results in the LFSR receiving no clocks.
+		//Using a noise channel clock shift of 14 or 15 results in the LFSR receiving no clocks
 		return;
 	}
 
@@ -97,13 +97,13 @@ void GbNoiseChannel::Exec(uint32_t clocksToRun)
 		_state.Timer = GetPeriod();
 
 		//When clocked by the frequency timer, the low two bits (0 and 1) are XORed, all bits are shifted right by one,
-		//and the result of the XOR is put into the now-empty high bit.
+		//and the result of the XOR is put into the now-empty high bit
 		uint16_t shiftedValue = _state.ShiftRegister >> 1;
 		uint8_t xorResult = (_state.ShiftRegister & 0x01) ^ (shiftedValue & 0x01);
 		_state.ShiftRegister = (xorResult << 14) | shiftedValue;
 		
 		if(_state.ShortWidthMode) {
-			//If width mode is 1 (NR43), the XOR result is ALSO put into bit 6 AFTER the shift, resulting in a 7-bit LFSR.
+			//If width mode is 1 (NR43), the XOR result is ALSO put into bit 6 AFTER the shift, resulting in a 7-bit LFSR
 			_state.ShiftRegister &= ~0x40;
 			_state.ShiftRegister |= (xorResult << 6);
 		}
@@ -192,7 +192,7 @@ void GbNoiseChannel::Write(uint16_t addr, uint8_t value)
 					_state.Timer += (_state.Divisor == 1) ? 4 : -4;
 				}
 
-				//Channel volume is reloaded from NRx2.
+				//Channel volume is reloaded from NRx2
 				_state.Volume = _state.EnvVolume;
 
 				if(_state.Enabled) {
@@ -203,16 +203,16 @@ void GbNoiseChannel::Write(uint16_t addr, uint8_t value)
 				//Channel is enabled, if volume is not 0 or raise volume flag is set
 				_state.Enabled = _state.EnvRaiseVolume || _state.EnvVolume > 0;
 
-				//Noise channel's LFSR bits are all set to 1.
+				//Noise channel's LFSR bits are all set to 1
 				_state.ShiftRegister = 0x7FFF;
 
-				//If length counter is zero, it is set to 64 (256 for wave channel).
+				//If length counter is zero, it is set to 64 (256 for wave channel)
 				if(_state.Length == 0) {
 					_state.Length = 64;
 					_state.LengthEnabled = false;
 				}
 
-				//Volume envelope timer is reloaded with period.
+				//Volume envelope timer is reloaded with period
 				_state.EnvTimer = _state.EnvPeriod;
 				_state.EnvStopped = false;
 			}

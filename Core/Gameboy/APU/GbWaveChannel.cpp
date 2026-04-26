@@ -12,7 +12,7 @@ GbWaveChannel::GbWaveChannel(GbApu* apu, Gameboy* gameboy)
 
 	//"When the Game Boy is switched on (before the internal boot ROM executes),
 	//the values in the wave table depend on the model. On the DMG, they are somewhat
-	//random, though the particular pattern is generally the same for each individual Game Boy unit.
+	//random, though the particular pattern is generally the same for each individual Game Boy unit
 	//The game R-Type doesn't initialize wave RAM and thus relies on these."
 
 	//Note: On CGB, the boot rom initalizes wave ram to 00, FF, 00, FF, etc. (so these values will be overwritten)
@@ -73,7 +73,7 @@ uint8_t GbWaveChannel::GetRawOutput()
 double GbWaveChannel::GetOutput()
 {
 	//"If a DAC is enabled, the digital range $0 to $F is linearly translated to the analog range -1 to 1, 
-	//in arbitrary units. Importantly, the slope is negative: “digital 0” maps to “analog 1”, not “analog -1”."	
+	//in arbitrary units. Importantly, the slope is negative: 'digital 0' maps to 'analog 1' not 'analog -1'"	
 
 	//Return -7 to 7 "analog" range (higher digital value = lower analog value)
 	return (7 - (int8_t)_state.Output) * (double)_dac.GetDacVolume() / 100;
@@ -104,21 +104,21 @@ void GbWaveChannel::Exec(uint32_t clocksToRun)
 	_allowRamAccess = false;
 
 	if(_state.Timer == 0) {
-		//The wave channel's frequency timer period is set to (2048-frequency)*2.
+		//The wave channel's frequency timer period is set to (2048-frequency)*2
 		_state.Timer = (2048 - _state.Frequency) * 2;
 
 		//When the timer generates a clock, the position counter is advanced one sample in the wave table,
 		//looping back to the beginning when it goes past the end,
 		_state.Position = (_state.Position + 1) & 0x1F;
 
-		//then a sample is read into the sample buffer from this NEW position.
+		//then a sample is read into the sample buffer from this NEW position
 		if(_state.Position & 0x01) {
 			_state.SampleBuffer = _state.Ram[_state.Position >> 1] & 0x0F;
 		} else {
 			_state.SampleBuffer = _state.Ram[_state.Position >> 1] >> 4;
 		}
 
-		//The DAC receives the current value from the upper/lower nibble of the sample buffer, shifted right by the volume control. 
+		//The DAC receives the current value from the upper/lower nibble of the sample buffer, shifted right by the volume control
 		UpdateOutput();
 
 		_allowRamAccess = true;
@@ -180,16 +180,16 @@ void GbWaveChannel::Write(uint16_t addr, uint8_t value)
 					UpdateOutput();
 				}
 
-				//Frequency timer is reloaded with period.
+				//Frequency timer is reloaded with period
 				_state.Timer = (2048 - _state.Frequency) * 2 + 6;
 
-				//If length counter is zero, it is set to 64 (256 for wave channel).
+				//If length counter is zero, it is set to 64 (256 for wave channel)
 				if(_state.Length == 0) {
 					_state.Length = 256;
 					_state.LengthEnabled = false;
 				}
 
-				//Wave channel's position is set to 0 but sample buffer is NOT refilled.
+				//Wave channel's position is set to 0 but sample buffer is NOT refilled
 				_state.Position = 0;
 			}
 

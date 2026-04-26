@@ -116,7 +116,7 @@ uint8_t GbSquareChannel::GetRawOutput()
 double GbSquareChannel::GetOutput()
 {
 	//"If a DAC is enabled, the digital range $0 to $F is linearly translated to the analog range -1 to 1, 
-	//in arbitrary units. Importantly, the slope is negative: “digital 0” maps to “analog 1”, not “analog -1”."	
+	//in arbitrary units. Importantly, the slope is negative: 'digital 0' maps to 'analog 1', not 'analog -1'"	
 	
 	//Return -7 to 7 "analog" range (higher digital value = lower analog value)
 	return (7 - (int8_t)_state.Output) * (double)_dac.GetDacVolume() / 100;
@@ -275,7 +275,7 @@ void GbSquareChannel::Write(uint16_t addr, uint8_t value)
 				_state.SweepTimer = _state.SweepPeriod ? _state.SweepPeriod : 8;
 				_state.SweepNegateCalcDone = false;
 
-				//"The internal enabled flag is set if either the sweep period or shift are non-zero, cleared otherwise.
+				//"The internal enabled flag is set if either the sweep period or shift are non-zero, cleared otherwise."
 				_state.SweepEnabled = _state.SweepPeriod > 0 || _state.SweepShift > 0;
 
 				//"If the sweep shift is non-zero, frequency calculation and the overflow check are performed immediately."
