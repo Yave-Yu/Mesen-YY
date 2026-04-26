@@ -161,16 +161,19 @@ void GbaRtc::Reset()
 {
 	_state = {};
 	//With this, each time start a new game, RTC automatically syncs to system clock
-	std::time_t now = time(0);
-	std::tm* gmtm = localtime(&now);
-	_state.Year = ToBCD(gmtm->tm_year % 100);
-	_state.Month = ToBCD(gmtm->tm_mon + 1);
-	_state.Day = ToBCD(gmtm->tm_mday);
-	_state.DoW = gmtm->tm_wday; //Only 0~6, don't need that.
-	_state.Hour = ToBCD(gmtm->tm_hour);
-	_state.Minute = ToBCD(gmtm->tm_min);
-	_state.Second = ToBCD(gmtm->tm_sec);
-	_state.Status = 64;
+	struct tm t;
+	time_t now;
+	time(&now);
+	localtime_s(&t, &now);
+
+	_state.Year = ToBCD(t.tm_year % 100);
+	_state.Month = ToBCD(t.tm_mon + 1);
+	_state.Day = ToBCD(t.tm_mday);
+	_state.DoW = t.tm_wday; //Only 0~6, don't need that
+	_state.Hour = ToBCD(t.tm_hour);
+	_state.Minute = ToBCD(t.tm_min);
+	_state.Second = ToBCD(t.tm_sec);
+	_state.Status = 0x40;
 }
 
 void GbaRtc::UpdateTime()
