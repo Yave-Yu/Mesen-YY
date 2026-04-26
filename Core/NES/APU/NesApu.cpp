@@ -103,7 +103,7 @@ uint8_t NesApu::ReadRam(uint16_t addr)
 		case 0x4015: {
 			uint8_t status = GetStatus() | (_console->GetMemoryManager()->GetInternalOpenBus() & 0x20);
 
-			//Reading $4015 clears the Frame Counter interrupt flag.
+			//Reading $4015 clears the Frame Counter interrupt flag
 			_console->GetCpu()->ClearIrqSource(IRQSource::FrameCounter);
 
 			return status;
@@ -270,8 +270,8 @@ bool NesApu::IsApuEnabled()
 {
 	//Adding extra lines before/after NMI temporarely turns off the Apu
 	//This appears to result in less side-effects than spreading out the Apu's
-	//load over the entire PPU frame, like what was done before.
-	//This is most likely due to the timing of the Frame Counter & DMC IRQs.
+	//load over the entire PPU frame, like what was done before
+	//This is most likely due to the timing of the Frame Counter & DMC IRQs
 	return _apuEnabled;
 }
 

@@ -1075,7 +1075,7 @@ int LuaApi::LoadSavestate(lua_State* lua)
 	return l.ReturnCount();
 }
 
-int LuaApi::GetState(lua_State* lua)
+int LuaApi::GetState(lua_State *lua)
 {
 	LuaCallHelper l(lua);
 	checkparams();
@@ -1201,7 +1201,6 @@ void LuaApi::ReadStateTable(Serializer& s, lua_State* lua)
 		lua_pop(lua, 1);
 	}
 
-	Serializer s(0, false, SerializeFormat::Map);
 	s.LoadFromMap(map);
 }
 
