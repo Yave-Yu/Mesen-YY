@@ -31,7 +31,6 @@ public:
 	void TriggerKeyIrq();
 
 	uint8_t Read();
-	uint8_t Peek();
 	void Write(uint8_t value);
 
 	bool IsSoundPressed();

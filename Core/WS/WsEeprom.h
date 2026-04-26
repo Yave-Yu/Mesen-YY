@@ -30,7 +30,6 @@ private:
 	WsEepromCommand GetCommand();
 	WsEepromSize GetSize();
 	uint16_t GetCommandAddress();
-	uint32_t GetCommandDelay(WsEepromCommand cmd) const;
 
 	void WriteValue(uint16_t addr, uint16_t value);
 

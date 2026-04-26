@@ -58,7 +58,6 @@ public:
 
 	WsController(Emulator* emu, WsConsole* console, uint8_t port, KeyMappingSet horizontalMappings, KeyMappingSet verticalMappings) : BaseControlDevice(emu, ControllerType::WsController, port, horizontalMappings)
 	{
-		//TODOWS turbo support
 		_verticalMappings = verticalMappings.GetKeyMappingArray();
 		_console = console;
 		_horizontalTurboSpeed = horizontalMappings.TurboSpeed;
