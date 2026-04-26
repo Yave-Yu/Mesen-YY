@@ -290,7 +290,7 @@
 			<Control ID="chkFdsFastForwardOnLoad">读盘时自动快进</Control>
 			<Control ID="chkFdsAutoInsertDisk">自动翻面</Control>
 
-			<Control ID="lblVsDualSystem">VS双机系统设置</Control>
+			<Control ID="lblVsDualSystem">VS双屏系统设置</Control>
 			<Control ID="lblVsDualPlayAudio">播放音频：</Control>
 			<Control ID="lblVsDualShowVideo">显示视频：</Control>
 
@@ -1971,10 +1971,10 @@ E
 			<Value ID="FdsInsertNextDisk">磁碟机插入</Value>
 			<Value ID="VsInsertCoin1">VS系统投币1</Value>
 			<Value ID="VsInsertCoin2">VS系统投币2</Value>
-			<Value ID="VsInsertCoin3">VS系统投币3（双机系统）</Value>
-			<Value ID="VsInsertCoin4">VS系统投币4（双机系统）</Value>
+			<Value ID="VsInsertCoin3">VS系统投币3（双屏系统）</Value>
+			<Value ID="VsInsertCoin4">VS系统投币4（双屏系统）</Value>
 			<Value ID="VsServiceButton">VS系统服务键</Value>
-			<Value ID="VsServiceButton2">VS系统服务键2（双机系统）</Value>
+			<Value ID="VsServiceButton2">VS系统服务键2（双屏系统）</Value>
 
 			<Value ID="InputBarcode">输入条码</Value>
 			<Value ID="LoadTape">从文件加载磁带</Value>
@@ -2627,7 +2627,7 @@ E
 			<Value ID="TkoBoxingProtection">TKO拳击</Value>
 			<Value ID="SuperXeviousProtection">超级铁板阵</Value>
 			<Value ID="IceClimberProtection">敲冰块</Value>
-			<Value ID="VsDualSystem">VS双机系统</Value>
+			<Value ID="VsDualSystem">VS双屏系统</Value>
 			<Value ID="RaidOnBungelingBayProtection">救难直升机</Value>
 		</Enum>
 		<Enum ID="GameInputType">
@@ -3559,8 +3559,8 @@ E
 			
 			<Value ID="InsertCoin1">投币1</Value>
 			<Value ID="InsertCoin2">投币2</Value>
-			<Value ID="InsertCoin3">投币3（双机系统）</Value>
-			<Value ID="InsertCoin4">投币4（双机系统）</Value>
+			<Value ID="InsertCoin3">投币3（双屏系统）</Value>
+			<Value ID="InsertCoin4">投币4（双屏系统）</Value>
 
 			<Value ID="SaveState">保存进度</Value>
 			<Value ID="LoadState">加载进度</Value>
