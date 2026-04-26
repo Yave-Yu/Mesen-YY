@@ -269,7 +269,7 @@
 			<Control ID="tpgVideo">视频</Control>
 			<Control ID="lblMiscSettings">杂项设置</Control>
 
-			<Control ID="chkBlendHighResolutionModes">混合高分辨率模式</Control>
+			<Control ID="lblHighResBlendMode">高分辨率混合模式：</Control>
 			<Control ID="chkHideBgLayer1">隐藏背景图层1</Control>
 			<Control ID="chkHideBgLayer2">隐藏背景图层2</Control>
 			<Control ID="chkHideBgLayer3">隐藏背景图层3</Control>
@@ -2452,6 +2452,11 @@ E
 		<Enum ID="MesenTheme">
 			<Value ID="Light">浅色</Value>
 			<Value ID="Dark">深色</Value>
+		</Enum>
+		<Enum ID="SnesHighResBlendMode">
+			<Value ID="None">无（默认）</Value>
+			<Value ID="BlendAll">混合整屏</Value>
+			<Value ID="BlendEvenOdd">混合奇偶列（假透明）</Value>
 		</Enum>
 		<Enum ID="PceConsoleType">
 			<Value ID="Auto">自动（推荐）</Value>
