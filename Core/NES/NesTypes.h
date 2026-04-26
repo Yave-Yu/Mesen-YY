@@ -42,6 +42,13 @@ enum class MemoryOperation
 	Any = 3
 };
 
+enum NesCpuBusType
+{
+	Internal,
+	External,
+	Both
+};
+
 struct NesCpuState : BaseState
 {
 	uint64_t CycleCount = 0;
